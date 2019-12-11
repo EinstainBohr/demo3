@@ -166,8 +166,8 @@ Window {
     Image {
         x: 1425
         y: 420
-//        source: "qrc:/Sequences/BatteryStateFine/BatteryCharge_001_000" + sim.batteryLevel.toFixed(0) + ".png" // This has slight impact on FPS (1-2 FPS)
-        source: "qrc:/Sequences/BatteryState/BatteryCharge_" + sim.chargeLevel.toFixed(0) + ".ktx"
+        source: "qrc:/Sequences/BatteryStateFine/BatteryCharge_001_000" + sim.batteryLevel.toFixed(0) + ".ktx" // This has slight impact on FPS (1-2 FPS)
+        //source: "qrc:/Sequences/BatteryState/BatteryCharge_" + sim.chargeLevel.toFixed(0) + ".ktx"
         opacity: 1.0 - warningIconOpacity
 
         Text {
