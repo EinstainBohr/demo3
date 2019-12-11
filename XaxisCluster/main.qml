@@ -61,21 +61,21 @@ Window {
         id: topLeftFrame
         anchors.top: parent.top
         anchors.left: parent.left
-        source: "qrc:/Images/Frame/Frame_left_top_solid_001.png"
+        source: "qrc:/Images/Frame/Frame_left_top_solid_001.ktx"
     }
 
     Image {
         id: sideLeftFrame
         anchors.top: topLeftFrame.bottom
         anchors.left: parent.left
-        source: "qrc:/Images/Frame/Frame_left_side_solid_001.png"
+        source: "qrc:/Images/Frame/Frame_left_side_solid_001.ktx"
     }
 
     Image {
         id: bottomLeftFrame
         anchors.top: sideLeftFrame.bottom
         anchors.left: parent.left
-        source: "qrc:/Images/Frame/Frame_left_bottom_solid_001.png"
+        source: "qrc:/Images/Frame/Frame_left_bottom_solid_001.ktx"
     }
 
     // Frame - right side
@@ -83,7 +83,7 @@ Window {
         id: topRightFrame
         anchors.top: parent.top
         anchors.right: parent.right
-        source: "qrc:/Images/Frame/Frame_left_top_solid_001.png"
+        source: "qrc:/Images/Frame/Frame_left_top_solid_001.ktx"
         mirror: true
     }
 
@@ -91,7 +91,7 @@ Window {
         id: sideRightFrame
         anchors.top: topRightFrame.bottom
         anchors.right: parent.right
-        source: "qrc:/Images/Frame/Frame_left_side_solid_001.png"
+        source: "qrc:/Images/Frame/Frame_left_side_solid_001.ktx"
         mirror: true
     }
 
@@ -99,7 +99,7 @@ Window {
         id: bottomRightFrame
         anchors.top: sideRightFrame.bottom
         anchors.right: parent.right
-        source: "qrc:/Images/Frame/Frame_left_bottom_solid_001.png"
+        source: "qrc:/Images/Frame/Frame_left_bottom_solid_001.ktx"
         mirror: true
     }
 
@@ -124,13 +124,13 @@ Window {
         opacity: warningIconOpacity
 
         Image {
-            source: "qrc:/Images/Icons/Warning_engine_001.png"
+            source: "qrc:/Images/Icons/Warning_engine_001.ktx"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_oil_001.png"
+            source: "qrc:/Images/Icons/Warning_oil_001.ktx"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_battery_001.png"
+            source: "qrc:/Images/Icons/Warning_battery_001.ktx"
         }
     }
 
@@ -143,13 +143,13 @@ Window {
         opacity: warningIconOpacity
 
         Image {
-            source: "qrc:/Images/Icons/Warning_parkingBrake_001.png"
+            source: "qrc:/Images/Icons/Warning_parkingBrake_001.ktx"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_handbBrake_001.png"
+            source: "qrc:/Images/Icons/Warning_handbBrake_001.ktx"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_ABS_001.png"
+            source: "qrc:/Images/Icons/Warning_ABS_001.ktx"
         }
     }
 
@@ -196,7 +196,7 @@ Window {
         anchors.bottom: bottomLeftFrame.top
         anchors.leftMargin: 175
         mirror: true
-        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.fuelLevel.toFixed(0) + ".png"
+        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.fuelLevel.toFixed(0) + ".ktx"
         opacity: 1.0 - warningIconOpacity
     }
 
@@ -205,7 +205,7 @@ Window {
         anchors.right: parent.right
         anchors.bottom: bottomRightFrame.top
         anchors.rightMargin: 175
-        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.chargeLevel.toFixed(0) + ".png"
+        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.chargeLevel.toFixed(0) + ".ktx"
         opacity: 1.0 - warningIconOpacity
     }
 
@@ -213,14 +213,14 @@ Window {
     Image {
         anchors.left: sideLeftGauge.right
         anchors.bottom: sideLeftGauge.bottom
-        source: "qrc:/Images/Icons/Fuel_001.png"
+        source: "qrc:/Images/Icons/Fuel_001.ktx"
         opacity: 1.0 - warningIconOpacity
     }
 
     Image {
         anchors.right: sideRightGauge.left
         anchors.bottom: sideRightGauge.bottom
-        source: "qrc:/Images/Icons/Battery_001.png"
+        source: "qrc:/Images/Icons/Battery_001.ktx"
         opacity: 1.0 - warningIconOpacity
     }
 
@@ -233,7 +233,7 @@ Window {
 
         Image {
             id: navTurn
-            source: "qrc:/Images/Icons/Nav_turn_001.png"
+            source: "qrc:/Images/Icons/Nav_turn_001.ktx"
             mirror: sim.turnLeftNext
         }
         Text {
@@ -253,7 +253,7 @@ Window {
 
         Image {
             id: navTime
-            source: "qrc:/Images/Icons/Nav_time_001.png"
+            source: "qrc:/Images/Icons/Nav_time_001.ktx"
         }
         Text {
             anchors.verticalCenter: navTime.verticalCenter
@@ -272,7 +272,7 @@ Window {
 
         Image {
             id: navRange
-            source: "qrc:/Images/Icons/Nav_range_001.png"
+            source: "qrc:/Images/Icons/Nav_range_001.ktx"
         }
         Text {
             anchors.verticalCenter: navRange.verticalCenter
