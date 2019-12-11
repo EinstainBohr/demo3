@@ -124,43 +124,45 @@ Item {
             LowPolySUV {
                 id: ownCar
                 property real xPos: midLane
-                scale: Qt.vector3d(5, 5, 5)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: xPos
+                position.y: -50
+                position.z: -50
             }
 
-            LowPolyCoupe {
+            LowPolySUVGray {
                 id: car01
                 property real zPos: 500
-                scale: Qt.vector3d(0.25, 0.25, 0.25)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: zPos
-                matOpacity: carFade
                 position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
+                matOpacity: carFade
             }
 
-            LowPolyCoupe {
+            LowPolySUVGray {
                 id: car02
                 property real zPos: -200
-                scale: Qt.vector3d(0.25, 0.25, 0.25)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: rightLane
                 position.z: zPos
                 position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
             }
 
-            LowPolyCoupe {
+            LowPolySUVGray {
                 id: car03
                 property real zPos: 200
-                scale: Qt.vector3d(0.25, 0.25, 0.25)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: zPos
-                matOpacity: carFade
                 position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
+                matOpacity: carFade
             }
 
-            LowPolyCoupe {
+            LowPolySUVGray {
                 id: car04
                 property real zPos: -500
-                scale: Qt.vector3d(0.25, 0.25, 0.25)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: midLane
                 position.z: zPos
                 position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)

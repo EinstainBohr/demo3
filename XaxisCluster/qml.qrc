@@ -23,23 +23,10 @@
         <file>maps/point.ktx</file>
         <file>shaders/globe.frag</file>
         <file>shaders/globe.vert</file>
-        <file>models/lowPolyCar/maps/Low_lowpolyCoupe_Diffuse.jpg</file>
-        <file>models/lowPolyCar/meshes/polySurface3.mesh</file>
-        <file>LowPolyCoupe.qml</file>
+        <file>LowPolySUVGray.qml</file>
         <file>meshes/lowpolyCar.mesh</file>
         <file>LowPolySUV.qml</file>
         <file>maps/LowPolySUV.jpg</file>
-        <file>Sequences/BatteryState/BatteryCharge_0.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_1.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_10.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_2.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_3.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_4.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_5.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_6.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_7.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_8.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_9.png</file>
         <file>Sequences/SideGauge/SideGauge_0.png</file>
         <file>Sequences/SideGauge/SideGauge_1.png</file>
         <file>Sequences/SideGauge/SideGauge_10.png</file>
@@ -52,7 +39,6 @@
         <file>Sequences/SideGauge/SideGauge_7.png</file>
         <file>Sequences/SideGauge/SideGauge_8.png</file>
         <file>Sequences/SideGauge/SideGauge_9.png</file>
-        <file>Sequences/BatteryState/BatteryCharge_11.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_10.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_11.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_12.png</file>
@@ -82,7 +68,6 @@
         <file>maps/line.ktx</file>
         <file>maps/LowPolySUV.ktx</file>
         <file>maps/mask.ktx</file>
-        <file>models/lowPolyCar/maps/Low_lowpolyCoupe_Diffuse.ktx</file>
         <file>Images/LineGroup_Left_matted.ktx</file>
         <file>shaders/globe_ES2.frag</file>
         <file>shaders/globe_ES2.vert</file>
@@ -161,17 +146,18 @@
         <file>Images/Icons/Warning_handbBrake_001.ktx</file>
         <file>Images/Icons/Warning_oil_001.ktx</file>
         <file>Images/Icons/Warning_parkingBrake_001.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_0.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_1.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_10.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_11.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_2.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_3.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_4.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_5.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_6.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_7.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_8.ktx</file>
-        <file>Sequences/SideGauge/SideGauge_9.ktx</file>
+        <file>maps/LowPolySUVBW.jpg</file>
+        <file>Sequences/BatteryState/BatteryCharge_0.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_1.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_10.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_11.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_2.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_3.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_4.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_5.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_6.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_7.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_8.ktx</file>
+        <file>Sequences/BatteryState/BatteryCharge_9.ktx</file>
     </qresource>
 </RCC>

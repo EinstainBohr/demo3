@@ -166,8 +166,8 @@ Window {
     Image {
         x: 1425
         y: 420
-        source: "qrc:/Sequences/BatteryStateFine/BatteryCharge_001_000" + sim.batteryLevel.toFixed(0) + ".png" // This has slight impact on FPS (1-2 FPS)
-        //source: "qrc:/Sequences/BatteryState/BatteryCharge_" + sim.chargeLevel.toFixed(0) + ".png"
+//        source: "qrc:/Sequences/BatteryStateFine/BatteryCharge_001_000" + sim.batteryLevel.toFixed(0) + ".png" // This has slight impact on FPS (1-2 FPS)
+        source: "qrc:/Sequences/BatteryState/BatteryCharge_" + sim.chargeLevel.toFixed(0) + ".ktx"
         opacity: 1.0 - warningIconOpacity
 
         Text {
@@ -196,7 +196,7 @@ Window {
         anchors.bottom: bottomLeftFrame.top
         anchors.leftMargin: 175
         mirror: true
-        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.fuelLevel.toFixed(0) + ".ktx"
+        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.fuelLevel.toFixed(0) + ".png"
         opacity: 1.0 - warningIconOpacity
     }
 
@@ -205,7 +205,7 @@ Window {
         anchors.right: parent.right
         anchors.bottom: bottomRightFrame.top
         anchors.rightMargin: 175
-        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.chargeLevel.toFixed(0) + ".ktx"
+        source: "qrc:/Sequences/SideGauge/SideGauge_" + sim.chargeLevel.toFixed(0) + ".png"
         opacity: 1.0 - warningIconOpacity
     }
 
