@@ -81,18 +81,6 @@
         <file>Images/Icons/Warning_oil_001.ktx</file>
         <file>Images/Icons/Warning_parkingBrake_001.ktx</file>
         <file>maps/LowPolySUVBW.jpg</file>
-        <file>Sequences/BatteryState/BatteryCharge_0.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_1.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_10.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_11.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_2.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_3.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_4.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_5.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_6.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_7.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_8.ktx</file>
-        <file>Sequences/BatteryState/BatteryCharge_9.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00039.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00040.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00041.ktx</file>
