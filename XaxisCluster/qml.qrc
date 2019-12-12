@@ -54,11 +54,6 @@
         <file>Sequences/LineIntro/Line_intro_001_premult_22.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_23.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_24.png</file>
-        <file>Sequences/LineIntro/Line_intro_001_premult_25.png</file>
-        <file>Sequences/LineIntro/Line_intro_001_premult_26.png</file>
-        <file>Sequences/LineIntro/Line_intro_001_premult_27.png</file>
-        <file>Sequences/LineIntro/Line_intro_001_premult_28.png</file>
-        <file>Sequences/LineIntro/Line_intro_001_premult_29.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_5.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_6.png</file>
         <file>Sequences/LineIntro/Line_intro_001_premult_7.png</file>
@@ -159,5 +154,6 @@
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00097.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00098.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00099.ktx</file>
+        <file>Images/LineGroup_Right_matted.ktx</file>
     </qresource>
 </RCC>

@@ -18,13 +18,15 @@ Window {
 
     // Image string
     property string lineImageLeft: "qrc:/Sequences/LineIntro/Line_intro_001_premult_5.png"
+    property string lineImageRight: "qrc:/Sequences/LineIntro/Line_intro_001_premult_5.png"
 
     // Line intro image sequence number
     property int imageSeqNo: 0
 
     onImageSeqNoChanged: {
-        lineImageLeft = "qrc:/Sequences/LineIntro/Line_intro_001_premult_"
+        lineImageRight = "qrc:/Sequences/LineIntro/Line_intro_001_premult_"
                 + imageSeqNo.toFixed(0) + ".png";
+        lineImageLeft = lineImageRight;
     }
 
     // Opacities
@@ -124,13 +126,13 @@ Window {
         opacity: warningIconOpacity
 
         Image {
-            source: "qrc:/Images/Icons/Warning_engine_001.ktx"
+            source: "qrc:/Images/Icons/Warning_engine_001.png"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_oil_001.ktx"
+            source: "qrc:/Images/Icons/Warning_oil_001.png"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_battery_001.ktx"
+            source: "qrc:/Images/Icons/Warning_battery_001.png"
         }
     }
 
@@ -143,13 +145,13 @@ Window {
         opacity: warningIconOpacity
 
         Image {
-            source: "qrc:/Images/Icons/Warning_parkingBrake_001.ktx"
+            source: "qrc:/Images/Icons/Warning_parkingBrake_001.png"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_handbBrake_001.ktx"
+            source: "qrc:/Images/Icons/Warning_handbBrake_001.png"
         }
         Image {
-            source: "qrc:/Images/Icons/Warning_ABS_001.ktx"
+            source: "qrc:/Images/Icons/Warning_ABS_001.png"
         }
     }
 
@@ -159,6 +161,7 @@ Window {
         anchors.bottom: bottomLeftFrame.top
         anchors.rightMargin: linesSideMargin
         anchors.bottomMargin: linesBottomMargin
+        mirror: !adasview.isRunning
         source: lineImageLeft
         opacity: linesOpacity
     }
@@ -184,8 +187,8 @@ Window {
         anchors.bottom: bottomRightFrame.top
         anchors.leftMargin: linesSideMargin
         anchors.bottomMargin: linesBottomMargin
-        mirror: true
-        source: lineImageLeft
+        mirror: adasview.isRunning
+        source: lineImageRight
         opacity: linesOpacity
     }
 
@@ -352,7 +355,7 @@ Window {
             property: "imageSeqNo"
             duration: 1000
             from: 5
-            to: 29
+            to: 24
         }
         // Opacity changes for lines
         PropertyAnimation {
@@ -366,6 +369,7 @@ Window {
         ScriptAction {
             script: {
                 lineImageLeft = "qrc:/Images/LineGroup_Left_matted.ktx";
+                lineImageRight = "qrc:/Images/LineGroup_Right_matted.ktx";
                 linesBottomMargin = 0;
                 linesSideMargin = 20;
                 adasview.isRunning = true;
