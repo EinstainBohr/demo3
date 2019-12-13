@@ -420,4 +420,90 @@ Window {
     SimulationData {
         id: sim
     }
+
+    //
+    // Triggerable camera animation
+    //
+    // Camera rotation
+    ParallelAnimation {
+        id: cameraRun
+        SequentialAnimation {
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraZRotation"
+                duration: 2000
+                from: 0
+                to: 15
+                easing.type: Easing.InOutCubic;
+            }
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraZRotation"
+                duration: 6000
+                from: 15
+                to: -15
+                easing.type: Easing.InOutCubic;
+            }
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraZRotation"
+                duration: 2000
+                from: -15
+                to: 0
+                easing.type: Easing.InOutCubic;
+            }
+        }
+        SequentialAnimation {
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraRotation"
+                duration: 5000
+                from: 35
+                to: 0
+                easing.type: Easing.InOutCubic;
+            }
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraRotation"
+                duration: 5000
+                from: 0
+                to: 35
+                easing.type: Easing.InOutCubic;
+            }
+        }
+        SequentialAnimation {
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraYPosition"
+                duration: 5000
+                from: 950
+                to: 800
+                easing.type: Easing.InOutCubic;
+            }
+            PropertyAnimation {
+                running: false
+                target: adasview
+                property: "cameraYPosition"
+                duration: 5000
+                from: 800
+                to: 950
+                easing.type: Easing.InOutCubic;
+            }
+        }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        focus: true
+        z: 100
+        Keys.onSpacePressed: {
+            cameraRun.restart();
+        }
+    }
 }

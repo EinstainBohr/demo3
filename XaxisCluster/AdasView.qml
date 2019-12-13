@@ -8,6 +8,8 @@ Item {
     property alias view: layer_u9301
     property bool isRunning: false
     property real cameraRotation: 0.0
+    property real cameraZRotation: 0.0
+    property real cameraYPosition: 950
 
     readonly property int leftLane: -100
     readonly property int rightLane: 100
@@ -30,10 +32,11 @@ Item {
 
         PerspectiveCamera {
             id: camera_u623
-            position.y: 950
+            position.y: cameraYPosition
             position.z: -800
             position.x: ownCar.xPos
             rotation.x: cameraRotation
+            rotation.z: cameraZRotation
             clipNear: 1
             clipFar: 1200
             fieldOfView: 45
