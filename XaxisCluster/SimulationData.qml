@@ -21,7 +21,7 @@ Item {
 
     // Nav distance
     property real distance: 45
-    property string distanceToFinish: distance.toFixed(1) + " km"
+    property string distanceToFinish: distance.toFixed(0) + " km"
 
     // Nav direction
     property bool turnLeftNext: false
@@ -29,7 +29,7 @@ Item {
     // Nav next turn
     property real drivenSince: 0.0
     property real turnDistance: 1500.0
-    property string nextTurn: (turnDistance / 10).toFixed(0) * 10 + " m"
+    property string nextTurn: (turnDistance / 100).toFixed(0) * 100 + " m"
 
     // Charge level & state
     property real batteryLevel: range > halfRange ? ((range - halfRange) / 3.3333) + 39 : 39

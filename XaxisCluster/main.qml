@@ -244,6 +244,8 @@ Window {
             font.pointSize: 24
             font.family: customfont.name
             text: sim.nextTurn
+            horizontalAlignment: Text.AlignRight
+            width: 100
         }
     }
 
