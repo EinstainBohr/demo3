@@ -67,7 +67,9 @@ Item {
 
                     // These properties names need to match the ones in the shader code!
                     property vector4d basecolor: Qt.vector4d(0.5195, 0.6914, 0.8398, 1.0)
-                    property real linepos: 0.0
+                    property real centerpos: (ownCar.xPos < 75 && ownCar.xPos > -75)
+                    property real leftpos: ownCar.xPos <= -50
+                    property real rightpos: ownCar.xPos >= 50
 
                     property TextureInput gridmap: TextureInput {
                         texture: Texture {
@@ -93,6 +95,37 @@ Item {
                     property TextureInput maskmap: TextureInput {
                         texture: Texture {
                             source: "qrc:/maps/mask.ktx"
+                        }
+                    }
+                    property TextureInput gradientmap: TextureInput {
+                        texture: Texture {
+                            source: "qrc:/maps/gradient.ktx"
+                        }
+                    }
+                    property TextureInput rightmaskmap: TextureInput {
+                        texture: Texture {
+                            source: "qrc:/maps/maskright.ktx"
+                            tilingModeHorizontal: Texture.Repeat
+                            tilingModeVertical: Texture.Repeat
+                        }
+                    }
+                    property TextureInput leftmaskmap: TextureInput {
+                        texture: Texture {
+                            source: "qrc:/maps/maskleft.ktx"
+                            tilingModeHorizontal: Texture.Repeat
+                            tilingModeVertical: Texture.Repeat
+                        }
+                    }
+                    property TextureInput centermaskmap: TextureInput {
+                        texture: Texture {
+                            source: "qrc:/maps/maskcenter.ktx"
+                            tilingModeHorizontal: Texture.Repeat
+                            tilingModeVertical: Texture.Repeat
+                        }
+                    }
+                    property TextureInput lanebasemap: TextureInput {
+                        texture: Texture {
+                            source: "qrc:/maps/lanebase.ktx"
                             tilingModeHorizontal: Texture.Repeat
                             tilingModeVertical: Texture.Repeat
                         }
@@ -190,19 +223,6 @@ Item {
                 pingPong: false
             }
         ]
-
-        KeyframeGroup {
-            target: globe_u4631
-            property: "linepos"
-            Keyframe {
-                frame: 0
-                value: 0
-            }
-            Keyframe {
-                frame: 300
-                value: 5
-            }
-        }
 
         KeyframeGroup {
             target: ownCar

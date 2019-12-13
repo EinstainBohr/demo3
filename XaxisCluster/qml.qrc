@@ -143,5 +143,11 @@
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00098.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00099.ktx</file>
         <file>Images/LineGroup_Right_matted.ktx</file>
+        <file>maps/gradient.ktx</file>
+        <file>maps/lanebase.ktx</file>
+        <file>maps/LowPolySUVBW.ktx</file>
+        <file>maps/maskcenter.ktx</file>
+        <file>maps/maskleft.ktx</file>
+        <file>maps/maskright.ktx</file>
     </qresource>
 </RCC>
