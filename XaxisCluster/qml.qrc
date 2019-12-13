@@ -149,5 +149,6 @@
         <file>maps/maskcenter.ktx</file>
         <file>maps/maskleft.ktx</file>
         <file>maps/maskright.ktx</file>
+        <file>Images/Mountains_001.ktx</file>
     </qresource>
 </RCC>
