@@ -93,8 +93,6 @@ Item {
                     property TextureInput maskmap: TextureInput {
                         texture: Texture {
                             source: "qrc:/maps/mask.ktx"
-                            tilingModeHorizontal: Texture.Repeat
-                            tilingModeVertical: Texture.Repeat
                         }
                     }
 
@@ -139,7 +137,7 @@ Item {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
+                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
                 matOpacity: carFade
             }
 
@@ -149,7 +147,7 @@ Item {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: rightLane
                 position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
+                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
             }
 
             LowPolySUVGray {
@@ -158,7 +156,7 @@ Item {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
+                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
                 matOpacity: carFade
             }
 
@@ -168,8 +166,25 @@ Item {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: midLane
                 position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0)
+                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
             }
+        }
+
+        Model {
+            scale.z: 1
+            scale.y: 3
+            scale.x: 12
+            position.y: 800
+            position.z: 375
+            source: "#Rectangle"
+            materials: [
+                DefaultMaterial {
+                    diffuseMap: Texture {
+                        source: "qrc:/Images/Mountains_001.ktx"
+                    }
+                    lighting: DefaultMaterial.NoLighting
+                }
+            ]
         }
     }
 

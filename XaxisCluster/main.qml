@@ -35,7 +35,6 @@ Window {
 
     // Line image bottom margin (image sequence is different size than the final image)
     property int linesBottomMargin: -75
-    property int linesSideMargin: 0
 
     FontLoader {
         id: customfont
@@ -159,7 +158,6 @@ Window {
     Image {
         anchors.right: parent.horizontalCenter
         anchors.bottom: bottomLeftFrame.top
-        anchors.rightMargin: linesSideMargin
         anchors.bottomMargin: linesBottomMargin
         mirror: !adasview.isRunning
         source: lineImageLeft
@@ -184,7 +182,6 @@ Window {
     Image {
         anchors.left: parent.horizontalCenter
         anchors.bottom: bottomRightFrame.top
-        anchors.leftMargin: linesSideMargin
         anchors.bottomMargin: linesBottomMargin
         mirror: adasview.isRunning
         source: lineImageRight
@@ -244,6 +241,8 @@ Window {
             font.pointSize: 24
             font.family: customfont.name
             text: sim.nextTurn
+            horizontalAlignment: Text.AlignRight
+            width: 70
         }
     }
 
@@ -370,7 +369,6 @@ Window {
                 lineImageLeft = "qrc:/Images/LineGroup_Left_matted.ktx";
                 lineImageRight = "qrc:/Images/LineGroup_Right_matted.ktx";
                 linesBottomMargin = 0;
-                linesSideMargin = 20;
                 adasview.isRunning = true;
             }
         }
@@ -406,7 +404,6 @@ Window {
     }
 
     function restartDemo() {
-        linesSideMargin = 0;
         linesBottomMargin = -75;
         warningIconOpacity = 1.0;
         adasview.isRunning = false;

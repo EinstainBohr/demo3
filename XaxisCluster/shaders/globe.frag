@@ -2,12 +2,14 @@ out vec4 fragColor;
 
 in vec3 v_color;
 in vec2 v_uv;
-in vec2 v_uv2;
+in vec2 v_uv_tiled;
+in vec2 v_uv_fitted;
+
 
 void main() {
-    vec4 splatPoint = texture(pointmap, vec2(v_uv.x * 120.0, v_uv.y * 120.0));
-    vec4 splatGrid = texture(gridmap, vec2(v_uv.x * 120.0, v_uv.y * 120.0));
-    vec4 splatLine = texture(linemap, vec2(v_uv2.x * 9.0, v_uv2.y * 15.0));
+    vec4 splatPoint = texture(pointmap, v_uv_tiled);
+    vec4 splatGrid = texture(gridmap, v_uv_tiled);
+    vec4 splatLine = texture(linemap, v_uv_fitted);
     vec4 splatMask = texture(maskmap, v_uv);
 
     vec4 finalOutput = vec4(splatGrid.rgb * v_color.b, 1.0) * splatMask.r;

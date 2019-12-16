@@ -143,5 +143,6 @@
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00098.ktx</file>
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00099.ktx</file>
         <file>Images/LineGroup_Right_matted.ktx</file>
+        <file>Images/Mountains_001.ktx</file>
     </qresource>
 </RCC>
