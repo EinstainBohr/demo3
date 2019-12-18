@@ -11,10 +11,11 @@ Model {
 
     DefaultMaterial {
         id: phong1SG_material
-        diffuseMap: Texture {
-            //source: "qrc:/maps/LowPolySUVBW.ktx" // Something wrong with the ktx?
-            source: "qrc:/maps/LowPolySUVBW.jpg"
-        }
+        diffuseColor: "#666666"
+//        diffuseMap: Texture {
+//            //source: "qrc:/maps/LowPolySUVBW.ktx" // Something wrong with the ktx?
+//            source: "qrc:/maps/LowPolySUVBW.jpg"
+//        }
         lighting: DefaultMaterial.NoLighting
     }
     materials: [

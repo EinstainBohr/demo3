@@ -144,5 +144,7 @@
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00099.ktx</file>
         <file>Images/LineGroup_Right_matted.ktx</file>
         <file>Images/Mountains_001.ktx</file>
+        <file>LowPolyVan.qml</file>
+        <file>meshes/body_24.mesh</file>
     </qresource>
 </RCC>

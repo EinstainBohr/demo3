@@ -15,6 +15,11 @@ Item {
     readonly property int rightLane: 100
     readonly property int midLane: 0
 
+    property real car01zPos: 500
+    property real car02zPos: -200
+    property real car03zPos: 200
+    property real car04zPos: -500
+
     property real carFade: Math.abs(ownCar.xPos - rightLane) / rightLane
 
     View3D {
@@ -131,42 +136,66 @@ Item {
                 position.z: -50
             }
 
-            LowPolySUVGray {
+            LowPolyVan {
                 id: car01
-                property real zPos: 500
-                scale: Qt.vector3d(6, 6, 6)
+                scale: Qt.vector3d(0.3, 0.3, 0.3)
                 position.x: leftLane
-                position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
+                position.z: car01zPos
+                position.y: 30 - (car01zPos > -250 ? (car01zPos + 250) / 5 : 0) + (car01zPos <= -750 ? (car01zPos + 750) / 10 : 0)
                 matOpacity: carFade
+                visible: false
+            }
+
+            LowPolyVan {
+                id: car02
+                scale: Qt.vector3d(0.3, 0.3, 0.3)
+                position.x: rightLane
+                position.z: car02zPos
+                position.y: 30 - (car02zPos > -250 ? (car02zPos + 250) / 5 : 0) + (car02zPos <= -750 ? (car02zPos + 750) / 10 : 0)
+                visible: true
+            }
+
+            LowPolyVan {
+                id: car03
+                scale: Qt.vector3d(0.3, 0.3, 0.3)
+                position.x: leftLane
+                position.z: car03zPos
+                position.y: 30 - (car03zPos > -250 ? (car03zPos + 250) / 5 : 0) + (car03zPos <= -750 ? (car03zPos + 750) / 10 : 0)
+                matOpacity: carFade
+                visible: false
             }
 
             LowPolySUVGray {
-                id: car02
-                property real zPos: -200
+                scale: Qt.vector3d(6, 6, 6)
+                position.x: leftLane
+                position.z: car01zPos
+                position.y: -50 - (car01zPos > -250 ? (car01zPos + 250) / 5 : 0) + (car01zPos <= -750 ? (car01zPos + 750) / 10 : 0)
+                matOpacity: carFade
+                visible: !car01.visible
+            }
+
+            LowPolySUVGray {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: rightLane
-                position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
+                position.z: car02zPos
+                position.y: -50 - (car02zPos > -250 ? (car02zPos + 250) / 5 : 0) + (car02zPos <= -750 ? (car02zPos + 750) / 10 : 0)
+                visible: !car02.visible
             }
 
             LowPolySUVGray {
-                id: car03
-                property real zPos: 200
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
-                position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
+                position.z: car03zPos
+                position.y: -50 - (car03zPos > -250 ? (car03zPos + 250) / 5 : 0) + (car03zPos <= -750 ? (car03zPos + 750) / 10 : 0)
                 matOpacity: carFade
+                visible: !car03.visible
             }
 
             LowPolySUVGray {
-                id: car04
-                property real zPos: -500
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: midLane
-                position.z: zPos
-                position.y: -50 - (zPos > -250 ? (zPos + 250) / 5 : 0) + (zPos <= -750 ? (zPos + 750) / 10 : 0)
+                position.z: car04zPos
+                position.y: -50 - (car04zPos > -250 ? (car04zPos + 250) / 5 : 0) + (car04zPos <= -750 ? (car04zPos + 750) / 10 : 0)
             }
         }
 
@@ -206,6 +235,31 @@ Item {
             }
         ]
 
+        // Randomize car type
+        onCurrentFrameChanged: {
+            if (currentFrame > 100) {
+                if (Math.ceil(currentFrame) == 101) {
+                    if (Math.random() <= 0.7)
+                        car02.visible = true;
+                    else
+                        car02.visible = false;
+                }
+            }
+            if (currentFrame > 299) {
+                if (Math.ceil(currentFrame) == 300) {
+                    if (Math.random() <= 0.3)
+                        car01.visible = true;
+                    else
+                        car01.visible = false;
+
+                    if (Math.random() <= 0.3)
+                        car03.visible = true;
+                    else
+                        car03.visible = false;
+                }
+            }
+        }
+
         KeyframeGroup {
             target: globe_u4631
             property: "linepos"
@@ -241,8 +295,8 @@ Item {
         }
 
         KeyframeGroup {
-            target: car01
-            property: "zPos"
+            target: lowEndAdas
+            property: "car01zPos"
             Keyframe {
                 frame: 0
                 value: 500
@@ -254,8 +308,8 @@ Item {
         }
 
         KeyframeGroup {
-            target: car02
-            property: "zPos"
+            target: lowEndAdas
+            property: "car02zPos"
             Keyframe {
                 frame: 0
                 value: -200
@@ -275,8 +329,8 @@ Item {
         }
 
         KeyframeGroup {
-            target: car03
-            property: "zPos"
+            target: lowEndAdas
+            property: "car03zPos"
             Keyframe {
                 frame: 0
                 value: 200
@@ -288,8 +342,8 @@ Item {
         }
 
         KeyframeGroup {
-            target: car04
-            property: "zPos"
+            target: lowEndAdas
+            property: "car04zPos"
             Keyframe {
                 frame: 0
                 value: -500
