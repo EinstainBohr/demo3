@@ -127,7 +127,7 @@ Item {
             position.y: 770
             position.z: -600
 
-            LowPolySUV {
+            SuvOwn {
                 id: ownCar
                 property real xPos: midLane
                 scale: Qt.vector3d(6, 6, 6)
@@ -136,36 +136,36 @@ Item {
                 position.z: -50
             }
 
-            LowPolyVan {
+            Van {
                 id: car01
-                scale: Qt.vector3d(0.3, 0.3, 0.3)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: car01zPos
-                position.y: 30 - (car01zPos > -250 ? (car01zPos + 250) / 5 : 0) + (car01zPos <= -750 ? (car01zPos + 750) / 10 : 0)
+                position.y: -50 - (car01zPos > -250 ? (car01zPos + 250) / 5 : 0) + (car01zPos <= -750 ? (car01zPos + 750) / 10 : 0)
                 matOpacity: carFade
                 visible: false
             }
 
-            LowPolyVan {
+            Van {
                 id: car02
-                scale: Qt.vector3d(0.3, 0.3, 0.3)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: rightLane
                 position.z: car02zPos
-                position.y: 30 - (car02zPos > -250 ? (car02zPos + 250) / 5 : 0) + (car02zPos <= -750 ? (car02zPos + 750) / 10 : 0)
+                position.y: -50 - (car02zPos > -250 ? (car02zPos + 250) / 5 : 0) + (car02zPos <= -750 ? (car02zPos + 750) / 10 : 0)
                 visible: true
             }
 
-            LowPolyVan {
+            Van {
                 id: car03
-                scale: Qt.vector3d(0.3, 0.3, 0.3)
+                scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: car03zPos
-                position.y: 30 - (car03zPos > -250 ? (car03zPos + 250) / 5 : 0) + (car03zPos <= -750 ? (car03zPos + 750) / 10 : 0)
+                position.y: -50 - (car03zPos > -250 ? (car03zPos + 250) / 5 : 0) + (car03zPos <= -750 ? (car03zPos + 750) / 10 : 0)
                 matOpacity: carFade
                 visible: false
             }
 
-            LowPolySUVGray {
+            SuvOther {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: car01zPos
@@ -174,7 +174,7 @@ Item {
                 visible: !car01.visible
             }
 
-            LowPolySUVGray {
+            SuvOther {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: rightLane
                 position.z: car02zPos
@@ -182,7 +182,7 @@ Item {
                 visible: !car02.visible
             }
 
-            LowPolySUVGray {
+            SuvOther {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: leftLane
                 position.z: car03zPos
@@ -191,7 +191,7 @@ Item {
                 visible: !car03.visible
             }
 
-            LowPolySUVGray {
+            SuvOther {
                 scale: Qt.vector3d(6, 6, 6)
                 position.x: midLane
                 position.z: car04zPos

@@ -2,21 +2,24 @@ import QtQuick3D 1.12
 import QtQuick 2.12
 
 Model {
-    id: lowpolyCar
+    id: lowpolyCar2_002
     rotation.x: -90
+    rotation.y: 90
+    scale.x: 100
+    scale.y: 100
+    scale.z: 100
     rotationOrder: Node.XYZr
     orientation: Node.RightHanded
-    source: "qrc:/meshes/LowPolySUV.mesh"
+    source: "meshes/SuvOwn.mesh"
 
     DefaultMaterial {
-        id: phong1SG_material
+        id: material_005_material
         diffuseMap: Texture {
-            //source: "qrc:/maps/LowPolySUV.ktx" // Something wrong with the ktx?
-            source: "qrc:/maps/LowPolySUV.jpg"
+            source: "maps/SuvOwn.jpg"
         }
         lighting: DefaultMaterial.NoLighting
     }
     materials: [
-        phong1SG_material
+        material_005_material
     ]
 }

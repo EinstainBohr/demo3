@@ -24,7 +24,7 @@
         <file>shaders/globe.frag</file>
         <file>shaders/globe.vert</file>
         <file>LowPolySUVGray.qml</file>
-        <file>meshes/lowpolyCar.mesh</file>
+        <file>meshes/LowPolySUV.mesh</file>
         <file>LowPolySUV.qml</file>
         <file>maps/LowPolySUV.jpg</file>
         <file>Sequences/SideGauge/SideGauge_0.png</file>
@@ -64,8 +64,6 @@
         <file>maps/LowPolySUV.ktx</file>
         <file>maps/mask.ktx</file>
         <file>Images/LineGroup_Left_matted.ktx</file>
-        <file>shaders/globe_ES2.frag</file>
-        <file>shaders/globe_ES2.vert</file>
         <file>Images/Frame/Frame_left_bottom_solid_001.ktx</file>
         <file>Images/Frame/Frame_left_side_solid_001.ktx</file>
         <file>Images/Frame/Frame_left_top_solid_001.ktx</file>
@@ -144,7 +142,17 @@
         <file>Sequences/BatteryStateFine/BatteryCharge_001_00099.ktx</file>
         <file>Images/LineGroup_Right_matted.ktx</file>
         <file>Images/Mountains_001.ktx</file>
-        <file>LowPolyVan.qml</file>
-        <file>meshes/body_24.mesh</file>
+        <file>HighPolyVan.qml</file>
+        <file>meshes/HighPolyVan.mesh</file>
+        <file>Van.qml</file>
+        <file>SuvOwn.qml</file>
+        <file>SuvOther.qml</file>
+        <file>maps/SuvOwn.jpg</file>
+        <file>maps/Van.jpg</file>
+        <file>maps/SuvOther.jpg</file>
+        <file>maps/LowPolySUVBW.ktx</file>
+        <file>meshes/SuvOwn.mesh</file>
+        <file>meshes/SuvOther.mesh</file>
+        <file>meshes/Van.mesh</file>
     </qresource>
 </RCC>

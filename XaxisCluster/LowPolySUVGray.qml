@@ -7,7 +7,7 @@ Model {
     rotation.x: -90
     rotationOrder: Node.XYZr
     orientation: Node.RightHanded
-    source: "qrc:/meshes/lowpolyCar.mesh"
+    source: "qrc:/meshes/LowPolySUV.mesh"
 
     DefaultMaterial {
         id: phong1SG_material

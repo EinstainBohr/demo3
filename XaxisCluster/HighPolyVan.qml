@@ -7,7 +7,7 @@ Model {
     rotation.y: 180
     rotationOrder: Node.XYZr
     orientation: Node.RightHanded
-    source: "meshes/body_24.mesh"
+    source: "meshes/HighPolyVan.mesh"
 
     DefaultMaterial {
         id: defaultMaterial_material
