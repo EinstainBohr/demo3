@@ -127,7 +127,7 @@ Item {
             position.y: 770
             position.z: -600
 
-            SuvOwn {
+            MainCar {
                 id: ownCar
                 property real xPos: midLane
                 scale: Qt.vector3d(6, 6, 6)

@@ -154,5 +154,8 @@
         <file>meshes/SuvOwn.mesh</file>
         <file>meshes/SuvOther.mesh</file>
         <file>meshes/Van.mesh</file>
+        <file>meshes/MainCar.mesh</file>
+        <file>MainCar.qml</file>
+        <file>maps/MainCar.jpg</file>
     </qresource>
 </RCC>
