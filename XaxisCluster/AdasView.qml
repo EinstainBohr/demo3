@@ -105,12 +105,14 @@ Item {
                         id: vertexShader
                         stage: Shader.Vertex
                         shader: "qrc:/shaders/globe.vert"
+                        //shader: "qrc:/shaders/globe_ES2.vert" // For forced ES2 backend
                     }
 
                     Shader {
                         id: fragmentShader
                         stage: Shader.Fragment
                         shader: "qrc:/shaders/globe.frag"
+                        //shader: "qrc:/shaders/globe_ES2.frag" // For forced ES2 backend
                     }
 
                     passes: [ Pass {

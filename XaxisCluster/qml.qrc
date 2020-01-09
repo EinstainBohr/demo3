@@ -157,5 +157,7 @@
         <file>meshes/MainCar.mesh</file>
         <file>MainCar.qml</file>
         <file>maps/MainCar.jpg</file>
+        <file>shaders/globe_ES2.frag</file>
+        <file>shaders/globe_ES2.vert</file>
     </qresource>
 </RCC>

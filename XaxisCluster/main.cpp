@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 //    qputenv("QT_LOGGING_RULES", "*=false");
 #endif
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+//    QCoreApplication::setAttribute(Qt::AA_UseOpenGLES); // For testing ES2 on Windows
 
 //    qputenv("QUICK3D_FORCE_OPENGL_BACKEND", "1"); // Force ES2 backend
 //    qputenv("QUICK3D_FORCE_OPENGL_BACKEND", "2"); // Force GL3 backend
