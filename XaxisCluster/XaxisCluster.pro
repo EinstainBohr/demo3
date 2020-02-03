@@ -1,4 +1,4 @@
-QT += quick quick3d-private
+QT += quick quick3d
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use

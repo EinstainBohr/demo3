@@ -1,12 +1,10 @@
-import QtQuick3D 1.12
+import QtQuick3D 1.15
 import QtQuick 2.12
 
 Model {
     property alias matOpacity: defaultMaterial_material.opacity
     id: body_24
-    rotation.y: 180
-    rotationOrder: Node.XYZr
-    orientation: Node.RightHanded
+    eulerRotation.y: 180
     source: "meshes/HighPolyVan.mesh"
 
     DefaultMaterial {

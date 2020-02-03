@@ -1,5 +1,5 @@
-import QtQuick3D 1.12
-import QtQuick3D.Materials 1.12
+import QtQuick3D 1.15
+import QtQuick3D.Materials 1.15
 import QtQuick 2.12
 import QtQuick.Timeline 1.0
 
@@ -38,10 +38,10 @@ Item {
         PerspectiveCamera {
             id: camera_u623
             position.y: cameraYPosition
-            position.z: -800
+            position.z: 800
             position.x: ownCar.xPos
-            rotation.x: cameraRotation
-            rotation.z: cameraZRotation
+            eulerRotation.x: cameraRotation
+            eulerRotation.z: cameraZRotation
             clipNear: 1
             clipFar: 1200
             fieldOfView: 45
@@ -54,12 +54,10 @@ Item {
                 id: sphere_u23107
                 position.y: -235
                 position.z: 0
-                rotation.x: -90
+                eulerRotation.x: -90
                 scale.x: 1850
                 scale.y: 1950
                 scale.z: 950
-                rotationOrder: Node.XYZr
-                orientation: Node.RightHanded
                 source: "qrc:/models/ADASglobe/meshes/Sphere.mesh"
 
                 CustomMaterial {
@@ -127,7 +125,7 @@ Item {
 
         Node {
             position.y: 770
-            position.z: -600
+            position.z: 600
 
             MainCar {
                 id: ownCar
@@ -206,7 +204,7 @@ Item {
             scale.y: 3
             scale.x: 12
             position.y: 800
-            position.z: 375
+            position.z: -375
             source: "#Rectangle"
             materials: [
                 DefaultMaterial {

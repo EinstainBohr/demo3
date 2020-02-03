@@ -1,6 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-import QtQuick3D.Helpers 1.12
+import QtQuick3D.Helpers 1.15
 
 //
 // Note: Font sizes are adjusted for target HW (R-Car D3 with 1920x720 display). They will look
@@ -394,7 +394,7 @@ Window {
             property: "cameraRotation"
             duration: 3000
             from: 0.0
-            to: 35
+            to: -35
             easing.type: Easing.InOutCubic;
         }
         // All done
@@ -459,7 +459,7 @@ Window {
                 target: adasview
                 property: "cameraRotation"
                 duration: 5000
-                from: 35
+                from: -35
                 to: 0
                 easing.type: Easing.InOutCubic;
             }
@@ -469,7 +469,7 @@ Window {
                 property: "cameraRotation"
                 duration: 5000
                 from: 0
-                to: 35
+                to: -35
                 easing.type: Easing.InOutCubic;
             }
         }

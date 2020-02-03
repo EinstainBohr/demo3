@@ -1,11 +1,9 @@
-import QtQuick3D 1.12
+import QtQuick3D 1.15
 import QtQuick 2.12
 
 Model {
-    rotation.x: -90
-    rotation.y: 90
-    rotationOrder: Node.XYZr
-    orientation: Node.RightHanded
+    eulerRotation.x: -90
+    eulerRotation.y: 90
     source: "meshes/SuvOwn.mesh"
 
     DefaultMaterial {

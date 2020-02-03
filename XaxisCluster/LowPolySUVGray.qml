@@ -1,12 +1,10 @@
-import QtQuick3D 1.12
+import QtQuick3D 1.15
 import QtQuick 2.12
 
 Model {
     property alias matOpacity: phong1SG_material.opacity
     id: lowpolyCar
-    rotation.x: -90
-    rotationOrder: Node.XYZr
-    orientation: Node.RightHanded
+    eulerRotation.x: -90
     source: "qrc:/meshes/LowPolySUV.mesh"
 
     DefaultMaterial {
