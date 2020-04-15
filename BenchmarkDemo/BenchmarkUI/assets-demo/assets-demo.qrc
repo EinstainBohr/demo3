@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>meshes/democity.mesh</file>
+        <file>meshes/factoryPropellers.mesh</file>
+        <file>meshes/gearCockpit1.mesh</file>
+        <file>meshes/gearCockpit2.mesh</file>
+        <file>meshes/gearCockpit3.mesh</file>
+        <file>meshes/gearCockpit4.mesh</file>
+        <file>meshes/gearCockpit5.mesh</file>
+        <file>meshes/gearHouse1.mesh</file>
+        <file>meshes/gearHouse2.mesh</file>
+        <file>meshes/gearHouse3.mesh</file>
+        <file>meshes/gearLarge.mesh</file>
+        <file>meshes/gyro1.mesh</file>
+        <file>meshes/gyro2.mesh</file>
+        <file>meshes/gyro3.mesh</file>
+        <file>meshes/propellerDemo.mesh</file>
+        <file>meshes/windMill.mesh</file>
+        <file>meshes/windTurbine.mesh</file>
+        <file>DemoCity.qml</file>
+        <file>../lightprobe/DemoModeIBL.hdr</file>
+        <file>../lightprobe/DemoModeIBL_small.hdr</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/">
+        <file>meshes/100k.mesh</file>
+        <file>meshes/10k.mesh</file>
+        <file>meshes/1k.mesh</file>
+        <file>meshes/500k.mesh</file>
+        <file>meshes/50k.mesh</file>
+        <file>Model100k.qml</file>
+        <file>Model10k.qml</file>
+        <file>Model1k.qml</file>
+        <file>Model500k.qml</file>
+        <file>Model50k.qml</file>
+        <file>maps/256x256/basecolor.jpg</file>
+        <file>maps/256x256/metallic.jpg</file>
+        <file>maps/256x256/normal.jpg</file>
+        <file>maps/256x256/roughness.jpg</file>
+        <file>maps/512x512/basecolor.jpg</file>
+        <file>maps/512x512/metallic.jpg</file>
+        <file>maps/512x512/normal.jpg</file>
+        <file>maps/512x512/roughness.jpg</file>
+        <file>maps/1024x1024/basecolor.jpg</file>
+        <file>maps/1024x1024/metallic.jpg</file>
+        <file>maps/1024x1024/normal.jpg</file>
+        <file>maps/1024x1024/roughness.jpg</file>
+        <file>maps/2048x2048/basecolor.jpg</file>
+        <file>maps/2048x2048/metallic.jpg</file>
+        <file>maps/2048x2048/normal.jpg</file>
+        <file>maps/2048x2048/roughness.jpg</file>
+        <file>maps/4096x4096/basecolor.jpg</file>
+        <file>maps/4096x4096/metallic.jpg</file>
+        <file>maps/4096x4096/normal.jpg</file>
+        <file>maps/4096x4096/roughness.jpg</file>
+    </qresource>
+</RCC>
