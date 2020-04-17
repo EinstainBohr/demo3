@@ -50,6 +50,7 @@ Item {
         if (androidMode) {
             // Force midrange embedded mode
             parser.presetMidrange = true;
+            parser.targetDesktop = false;
             parser.targetEmbedded = true;
         } else if (commandLineArguments.length > 1) {
             if (commandLineArguments[1] === "-?" || commandLineArguments[1] === "--help") {

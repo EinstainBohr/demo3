@@ -9,12 +9,15 @@ SOURCES += \
         main.cpp
 
 RESOURCES += qml.qrc \
-    BenchmarkUI/assets-demo/assets-demo.qrc \
     BenchmarkUI/assets/assets.qrc \
     #BenchmarkUI/assets-simple/assets-simple.qrc \ # Use these if you want to benchmark with very simple one-mesh models
     $$files(BenchmarkUI/*.qml)
+# Demo mode not yet supported for Android
+!android: RESOURCES += BenchmarkUI/assets-demo/assets-demo.qrc
 
 RCC_DIR = $${PWD}
+
+android: QMAKE_LFLAGS += --for-linker=--long-plt
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 !android: QML_IMPORT_PATH = BenchmarkUI
