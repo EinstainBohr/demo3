@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/meshes/edge.mesh</file>
+        <file>qml/FpsItem.qml</file>
+        <file>qml/images/spinner.png</file>
+        <file>qml/meshes/background.mesh</file>
+        <file>qml/images/steel2n.png</file>
+        <file>qml/SpeedometerComponent.qml</file>
+        <file>qml/GraphComponent.qml</file>
+        <file>qml/SettingsView.qml</file>
+        <file>qml/SettingsComponentSlider.qml</file>
+        <file>qml/SettingsComponentView.qml</file>
+        <file>qml/images/arrow.png</file>
+        <file>qml/CircleClipEffect.qml</file>
+        <file>qml/images/Built_with_Qt_RGB_logo.png</file>
+        <file>qml/images/background2.jpg</file>
+        <file>qml/SettingsComponentCheckBox.qml</file>
+        <file>qml/images/background2n.jpg</file>
+        <file>qml/AssistantComponent.qml</file>
+        <file>src/qnwaveitem.cpp</file>
+        <file>src/qnwaveitem.h</file>
+        <file>src/qnwaveitempainter.cpp</file>
+        <file>src/qnwaveitempainter.h</file>
+        <file>qml/images/particleA.png</file>
+        <file>qml/SettingsComponentColorSelector.qml</file>
+        <file>qml/Settings.qml</file>
+        <file>qml/images/pause.png</file>
+        <file>qml/images/play.png</file>
+        <file>qml/ResetSettingsOverlay.qml</file>
+    </qresource>
+</RCC>
