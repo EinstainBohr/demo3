@@ -237,7 +237,7 @@ Supported arguments:
 
     Timer {
         id: benchmarkTimer
-        interval: 1000
+        interval: 2500
         running: false
         onTriggered: {
             startBenchmark();
