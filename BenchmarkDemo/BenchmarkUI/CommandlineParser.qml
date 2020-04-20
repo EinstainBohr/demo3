@@ -188,7 +188,7 @@ Supported arguments:
                 // AA: MSAA VeryHigh
                 // Texture size: 4096x4096
                 // Model: 500k, #20
-                // Lights: Point, #4
+                // Lights: Directional, #7
                 // Material: Principled
                 benchmarkRoot.shadowsEnabled = true;
                 benchmarkRoot.iblEnabled = true;
@@ -199,7 +199,7 @@ Supported arguments:
                 benchmarkRoot.msaaQualityIndex = parser.targetDesktop ? 3 : 2; // Very High / High
                 benchmarkRoot.modelIndex = parser.targetDesktop ? 4 : 3; // 500k / 100k
                 benchmarkRoot.modelInstanceCount = 20;
-                benchmarkRoot.lightTypeIndex = 2; // Point
+                benchmarkRoot.lightTypeIndex = 0; // Directional
                 benchmarkRoot.lightInstanceCount = parser.targetDesktop ? 7 : 4;
                 benchmarkRoot.materialIndex = 1; // Principled Material - Metal
             }
