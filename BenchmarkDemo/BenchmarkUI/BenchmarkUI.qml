@@ -1,5 +1,4 @@
 import QtQuick 2.12
-import BenchmarkUI 1.0
 
 Item {
     anchors.fill: parent

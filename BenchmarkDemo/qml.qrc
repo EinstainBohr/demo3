@@ -1,9 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>BenchmarkUI/fonts/fonts.txt</file>
-        <file>BenchmarkUI/imports/BenchmarkUI/Constants.qml</file>
-        <file>BenchmarkUI/imports/BenchmarkUI/DirectoryFontLoader.qml</file>
-        <file>BenchmarkUI/imports/BenchmarkUI/qmldir</file>
         <file>BenchmarkUI/imports/QtQuick/Studio/Components/designer/images/custom-border-16px.png</file>
         <file>BenchmarkUI/imports/QtQuick/Studio/Components/designer/images/custom-border-24px.png</file>
         <file>BenchmarkUI/imports/QtQuick/Studio/Components/designer/images/custom-border-24px@2x.png</file>

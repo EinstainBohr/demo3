@@ -1,5 +1,4 @@
 import QtQuick 2.15
-import BenchmarkUI 1.0
 import QtQuick.Controls 2.3
 import QtQuick3D 1.15
 import QtQuick3D.Helpers 1.15
