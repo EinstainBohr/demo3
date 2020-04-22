@@ -66,17 +66,31 @@ Item {
     ShaderEffect {
         anchors.fill: effectSource
         property var src: effectSource
-        fragmentShader: " \
-        varying highp vec2 qt_TexCoord0;
-        uniform sampler2D src;
-        uniform lowp float qt_Opacity;
-        void main() {
-            lowp vec2 c = vec2(0.5, 0.5);
-            if (distance(c, qt_TexCoord0) < 0.5) {
-                gl_FragColor = texture2D(src, qt_TexCoord0) * qt_Opacity;
-            } else {
-                gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
-            }
-    }"
+        fragmentShader: GraphicsInfo.profile === GraphicsInfo.OpenGLCoreProfile ?
+            "#version 330 core
+            in highp vec2 qt_TexCoord0;
+            uniform sampler2D src;
+            uniform lowp float qt_Opacity;
+            out vec4 fragColor;
+            void main() {
+                lowp vec2 c = vec2(0.5, 0.5);
+                if (distance(c, qt_TexCoord0) < 0.5) {
+                    fragColor = texture2D(src, qt_TexCoord0) * qt_Opacity;
+                } else {
+                    fragColor = vec4(0.0, 0.0, 0.0, 0.0);
+                }
+            }"
+                          :
+            "varying highp vec2 qt_TexCoord0;
+            uniform sampler2D src;
+            uniform lowp float qt_Opacity;
+            void main() {
+                lowp vec2 c = vec2(0.5, 0.5);
+                if (distance(c, qt_TexCoord0) < 0.5) {
+                    gl_FragColor = texture2D(src, qt_TexCoord0) * qt_Opacity;
+                } else {
+                    gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+                }
+            }"
     }
 }
