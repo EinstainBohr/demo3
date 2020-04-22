@@ -87,7 +87,7 @@ Item {
             void main() {
                 lowp vec2 c = vec2(0.5, 0.5);
                 if (distance(c, qt_TexCoord0) < 0.5) {
-                    gl_FragColor = texture(src, qt_TexCoord0) * qt_Opacity;
+                    gl_FragColor = texture2D(src, qt_TexCoord0) * qt_Opacity;
                 } else {
                     gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
                 }
