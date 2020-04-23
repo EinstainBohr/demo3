@@ -71,6 +71,8 @@ QtObject {
     property bool backgroundBumpMapping: true
     property int textureResolution: 512
     property bool msaaAntialiasing: true
+    // 0 = Medium, 1 = High, 2 = VeryHigh
+    property int msaaAntialiasingQuality: 1
     property real cameraDistance: 640
 
     // *** Lights settings ***
@@ -122,6 +124,7 @@ QtObject {
         backgroundBumpMapping = defaultSettings.backgroundBumpMapping;
         textureResolution = defaultSettings.textureResolution;
         msaaAntialiasing = defaultSettings.msaaAntialiasing;
+        msaaAntialiasingQuality = defaultSettings.msaaAntialiasingQuality;
         cameraDistance = defaultSettings.cameraDistance;
 
         // *** Lights settings ***

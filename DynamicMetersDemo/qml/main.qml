@@ -130,7 +130,14 @@ Window {
             clearColor: "#000000"
             backgroundMode: SceneEnvironment.Color
             antialiasingMode: settings.msaaAntialiasing ? SceneEnvironment.MSAA : SceneEnvironment.NoAA
-            antialiasingQuality: SceneEnvironment.VeryHigh
+            antialiasingQuality: {
+                if (settings.msaaAntialiasingQuality === 0)
+                    return SceneEnvironment.Medium;
+                else if (settings.msaaAntialiasingQuality === 1)
+                    return SceneEnvironment.High;
+                else
+                    return SceneEnvironment.VeryHigh;
+            }
         }
 
         PerspectiveCamera {

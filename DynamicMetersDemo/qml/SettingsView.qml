@@ -186,6 +186,22 @@ Item {
                         settings.cameraDistance = value;
                     }
                 }
+                SettingsComponentSlider {
+                    property string msaa: value === 0 ? "2x" : value === 1 ? "4x" : "8x"
+                    text: qsTr("Antialiasing: ") + msaa + " MSAA";
+                    showCheckbox: true
+                    checked: settings.msaaAntialiasing
+                    onToggled: {
+                        settings.msaaAntialiasing = checked;
+                    }
+                    value: settings.msaaAntialiasingQuality
+                    from: 0
+                    to: 2
+                    stepSize: 1
+                    onMoved: {
+                        settings.msaaAntialiasingQuality = value;
+                    }
+                }
                 SettingsComponentCheckBox {
                     text: qsTr("Show Statistics")
                     checked: settings.showFps
@@ -198,13 +214,6 @@ Item {
                     checked: settings.backgroundBumpMapping
                     onToggled: {
                         settings.backgroundBumpMapping = checked;
-                    }
-                }
-                SettingsComponentCheckBox {
-                    text: qsTr("MSAA Antialiasing")
-                    checked: settings.msaaAntialiasing
-                    onToggled: {
-                        settings.msaaAntialiasing = checked;
                     }
                 }
             }
