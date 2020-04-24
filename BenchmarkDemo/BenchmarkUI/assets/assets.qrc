@@ -242,5 +242,10 @@
         <file>meshes/gear.mesh</file>
         <file>meshes/ship10.mesh</file>
         <file>meshes/propeller_ship.mesh</file>
+        <file>maps/256x256/SmallMachine_Diffuse.png</file>
+        <file>maps/512x512/SmallMachine_Diffuse.png</file>
+        <file>maps/1024x1024/SmallMachine_Diffuse.png</file>
+        <file>maps/2048x2048/SmallMachine_Diffuse.png</file>
+        <file>maps/4096x4096/SmallMachine_Diffuse.png</file>
     </qresource>
 </RCC>
