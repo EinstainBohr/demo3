@@ -1059,6 +1059,14 @@ Item {
                 env.antialiasingQuality = SceneEnvironment.VeryHigh
                 break
             }
+            // Copy antialiasing quality to the other sceneEnvironment too
+            if (iblLighting.checked) {
+                sceneEnvironment.antialiasingMode = env.antialiasingMode;
+                sceneEnvironment.antialiasingQuality = env.antialiasingQuality;
+            } else {
+                sceneEnvironmentIBL.antialiasingMode = env.antialiasingMode;
+                sceneEnvironmentIBL.antialiasingQuality = env.antialiasingQuality;
+            }
         }
     }
 
@@ -1083,14 +1091,22 @@ Item {
                 env.antialiasingQuality = SceneEnvironment.VeryHigh
                 break
             }
+            // Copy antialiasing quality to the other sceneEnvironment too
+            if (iblLighting.checked) {
+                sceneEnvironment.antialiasingMode = env.antialiasingMode;
+                sceneEnvironment.antialiasingQuality = env.antialiasingQuality;
+            } else {
+                sceneEnvironmentIBL.antialiasingMode = env.antialiasingMode;
+                sceneEnvironmentIBL.antialiasingQuality = env.antialiasingQuality;
+            }
         }
     }
 
     Connections {
         target: temporalAA
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
-            env.temporalAAEnabled = temporalAA.checked
+            sceneEnvironmentIBL.temporalAAEnabled = temporalAA.checked
+            sceneEnvironment.temporalAAEnabled = temporalAA.checked
         }
     }
 
@@ -1223,13 +1239,13 @@ Item {
     Connections {
         target: effectAdditiveColor
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectAdditiveColor.checked) {
                 effectList.push(effectInstanceAdditiveColorGradient)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceAdditiveColorGradient), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
@@ -1243,52 +1259,52 @@ Item {
     Connections {
         target: effectBlur
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectBlur.checked) {
                 effectList.push(effectInstanceBlur)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceBlur), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectBrushStrokes
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectBrushStrokes.checked) {
                 effectList.push(effectInstanceBrushStrokes)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceBrushStrokes), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectChromaticAberration
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectChromaticAberration.checked) {
                 effectList.push(effectInstanceChromaticAberration)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceChromaticAberration), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectColorMaster
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectColorMaster.checked) {
                 effectList.push(effectInstanceColorMaster)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceColorMaster), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
@@ -1309,115 +1325,115 @@ Item {
     Connections {
         target: effectDepthOfFieldHQBlur
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectDepthOfFieldHQBlur.checked) {
                 effectList.push(effectInstanceDepthOfFieldHQBlur)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceDepthOfFieldHQBlur), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectDesaturate
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectDesaturate.checked) {
                 effectList.push(effectInstanceDesaturate)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceDesaturate), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectDistortionRipple
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectDistortionRipple.checked) {
                 effectList.push(effectInstanceDistortionRipple)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceDistortionRipple), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectDistortionSphere
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectDistortionSphere.checked) {
                 effectList.push(effectInstanceDistortionSphere)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceDistortionSphere), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectDistortionSpiral
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectDistortionSpiral.checked) {
                 effectList.push(effectInstanceDistortionSpiral)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceDistortionSpiral), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectEdgeDetect
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectEdgeDetect.checked) {
                 effectList.push(effectInstanceEdgeDetect)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceEdgeDetect), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectEmboss
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectEmboss.checked) {
                 effectList.push(effectInstanceEmboss)
             } else {
                 effectList.splice(effectList.indexOf(effectInstanceEmboss), 1)
             }
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectFlip
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectFlip.checked)
                 effectList.push(effectInstanceFlip)
             else
                 effectList.splice(effectList.indexOf(effectInstanceFlip), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectFXAA
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectFXAA.checked)
                 effectList.push(effectInstanceFXAA)
             else
                 effectList.splice(effectList.indexOf(effectInstanceFXAA), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
@@ -1431,24 +1447,24 @@ Item {
     Connections {
         target: effectGaussianBlur
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectGaussianBlur.checked)
                 effectList.push(effectInstanceGaussianBlur)
             else
                 effectList.splice(effectList.indexOf(effectInstanceGaussianBlur), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectHDRBloomToneMap
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectHDRBloomToneMap.checked)
                 effectList.push(effectInstanceHDRBloomTonemap)
             else
                 effectList.splice(effectList.indexOf(effectInstanceHDRBloomTonemap), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
@@ -1462,36 +1478,36 @@ Item {
     Connections {
         target: effectMotionBlur
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectMotionBlur.checked)
                 effectList.push(effectInstanceMotionBlur)
             else
                 effectList.splice(effectList.indexOf(effectInstanceMotionBlur), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectScatter
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectScatter.checked)
                 effectList.push(effectInstanceScatter)
             else
                 effectList.splice(effectList.indexOf(effectInstanceScatter), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectSCurveToneMap
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectSCurveToneMap.checked)
                 effectList.push(effectInstanceSCurveTonemap)
             else
                 effectList.splice(effectList.indexOf(effectInstanceSCurveTonemap), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
@@ -1519,24 +1535,24 @@ Item {
     Connections {
         target: effectTiltShift
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectTiltShift.checked)
                 effectList.push(effectInstanceTiltShift)
             else
                 effectList.splice(effectList.indexOf(effectInstanceTiltShift), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
     Connections {
         target: effectVignette
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             if (effectVignette.checked)
                 effectList.push(effectInstanceVignette)
             else
                 effectList.splice(effectList.indexOf(effectInstanceVignette), 1)
-            env.effects = effectList
+            sceneEnvironmentIBL.effects = effectList
+            sceneEnvironment.effects = effectList
         }
     }
 
