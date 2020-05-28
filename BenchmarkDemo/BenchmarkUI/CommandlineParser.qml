@@ -19,6 +19,9 @@ Item {
     property bool modeBenchmark: false
     property bool modeNormal: true
 
+    // Speed
+    property int demoSpeed: 0
+
     // Other parameters to be read from the outside
     property bool quitAfter: false
 
@@ -45,6 +48,8 @@ Item {
     //              Preset is 'midrange' by default.
     // --target     The target environment. Can be one of: [ embedded, desktop ].
     //              Target is 'desktop' by default.
+    // --speed      Only used in demo mode. Determines the speed at which the animation loop is run.
+    //              Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
 
     Component.onCompleted: {
         if (androidMode) {
@@ -105,6 +110,24 @@ Item {
                             printHelpAndQuit();
                         }
                         break;
+                    case "--speed":
+                        switch (commandLineArguments[i + 1]) {
+                        case "slow":
+                            parser.demoSpeed = 240000;
+                            break;
+                        case "normal":
+                            parser.demoSpeed = 120000;
+                            break;
+                        case "fast":
+                            parser.demoSpeed = 60000;
+                            break;
+                        case "veryfast":
+                            parser.demoSpeed = 30000;
+                            break;
+                        default:
+                            printHelpAndQuit();
+                        }
+                        break;
                     }
                 }
             }
@@ -133,6 +156,8 @@ Supported arguments:
             Preset is 'midrange' by default.
 --target    The target environment. Can be one of: [ embedded, desktop ].
             Target is 'desktop' by default.
+--speed     Only used in demo mode. Determines the speed at which the animation loop is run.
+            Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
                     ");
         Qt.callLater(Qt.quit);
     }

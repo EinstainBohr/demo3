@@ -1634,10 +1634,10 @@ Item {
                         : "qrc:/../lightprobe/DemoModeIBL_small.hdr"
                 if (benchmarkRoot.aoEnabled) {
                     lightSpawner.brightness = 300;
-                    sceneEnvironmentIBL.probeBrightness = 400;
+                    sceneEnvironmentIBL.probeBrightness = 200;
                 } else {
                     lightSpawner.brightness = 200;
-                    sceneEnvironmentIBL.probeBrightness = 300;
+                    sceneEnvironmentIBL.probeBrightness = 125;
                 }
                 lightSpawner.demomode = true;
                 modelSpawner.demomode = true;
@@ -1671,7 +1671,6 @@ Item {
                 effectInstanceDepthOfFieldHQBlur.blurAmount = 4;
                 effectInstanceDepthOfFieldHQBlur.focusRange = 7.5;
                 effectList.push(effectInstanceDepthOfFieldHQBlur)
-                effectInstanceHDRBloomTonemap.bloomThreshold = 0.85;
                 effectList.push(effectInstanceHDRBloomTonemap)
                 view3D.environment.effects = effectList
                 // Camera startup position
@@ -1696,11 +1695,12 @@ Item {
         enabled: commands.modeDemo
         animations: [
             TimelineAnimation {
-                duration: 120000
+                duration: commands.demoSpeed
                 from: 0
                 to: 16667
                 running: commands.modeDemo
                 loops: Animation.Infinite
+                onDurationChanged: restart()
             }
         ]
 

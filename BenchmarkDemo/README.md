@@ -29,6 +29,8 @@ Supported arguments:
             Preset is 'midrange' by default.
 --target    The target environment. Can be one of: [ embedded, desktop ].
             Target is 'desktop' by default.
+--speed     Only used in demo mode. Determines the speed at which the animation loop is run.
+            Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
 ```
 
 Using your own assets
