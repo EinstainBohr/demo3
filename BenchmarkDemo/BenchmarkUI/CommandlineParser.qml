@@ -20,7 +20,7 @@ Item {
     property bool modeNormal: true
 
     // Speed
-    property int demoSpeed: 0
+    property int demoSpeed: 120000
 
     // Other parameters to be read from the outside
     property bool quitAfter: false
