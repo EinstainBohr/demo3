@@ -555,6 +555,7 @@ Node {
             Keyframe {
                 frame: 16667
                 value: Qt.vector3d(0, 1440, 0)
+                easing.type: Easing.Linear
             }
         }
 
