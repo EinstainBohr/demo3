@@ -86,7 +86,7 @@ Item {
 
     Timer {
         id: measureTimer
-        interval: 60000
+        interval: 10000// 60000
         running: false
         onTriggered: {
             if (fpsUpdates === 0) {
@@ -124,12 +124,12 @@ Item {
                 logContainer.visible = true;
             }
 
+            reset();
+
             if (quitAfter)
                 Qt.callLater(Qt.quit);
             else
                 measurementDone();
-
-            reset();
         }
     }
 

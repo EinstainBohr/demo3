@@ -165,5 +165,7 @@
         <file>BenchmarkUI/LightContainer.qml</file>
         <file>BenchmarkUI/LightSpawner.qml</file>
         <file>BenchmarkUI/lightprobe/IBL.hdr</file>
+        <file>BenchmarkUI/AutoMode.qml</file>
+        <file>BenchmarkUI/CommandlineParser.qml</file>
     </qresource>
 </RCC>

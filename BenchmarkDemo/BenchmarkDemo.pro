@@ -35,6 +35,7 @@ HEADERS += \
     fileio.h
 
 DISTFILES += \
+    BenchmarkUI/AutoMode.qml \
     android/AndroidManifest.xml \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.jar \

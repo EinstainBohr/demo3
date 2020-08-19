@@ -266,6 +266,11 @@ Item {
         id: commands
     }
 
+    AutoMode {
+        id: automode
+        enabled: false
+    }
+
     DebugView {
         id: debugView
         anchors.left: parent.left
@@ -1570,7 +1575,7 @@ Item {
             measureButton.visible = false
             debugView.visible = false
             swipeView.visible = false
-            logger.quitAfter = commands.quitAfter
+            logger.quitAfter = commands.quitAfter && !commands.autoModeEnabled
             logger.enabled = true
             logger.config = [// Model
                              "Model: " + modelCB.currentValue + " (#" + modelCount.text + ")",
@@ -1621,9 +1626,28 @@ Item {
     Connections {
         target: logger
         function onMeasurementDone() {
-            measureButton.visible = true
-            debugView.visible = true
-            swipeView.visible = true
+            if (!commands.autoModeEnabled) {
+                measureButton.visible = true
+                debugView.visible = true
+                swipeView.visible = true
+            } else {
+                // Update auto mode benchmark settings and run again
+                automode.enabled = true;
+                automode.update(commands.autoModel, commands.autoModelCount, commands.autoLight,
+                                commands.autoLightCount, commands.autoTexture);
+                lightSpawner.instanceCount = lightCount.value;
+                modelSpawner.instanceCount = modelInstanceCount;
+                if (texturesEnabled)
+                    textures.onClicked();
+                textureSizeCB.onActivated(textureSizeIndex);
+                // Respawn models
+                modelCB.onActivated(modelIndex);
+                // Respawn lights
+                lightTypeCB.onActivated(lightTypeIndex);
+                // Re-run measurements
+                measureButton.onClicked();
+                logger.start(view3D);
+            }
         }
     }
 

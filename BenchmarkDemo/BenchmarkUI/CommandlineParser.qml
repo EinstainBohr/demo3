@@ -22,6 +22,14 @@ Item {
     // Speed
     property int demoSpeed: 120000
 
+    // Automatic benchmark modes
+    property bool autoModeEnabled: false
+    property bool autoModel: false
+    property bool autoTexture: false
+    property bool autoLight: false
+    property bool autoModelCount: false
+    property bool autoLightCount: false
+
     // Other parameters to be read from the outside
     property bool quitAfter: false
 
@@ -50,6 +58,13 @@ Item {
     //              Target is 'desktop' by default.
     // --speed      Only used in demo mode. Determines the speed at which the animation loop is run.
     //              Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
+    // --automatic  Only used in benchmark mode. Defines a set of benchmarks to be run one after
+    //              another.
+    //              Can be one of: [ model, modecount, light, lightcount, texture ].
+    //              model and modelcount can be specified at the same time
+    //              [ --automatic model --automatic modelcount ], as well as light
+    //              and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
+    //              maximum model complexity, as well as the maximum number of lights and models.
 
     Component.onCompleted: {
         if (androidMode) {
@@ -128,8 +143,37 @@ Item {
                             printHelpAndQuit();
                         }
                         break;
+                    case "--automatic":
+                        autoModeEnabled = true;
+                        switch (commandLineArguments[i + 1]) {
+                        case "model":
+                            parser.autoModel = true;
+                            break;
+                        case "modelcount":
+                            parser.autoModelCount = true;
+                            break;
+                        case "light":
+                            parser.autoLight = true;
+                            break;
+                        case "lightcount":
+                            parser.autoLightCount = true;
+                            break;
+                        case "texture":
+                            parser.autoTexture = true;
+                            break;
+                        default:
+                            printHelpAndQuit();
+                        }
+                        break;
                     }
                 }
+            }
+            // Do not allow combinations
+            if (((parser.autoModel || parser.autoModelCount)
+                 && (parser.autoLight || parser.autoLightCount || parser.autoTexture))
+                    || ((parser.autoLight || parser.autoLightCount)
+                        && (parser.autoModel || parser.autoModelCount || parser.autoTexture))) {
+                printHelpAndQuit();
             }
         }
         createConfig();
@@ -158,6 +202,12 @@ Supported arguments:
             Target is 'desktop' by default.
 --speed     Only used in demo mode. Determines the speed at which the animation loop is run.
             Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
+--automatic Only used in benchmark mode. Defines a set of benchmarks to be run one after
+            another. Can be one of: [ model, modecount, light, lightcount, texture ].
+            model and modelcount can be specified at the same time
+            [ --automatic model --automatic modelcount ], as well as light
+            and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
+            maximum model complexity, as well as the maximum number of lights and models.
                     ");
         Qt.callLater(Qt.quit);
     }
@@ -232,6 +282,20 @@ Supported arguments:
                 // Benchmark mode
                 console.log("Benchmark Mode");
                 parser.quitAfter = true;
+                // If any automatic benchmark modes have been activated, reset the defaults accordingly
+                if (parser.autoModel)
+                    benchmarkRoot.modelIndex = 0;
+                if (parser.autoModelCount)
+                    benchmarkRoot.modelInstanceCount = 1;
+                if (parser.autoLight)
+                    benchmarkRoot.lightTypeIndex = 0;
+                if (parser.autoLightCount)
+                    benchmarkRoot.lightInstanceCount = 1;
+                if (parser.autoTexture) {
+                    // Start with no textures
+                    benchmarkRoot.texturesEnabled = false;
+                    benchmarkRoot.textureSizeIndex = 0;
+                }
             } else {
                 // Normal mode
                 console.log("Normal Mode");
