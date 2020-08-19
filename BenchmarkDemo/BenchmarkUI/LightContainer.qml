@@ -49,7 +49,7 @@ Node {
         position: lightInstance.instancePosition
         eulerRotation: lightInstance.instanceRotation
         castsShadow: shadowsEnabled
-        shadowMapFar: demomode ? 100 : 1500
+        shadowMapFar: demomode ? 170 : 1500
         shadowMapQuality: Light.ShadowMapQualityHigh
         shadowFactor: 100
         shadowFilter: 4

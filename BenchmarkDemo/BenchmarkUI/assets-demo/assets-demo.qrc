@@ -20,5 +20,6 @@
         <file>DemoCity.qml</file>
         <file>../lightprobe/DemoModeIBL.hdr</file>
         <file>../lightprobe/DemoModeIBL_small.hdr</file>
+        <file>FlyingSmallShip.qml</file>
     </qresource>
 </RCC>

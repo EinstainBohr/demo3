@@ -246,6 +246,13 @@ Item {
                 id: modelSpawner
                 visible: benchmarkRoot.visible
             }
+
+            MeshSpawner {
+                id: demoContentLoader
+                x: 5
+                z: 1.5
+                visible: false
+            }
         }
     }
 
@@ -1633,14 +1640,16 @@ Item {
                         ? "qrc:/../lightprobe/DemoModeIBL.hdr"
                         : "qrc:/../lightprobe/DemoModeIBL_small.hdr"
                 if (benchmarkRoot.aoEnabled) {
-                    lightSpawner.brightness = 300;
+                    lightSpawner.brightness = 350;
                     sceneEnvironmentIBL.probeBrightness = 200;
                 } else {
-                    lightSpawner.brightness = 200;
+                    lightSpawner.brightness = 250;
                     sceneEnvironmentIBL.probeBrightness = 125;
                 }
                 lightSpawner.demomode = true;
                 modelSpawner.demomode = true;
+                demoContentLoader.demomode = true;
+                demoContentLoader.instanceCount = 1;
             }
             lightSpawner.instanceCount = lightCount.value
             lightSpawner.shadowsEnabled = shadows.checked
@@ -1663,6 +1672,8 @@ Item {
             } else if (commands.modeDemo) {
                 // Demo mode
                 modelSpawner.model = "qrc:/DemoCity.qml";
+                demoContentLoader.visible = true;
+                demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
                 measureButton.visible = false
                 debugView.visible = false
                 swipeView.visible = false
@@ -1676,7 +1687,7 @@ Item {
                 // Camera startup position
                 camera.position = Qt.vector3d(-32.3353, 21.3145, -16.3025);
                 camera.eulerRotation = Qt.vector3d(-90 + 63.5292, -114.546, 0.000302634);
-                camera.clipFar = 100;
+                camera.clipFar = 170;
                 camera.clipNear = 0.1;
                 camera.fieldOfView = 50;
             }
