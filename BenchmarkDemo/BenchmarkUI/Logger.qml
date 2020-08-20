@@ -86,7 +86,7 @@ Item {
 
     Timer {
         id: measureTimer
-        interval: 10000// 60000
+        interval: 60000
         running: false
         onTriggered: {
             if (fpsUpdates === 0) {
