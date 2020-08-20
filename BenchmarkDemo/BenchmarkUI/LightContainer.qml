@@ -7,7 +7,7 @@ Node {
     property bool shadowsEnabled: false
     property var instanceRotation: Qt.vector3d(0, 0, 0)
     property var instancePosition: Qt.vector3d(0, 0, 0)
-    property int brightness: 500
+    property int brightness: 250
     property bool demomode: false
 
     DirectionalLight {

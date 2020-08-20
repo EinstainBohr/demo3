@@ -29,6 +29,7 @@ void FileIO::write()
     if (file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
         stream << m_text;
+        qDebug() << "Wrote file" << file.fileName();
     } else {
         qWarning() << "Could not write file" << file.fileName();
     }

@@ -8,7 +8,7 @@ Node {
     property string light: "qrc:/BenchmarkUI/LightContainer.qml"
     property int instanceCount: 1
     property int lightType: 0
-    property int brightness: 500
+    property int brightness: 250
     property bool shadowsEnabled: false
     property bool demomode: false
 

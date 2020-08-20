@@ -138,6 +138,8 @@ Item {
         specularMap: Texture {
             source: roughnessImage
         }
+        bumpAmount: 1.0
+        specularAmount: 0.25
     }
 
     DefaultMaterial {
@@ -451,7 +453,7 @@ Item {
                         Layout.fillWidth: true
                         live: false
                         to: 1000
-                        value: 500
+                        value: 250
                     }
 
                     Text {
