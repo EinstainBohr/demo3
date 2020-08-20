@@ -273,6 +273,11 @@ Item {
         enabled: false
     }
 
+    ScriptHandler {
+        id: scripthandler
+        enabled: false
+    }
+
     DebugView {
         id: debugView
         anchors.left: parent.left
@@ -1578,6 +1583,7 @@ Item {
             debugView.visible = false
             swipeView.visible = false
             logger.quitAfter = commands.quitAfter && !commands.autoModeEnabled
+                    && !commands.scriptModeEnabled
             logger.enabled = true
             logger.config = [// Model
                              "Model: " + modelCB.currentValue + " (#" + modelCount.text + ")",
@@ -1628,34 +1634,49 @@ Item {
     Connections {
         target: logger
         function onMeasurementDone() {
-            if (!commands.autoModeEnabled) {
-                measureButton.visible = true
-                debugView.visible = true
-                swipeView.visible = true
-            } else {
+            if (!commands.autoModeEnabled && !commands.scriptModeEnabled) {
+                measureButton.visible = true;
+                debugView.visible = true;
+                swipeView.visible = true;
+                return;
+            } else if (commands.autoModeEnabled) {
                 // Update auto mode benchmark settings and run again
                 automode.enabled = true;
                 automode.update(commands.autoModel, commands.autoModelCount, commands.autoLight,
                                 commands.autoLightCount, commands.autoTexture);
-                lightSpawner.instanceCount = lightCount.value;
-                modelSpawner.instanceCount = modelInstanceCount;
-                if (texturesEnabled)
-                    textures.onClicked();
-                textureSizeCB.onActivated(textureSizeIndex);
-                // Respawn models
-                modelCB.onActivated(modelIndex);
-                // Respawn lights
-                lightTypeCB.onActivated(lightTypeIndex);
-                // Re-run measurements
-                measureButton.onClicked();
-                logger.start(view3D);
+            } else {
+                // Update script mode settings and run again
+                scripthandler.getNextTest();
+                // Set the correct SceneEnvironment
+                view3D.environment = iblEnabled ? sceneEnvironmentIBL : sceneEnvironment
             }
+            lightSpawner.instanceCount = lightCount.value;
+            modelSpawner.instanceCount = modelInstanceCount;
+            if (texturesEnabled)
+                textures.onClicked();
+            textureSizeCB.onActivated(textureSizeIndex);
+            // Respawn models
+            modelCB.onActivated(modelIndex);
+            // Respawn lights
+            lightTypeCB.onActivated(lightTypeIndex);
+            // Re-run measurements
+            measureButton.onClicked();
+            logger.start(view3D);
         }
     }
 
     Connections {
         target: commands
         function onParsingDone() {
+            // If in benchmark test set mode, get the initial test settings
+            if (commands.modeBenchmark && commands.scriptModeEnabled) {
+                // Parse test sets
+                scripthandler.enabled = true;
+                scripthandler.source = commands.scriptFile;
+                scripthandler.parseScript();
+                scripthandler.getNextTest();
+            }
+
             // Set the correct SceneEnvironment
             view3D.environment = iblEnabled ? sceneEnvironmentIBL : sceneEnvironment
 
@@ -1694,7 +1715,7 @@ Item {
 
             // Start demo if in demo mode and benchmarking if benchmark mode
             if (commands.modeBenchmark) {
-                measureButton.onClicked()
+                measureButton.onClicked() // In script mode, do this after script has been parsed
             } else if (commands.modeDemo) {
                 // Demo mode
                 modelSpawner.model = "qrc:/DemoCity.qml";

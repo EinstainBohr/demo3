@@ -36,7 +36,11 @@ Supported arguments:
             model and modelcount can be specified at the same time
             [ --automatic model --automatic modelcount ], as well as light
             and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
-            maximum model complexity, as well as the maximum number of lights and models.
+            maximum model complexity, as well as the maximum number of lights and models. Cannot
+            be used together with 'testset'.
+--testset   Only used in benchmark mode. Value is a path to the JSON file containing the
+            tests to be run. For example [ --testset /testscripts/exampletestset.json ]. Cannot
+            be used together with 'automatic'.
 ```
 
 Using your own assets

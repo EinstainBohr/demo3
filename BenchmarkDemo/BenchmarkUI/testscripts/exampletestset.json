@@ -1,0 +1,54 @@
+[
+    {
+        "name":"Test Set #1",
+        "modelIndex":0,
+        "modelInstanceCount":500,
+        "lightTypeIndex":0,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":true,
+        "textureSizeIndex":2,
+        "msaaQualityIndex":1,
+        "materialIndex":0,
+        "effects":[
+            "HDRBloomToneMap",
+            "TiltShift"
+        ]
+    },
+    {
+        "name":"Test Set #2",
+        "modelIndex":2,
+        "modelInstanceCount":100,
+        "lightTypeIndex":2,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":true,
+        "texturesEnabled":true,
+        "textureSizeIndex":3,
+        "msaaQualityIndex":3,
+        "materialIndex":6
+    },
+    {
+        "name":"Test Set #3",
+        "modelIndex":3,
+        "modelInstanceCount":50,
+        "lightTypeIndex":1,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":true,
+        "textureSizeIndex":1,
+        "msaaQualityIndex":0,
+        "materialIndex":2,
+        "effects":[
+            "FXAA"
+        ]
+    }
+]

@@ -9,7 +9,7 @@ QString FileIO::read()
 
     QFile file(m_url.toLocalFile());
     if (!file.exists()) {
-        qWarning() << m_url.toLocalFile() << "does not exist";
+        qWarning() << "File" << file.fileName() << "does not exist";
         return {};
     }
     if (file.open(QIODevice::ReadOnly)) {

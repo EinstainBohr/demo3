@@ -36,6 +36,7 @@ HEADERS += \
 
 DISTFILES += \
     BenchmarkUI/AutoMode.qml \
+    BenchmarkUI/ScriptHandler.qml \
     android/AndroidManifest.xml \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.jar \

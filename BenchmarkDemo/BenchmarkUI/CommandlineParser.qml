@@ -1,4 +1,5 @@
 import QtQuick 2.12
+import FileHelper 1.0
 
 Item {
     id: parser
@@ -29,6 +30,10 @@ Item {
     property bool autoLight: false
     property bool autoModelCount: false
     property bool autoLightCount: false
+
+    // Scripted benchmark mode
+    property bool scriptModeEnabled: false
+    property url scriptFile: ""
 
     // Other parameters to be read from the outside
     property bool quitAfter: false
@@ -65,6 +70,10 @@ Item {
     //              [ --automatic model --automatic modelcount ], as well as light
     //              and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
     //              maximum model complexity, as well as the maximum number of lights and models.
+    //              Cannot be used together with 'testset'.
+    // --testset    Only used in benchmark mode. Value is a path to the JSON file containing the
+    //              tests to be run. For example [ --testset /testscripts/exampletestset.json ].
+    //              Cannot be used together with 'automatic'.
 
     Component.onCompleted: {
         if (androidMode) {
@@ -165,16 +174,33 @@ Item {
                             printHelpAndQuit();
                         }
                         break;
+                    case "--testset":
+                        if (!commandLineArguments[i + 1]) {
+                            printHelpAndQuit();
+                        } else {
+                            scriptModeEnabled = true;
+                            // Check if the file exists
+                            scriptFile = "file:" + commandLineArguments[i + 1];
+                            fileChecker.source = scriptFile;
+                            if (fileChecker.read() === "")
+                                Qt.callLater(Qt.quit); // fileChecker prints a warning if file is not found
+                        }
+                        break;
+                    default:
+                        printHelpAndQuit();
                     }
                 }
             }
-            // Do not allow combinations
+            // Do not allow all automatic benchmark combinations
             if (((parser.autoModel || parser.autoModelCount)
                  && (parser.autoLight || parser.autoLightCount || parser.autoTexture))
                     || ((parser.autoLight || parser.autoLightCount)
                         && (parser.autoModel || parser.autoModelCount || parser.autoTexture))) {
                 printHelpAndQuit();
             }
+            // Do not allow both --testset and --automatic
+            if (autoModeEnabled && scriptModeEnabled)
+                printHelpAndQuit();
         }
         createConfig();
     }
@@ -207,7 +233,11 @@ Supported arguments:
             model and modelcount can be specified at the same time
             [ --automatic model --automatic modelcount ], as well as light
             and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
-            maximum model complexity, as well as the maximum number of lights and models.
+            maximum model complexity, as well as the maximum number of lights and models. Cannot
+            be used together with 'testset'.
+--testset   Only used in benchmark mode. Value is a path to the JSON file containing the
+            tests to be run. For example [ --testset /testscripts/exampletestset.json ]. Cannot
+            be used together with 'automatic'.
                     ");
         Qt.callLater(Qt.quit);
     }
@@ -322,6 +352,10 @@ Supported arguments:
 
         if (modeBenchmark)
             benchmarkTimer.start();
+    }
+
+    FileIO {
+        id: fileChecker
     }
 
     Timer {

@@ -34,7 +34,6 @@ Item {
                 ++benchmarkRoot.modelIndex;
                 if (autoModelCount) {
                     // Model index was updated, reset model count
-                    console.log("reset model count");
                     benchmarkRoot.modelInstanceCount = 1;
                     modelListIndex = 0;
                 }
@@ -59,10 +58,8 @@ Item {
         if (autoLight && currentLightIndex < maxLightIndex) {
             if (!autoLightCount || (autoLightCount && currentLightCount == maxLightCount)) {
                 ++benchmarkRoot.lightTypeIndex;
-                if (autoLightCount) {
-                    console.log("reset light count");
+                if (autoLightCount)
                     benchmarkRoot.lightInstanceCount = 1;
-                }
             }
         }
 
