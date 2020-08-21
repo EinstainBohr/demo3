@@ -1646,9 +1646,17 @@ Item {
                                 commands.autoLightCount, commands.autoTexture);
             } else {
                 // Update script mode settings and run again
-                scripthandler.getNextTest();
+                var previousTexturesEnabled = texturesEnabled;
+                logger.testName = scripthandler.getNextTest();
+                if (previousTexturesEnabled !== texturesEnabled)
+                    textures.onClicked();
                 // Set the correct SceneEnvironment
                 view3D.environment = iblEnabled ? sceneEnvironmentIBL : sceneEnvironment
+                // Trigger material change; needed for original material
+                materialsCB.onActivated(materialIndex);
+                // Update effect list
+                sceneEnvironmentIBL.effects = effectList;
+                sceneEnvironment.effects = effectList;
             }
             lightSpawner.instanceCount = lightCount.value;
             modelSpawner.instanceCount = modelInstanceCount;
@@ -1674,7 +1682,17 @@ Item {
                 scripthandler.enabled = true;
                 scripthandler.source = commands.scriptFile;
                 scripthandler.parseScript();
-                scripthandler.getNextTest();
+                var previousTexturesEnabled = texturesEnabled;
+                logger.testName = scripthandler.getNextTest();
+                if (previousTexturesEnabled !== texturesEnabled)
+                    textures.onClicked();
+                // Set the correct SceneEnvironment
+                view3D.environment = iblEnabled ? sceneEnvironmentIBL : sceneEnvironment
+                // Trigger material change; needed for original material
+                materialsCB.onActivated(materialIndex);
+                // Update effect list
+                sceneEnvironmentIBL.effects = effectList;
+                sceneEnvironment.effects = effectList;
             }
 
             // Set the correct SceneEnvironment

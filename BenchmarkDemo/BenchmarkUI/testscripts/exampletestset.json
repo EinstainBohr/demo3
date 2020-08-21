@@ -12,10 +12,8 @@
         "texturesEnabled":true,
         "textureSizeIndex":2,
         "msaaQualityIndex":1,
-        "materialIndex":0,
         "effects":[
-            "HDRBloomToneMap",
-            "TiltShift"
+            "MotionBlur"
         ]
     },
     {
@@ -31,24 +29,62 @@
         "texturesEnabled":true,
         "textureSizeIndex":3,
         "msaaQualityIndex":3,
-        "materialIndex":6
+        "materialIndex":1,
+        "effects":[
+            "HDRBloomTonemap",
+            "DepthOfFieldHQBlur"
+        ]
     },
     {
         "name":"Test Set #3",
         "modelIndex":3,
-        "modelInstanceCount":50,
+        "modelInstanceCount":25,
         "lightTypeIndex":1,
         "lightInstanceCount":2,
-        "shadowsEnabled":true,
+        "shadowsEnabled":false,
         "iblEnabled":false,
         "aoEnabled":false,
         "skyboxEnabled":false,
-        "texturesEnabled":true,
-        "textureSizeIndex":1,
+        "texturesEnabled":false,
+        "textureSizeIndex":0,
         "msaaQualityIndex":0,
         "materialIndex":2,
         "effects":[
-            "FXAA"
+            "Fxaa"
         ]
+    },
+    {
+        "name":"Test Set #4",
+        "modelIndex":4,
+        "modelInstanceCount":1,
+        "lightTypeIndex":3,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":true,
+        "texturesEnabled":true,
+        "textureSizeIndex":2,
+        "msaaQualityIndex":3,
+        "materialIndex":6,
+        "effects":[
+            "Vignette"
+        ]
+    },
+    {
+        "name":"Test Set #5",
+        "lightTypeIndex":2,
+        "shadowsEnabled":false,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false
+    },
+    {
+        "name":"Test Set #5 Overlay",
+        "renderMode":"Overlay"
+    },
+    {
+        "name":"Test Set #5 Underlay",
+        "renderMode":"Underlay"
     }
 ]

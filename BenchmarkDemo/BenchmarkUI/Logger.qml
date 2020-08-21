@@ -38,6 +38,9 @@ Item {
     property string measurementLog: ""
     property string logUrl: ""
 
+    // test name in case of script testing
+    property string testName: ""
+
     function start(view) {
         var date = new Date().toLocaleDateString(Qt.locale("en_EN"), "yyyy-MM-dd-");
         var time = new Date().toLocaleTimeString(Qt.locale("en_EN"), "hh-mm-ss");
@@ -97,6 +100,8 @@ Item {
             } else {
                 avgFps /= fpsUpdates;
             }
+            if (testName.length)
+                measurementLog += testName + "\n";
             measurementLog += "Screen Size: (" + source.width + "x" + source.height + ")";
             measurementLog += "\nAverage FPS: " + avgFps;
             measurementLog += "\nMinimum FPS: " + minFps;
