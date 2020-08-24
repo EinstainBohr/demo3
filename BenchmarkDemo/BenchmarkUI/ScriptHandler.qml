@@ -57,6 +57,11 @@ Item {
                                            ? 2 : 0);
             renderModeCB.onActivated(renderModeCB.currentIndex);
         }
+        // Temporal AA
+        if (jsonScript[currentTestSet].temporalAA !== undefined) {
+            temporalAA.checked = jsonScript[currentTestSet].temporalAA;
+            temporalAA.onClicked();
+        }
         // Effects
         if (jsonScript[currentTestSet].effects) {
             for (var effectIdx = 0; effectIdx < jsonScript[currentTestSet].effects.length;
