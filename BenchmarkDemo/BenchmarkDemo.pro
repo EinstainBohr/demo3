@@ -17,6 +17,8 @@ RESOURCES += qml.qrc \
 
 RCC_DIR = $${PWD}
 
+OTHER_FILES += BenchmarkUI/testscripts/*.json
+
 android: QMAKE_LFLAGS += --for-linker=--long-plt
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
@@ -35,8 +37,11 @@ HEADERS += \
     fileio.h
 
 DISTFILES += \
-    BenchmarkUI/AutoMode.qml \
-    BenchmarkUI/ScriptHandler.qml \
+    BenchmarkUI/testscripts/antialiasing.json \
+    BenchmarkUI/testscripts/effects.json \
+    BenchmarkUI/testscripts/lightprobeAndAo.json \
+    BenchmarkUI/testscripts/rendermodes.json \
+    BenchmarkUI/testscripts/shadows.json \
     android/AndroidManifest.xml \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.jar \

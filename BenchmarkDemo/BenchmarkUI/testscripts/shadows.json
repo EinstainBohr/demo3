@@ -1,0 +1,114 @@
+[
+    {
+        "name":"Directional light, shadows OFF",
+        "lightTypeIndex":0,
+        "lightInstanceCount":1,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Directional light, shadows ON",
+        "lightTypeIndex":0,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Directional lights, shadows OFF",
+        "lightTypeIndex":0,
+        "lightInstanceCount":2,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Directional lights, shadows ON",
+        "lightTypeIndex":0,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Area light, shadows OFF",
+        "lightTypeIndex":1,
+        "lightInstanceCount":1,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Area light, shadows ON",
+        "lightTypeIndex":1,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Area lights, shadows OFF",
+        "lightTypeIndex":1,
+        "lightInstanceCount":2,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Area lights, shadows ON",
+        "lightTypeIndex":1,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Point light, shadows OFF",
+        "lightTypeIndex":2,
+        "lightInstanceCount":1,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Point light, shadows ON",
+        "lightTypeIndex":2,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Point lights, shadows OFF",
+        "lightTypeIndex":2,
+        "lightInstanceCount":2,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Point lights, shadows ON",
+        "lightTypeIndex":2,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Spot light, shadows OFF",
+        "lightTypeIndex":3,
+        "lightInstanceCount":1,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Spot light, shadows ON",
+        "lightTypeIndex":3,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Spot lights, shadows OFF",
+        "lightTypeIndex":3,
+        "lightInstanceCount":2,
+        "shadowsEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"2 Spot lights, shadows ON",
+        "lightTypeIndex":3,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "msaaQualityIndex":0
+    }
+]

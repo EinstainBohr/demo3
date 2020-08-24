@@ -1,0 +1,30 @@
+[
+    {
+        "name":"MSAA OFF",
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"MSAA Medium (2X)",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"MSAA High (4X)",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"MSAA Very High (8X)",
+        "msaaQualityIndex":3
+    },
+    {
+        "name":"FXAA",
+        "msaaQualityIndex":0,
+        "effects":[
+            "Fxaa"
+        ]
+    },
+    {
+        "name":"Temporal AA ",
+        "msaaQualityIndex":0,
+        "temporalAA":true
+    }
+]

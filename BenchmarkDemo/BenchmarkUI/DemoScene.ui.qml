@@ -1657,6 +1657,8 @@ Item {
                 multisampleAACB.onActivated(msaaQualityIndex);
                 // Update effect list
                 view3D.environment.effects = effectList;
+                // Shadow settings
+                lightSpawner.shadowsEnabled = shadowsEnabled;
             }
             lightSpawner.instanceCount = lightCount.value;
             modelSpawner.instanceCount = modelInstanceCount;
