@@ -1578,7 +1578,6 @@ Item {
     Connections {
         target: measureButton
         function onClicked() {
-            var env = iblLighting.checked ? sceneEnvironmentIBL : sceneEnvironment
             measureButton.visible = false
             debugView.visible = false
             swipeView.visible = false
@@ -1655,8 +1654,7 @@ Item {
                 // Trigger material change; needed for original material
                 materialsCB.onActivated(materialIndex);
                 // Update effect list
-                sceneEnvironmentIBL.effects = effectList;
-                sceneEnvironment.effects = effectList;
+                view3D.environment.effects = effectList;
             }
             lightSpawner.instanceCount = lightCount.value;
             modelSpawner.instanceCount = modelInstanceCount;
@@ -1691,8 +1689,7 @@ Item {
                 // Trigger material change; needed for original material
                 materialsCB.onActivated(materialIndex);
                 // Update effect list
-                sceneEnvironmentIBL.effects = effectList;
-                sceneEnvironment.effects = effectList;
+                view3D.environment.effects = effectList;
             }
 
             // Set the correct SceneEnvironment
