@@ -1653,6 +1653,8 @@ Item {
                 view3D.environment = iblEnabled ? sceneEnvironmentIBL : sceneEnvironment
                 // Trigger material change; needed for original material
                 materialsCB.onActivated(materialIndex);
+                // Trigger msaa change
+                multisampleAACB.onActivated(msaaQualityIndex);
                 // Update effect list
                 view3D.environment.effects = effectList;
             }
