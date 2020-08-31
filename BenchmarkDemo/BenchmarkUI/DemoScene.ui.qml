@@ -1696,6 +1696,8 @@ Item {
                 view3D.environment.effects = effectList;
             }
 
+            // Force changing the env once to enable all state changed (bit unclear why this is needed, though)
+            view3D.environment = sceneEnvironmentIBL;
             // Set the correct SceneEnvironment
             view3D.environment = iblEnabled ? sceneEnvironmentIBL : sceneEnvironment
 
