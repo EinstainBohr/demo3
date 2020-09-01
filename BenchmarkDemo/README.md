@@ -32,7 +32,7 @@ Supported arguments:
 --speed     Only used in demo mode. Determines the speed at which the animation loop is run.
             Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
 --automatic Only used in benchmark mode. Defines a set of benchmarks to be run one after
-            another. Can be one of: [ model, modecount, light, lightcount, texture ].
+            another. Can be one of: [ model, modelcount, light, lightcount, texture ].
             model and modelcount can be specified at the same time
             [ --automatic model --automatic modelcount ], as well as light
             and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
