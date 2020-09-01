@@ -8,7 +8,7 @@ class FileIO : public QObject {
 
 public:
     Q_INVOKABLE QString read();
-    Q_INVOKABLE void write();
+    Q_INVOKABLE void write(bool append = false);
 
     QString text() const { return m_text; }
     void setText(const QString &text) { m_text = text; }

@@ -41,6 +41,10 @@ Supported arguments:
 --testset   Only used in benchmark mode. Value is a path to the JSON file containing the
             tests to be run. For example [ --testset /testscripts/exampletestset.json ]. Cannot
             be used together with 'automatic'.
+--report    Only used in benchmark mode. Determines the report file style, either combining
+            each test result into a single file, or saving each one into a separate file.
+            'Single' style filename begins with the test script filename.
+            Can be one of: [ single, multi ]. Report is 'single' by default.
 ```
 
 Using your own assets

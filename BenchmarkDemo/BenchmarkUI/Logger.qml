@@ -9,6 +9,7 @@ Item {
     signal measurementDone
 
     property bool androidMode: false
+    property bool singleReportMode: false
 
     property View3D source
     property var config: []
@@ -41,10 +42,20 @@ Item {
     // test name in case of script testing
     property string testName: ""
 
+    // script file name in case of script testing
+    property string scriptName: ""
+
     function start(view) {
         var date = new Date().toLocaleDateString(Qt.locale("en_EN"), "yyyy-MM-dd-");
         var time = new Date().toLocaleTimeString(Qt.locale("en_EN"), "hh-mm-ss");
-        logUrl = "file:./benchmark_result_" + date + time + ".txt";
+        if (!singleReportMode) {
+            logUrl = "file:./benchmark_result_" + date + time + ".txt";
+        } else if (singleReportMode && logUrl.length === 0) {
+            if (scriptName.length > 0)
+                logUrl = "file:./" + scriptName + "_" + date + time + ".txt";
+            else
+                logUrl = "file:./" + "benchmark_result_automatic_" + date + time + ".txt";
+        }
         source = view;
         measureTimer.start();
     }
@@ -101,7 +112,7 @@ Item {
                 avgFps /= fpsUpdates;
             }
             if (testName.length)
-                measurementLog += testName + "\n";
+                measurementLog += "Test Set: " + testName + "\n";
             measurementLog += "Screen Size: (" + source.width + "x" + source.height + ")";
             measurementLog += "\nAverage FPS: " + avgFps;
             measurementLog += "\nMinimum FPS: " + minFps;
@@ -114,6 +125,8 @@ Item {
             measurementLog += "\nMaximum Sync Time: " + maxSyncTime;
             for (var i = 0; i < config.length; ++i)
                 measurementLog += "\n" + config[i];
+            if (singleReportMode)
+                measurementLog += "\n\n";
 
             // Console log
             console.log(measurementLog);
@@ -122,7 +135,7 @@ Item {
                 // Write log
                 fileWriter.source = logUrl;
                 fileWriter.text = measurementLog;
-                fileWriter.write();
+                fileWriter.write(singleReportMode);
             } else {
                 // Show log
                 logOutput.text = measurementLog;

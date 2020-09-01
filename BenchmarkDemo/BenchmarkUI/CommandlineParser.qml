@@ -35,6 +35,9 @@ Item {
     property bool scriptModeEnabled: false
     property url scriptFile: ""
 
+    // Report style
+    property bool reportSingle: true
+
     // Other parameters to be read from the outside
     property bool quitAfter: false
 
@@ -74,6 +77,10 @@ Item {
     // --testset    Only used in benchmark mode. Value is a path to the JSON file containing the
     //              tests to be run. For example [ --testset /testscripts/exampletestset.json ].
     //              Cannot be used together with 'automatic'.
+    // --report     Only used in benchmark mode. Determines the report file style, either combining
+    //              each test result into a single file, or saving each one into a separate file.
+    //              'Single' style filename begins with the test script filename.
+    //              Can be one of: [ single, multi ]. Report is 'single' by default.
 
     Component.onCompleted: {
         if (androidMode) {
@@ -186,6 +193,18 @@ Item {
                                 Qt.callLater(Qt.quit); // fileChecker prints a warning if file is not found
                         }
                         break;
+                    case "--report":
+                        switch (commandLineArguments[i + 1]) {
+                        case "single":
+                            parser.reportSingle = true;
+                            break;
+                        case "multi":
+                            parser.reportSingle = false;
+                            break;
+                        default:
+                            printHelpAndQuit();
+                        }
+                        break;
                     default:
                         printHelpAndQuit();
                     }
@@ -202,6 +221,9 @@ Item {
             if (autoModeEnabled && scriptModeEnabled)
                 printHelpAndQuit();
         }
+        // Only allow single report style if in benchmark mode
+        parser.reportSingle = parser.modeBenchmark ? parser.reportSingle : false;
+
         createConfig();
     }
 
@@ -238,6 +260,10 @@ Supported arguments:
 --testset   Only used in benchmark mode. Value is a path to the JSON file containing the
             tests to be run. For example [ --testset /testscripts/exampletestset.json ]. Cannot
             be used together with 'automatic'.
+--report    Only used in benchmark mode. Determines the report file style, either combining
+            each test result into a single file, or saving each one into a separate file.
+            'Single' style filename begins with the test script filename.
+            Can be one of: [ single, multi ]. Report is 'single' by default.
                     ");
         Qt.callLater(Qt.quit);
     }
@@ -252,7 +278,6 @@ Supported arguments:
                 // Model: 10k, #5
                 // Lights: Directional, #1
                 // Material: Default
-                // TODO: more target differences for entrylevel?
                 benchmarkRoot.shadowsEnabled = false;
                 benchmarkRoot.iblEnabled = false;
                 benchmarkRoot.aoEnabled = false;

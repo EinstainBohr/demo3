@@ -20,13 +20,13 @@ QString FileIO::read()
     return m_text;
 }
 
-void FileIO::write()
+void FileIO::write(bool append)
 {
     if (m_url.isEmpty())
         return;
 
     QFile file(m_url.toLocalFile());
-    if (file.open(QIODevice::WriteOnly)) {
+    if (file.open(QIODevice::WriteOnly | (append ? QIODevice::Append : QIODevice::NewOnly))) {
         QTextStream stream(&file);
         stream << m_text;
         qDebug() << "Wrote file" << file.fileName();

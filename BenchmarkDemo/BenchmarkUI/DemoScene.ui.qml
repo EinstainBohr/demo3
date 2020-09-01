@@ -1686,6 +1686,14 @@ Item {
                 scripthandler.parseScript();
                 var previousTexturesEnabled = texturesEnabled;
                 logger.testName = scripthandler.getNextTest();
+                if (commands.reportSingle) {
+                    // Trim the script file name from full path
+                    var splitPath = commands.scriptFile.toString().split("/");
+                    splitPath = splitPath[splitPath.length - 1].split(".")
+                    var scriptFinalName = splitPath[0].replace(" ", "_");
+                    logger.scriptName = scriptFinalName;
+                }
+                // Handle texture state
                 if (previousTexturesEnabled !== texturesEnabled)
                     textures.onClicked();
                 // Set the correct SceneEnvironment
@@ -1695,6 +1703,9 @@ Item {
                 // Update effect list
                 view3D.environment.effects = effectList;
             }
+
+            if (commands.modeBenchmark)
+                logger.singleReportMode = commands.reportSingle;
 
             // Force changing the env once to enable all state changed (bit unclear why this is needed, though)
             view3D.environment = sceneEnvironmentIBL;
