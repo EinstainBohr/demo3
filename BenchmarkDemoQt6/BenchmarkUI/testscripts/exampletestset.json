@@ -1,0 +1,90 @@
+[
+    {
+        "name":"Test Set #1",
+        "modelIndex":0,
+        "modelInstanceCount":500,
+        "lightTypeIndex":0,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":true,
+        "textureSizeIndex":2,
+        "msaaQualityIndex":1,
+        "effects":[
+            "MotionBlur"
+        ]
+    },
+    {
+        "name":"Test Set #2",
+        "modelIndex":2,
+        "modelInstanceCount":100,
+        "lightTypeIndex":2,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":true,
+        "texturesEnabled":true,
+        "textureSizeIndex":3,
+        "msaaQualityIndex":3,
+        "materialIndex":1,
+        "effects":[
+            "HDRBloomTonemap",
+            "DepthOfFieldHQBlur"
+        ]
+    },
+    {
+        "name":"Test Set #3",
+        "modelIndex":3,
+        "modelInstanceCount":25,
+        "lightTypeIndex":1,
+        "lightInstanceCount":2,
+        "shadowsEnabled":false,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":false,
+        "textureSizeIndex":0,
+        "msaaQualityIndex":0,
+        "materialIndex":2,
+        "effects":[
+            "Fxaa"
+        ]
+    },
+    {
+        "name":"Test Set #4",
+        "modelIndex":4,
+        "modelInstanceCount":1,
+        "lightTypeIndex":3,
+        "lightInstanceCount":2,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":true,
+        "texturesEnabled":true,
+        "textureSizeIndex":2,
+        "msaaQualityIndex":3,
+        "materialIndex":6,
+        "effects":[
+            "Vignette"
+        ]
+    },
+    {
+        "name":"Test Set #5",
+        "lightTypeIndex":2,
+        "shadowsEnabled":false,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false
+    },
+    {
+        "name":"Test Set #5 Overlay",
+        "renderMode":"Overlay"
+    },
+    {
+        "name":"Test Set #5 Underlay",
+        "renderMode":"Underlay"
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "name":"Offscreen #1",
+        "lightTypeIndex":0,
+        "shadowsEnabled":true,
+        "texturesEnabled":false,
+        "textureSizeIndex":0,
+        "msaaQualityIndex":0,
+        "materialIndex":2
+    },
+    {
+        "name":"Overlay #1",
+        "renderMode":"Overlay"
+    },
+    {
+        "name":"Underlay #1",
+        "renderMode":"Underlay"
+    },
+    {
+        "name":"Offscreen #2",
+        "shadowsEnabled":false,
+        "texturesEnabled":true,
+        "materialIndex":0,
+        "textureSizeIndex":2,
+        "renderMode":"Offscreen"
+    },
+    {
+        "name":"Overlay #2",
+        "renderMode":"Overlay"
+    },
+    {
+        "name":"Underlay #2",
+        "renderMode":"Underlay"
+    },
+    {
+        "name":"Offscreen #3",
+        "iblEnabled":true,
+        "skyboxEnabled":true,
+        "materialIndex":6,
+        "renderMode":"Offscreen"
+    },
+    {
+        "name":"Overlay #3",
+        "renderMode":"Overlay"
+    },
+    {
+        "name":"Underlay #3",
+        "renderMode":"Underlay"
+    }
+]

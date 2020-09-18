@@ -1,0 +1,39 @@
+[
+    {
+        "name":"All OFF",
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "materialIndex":1
+    },
+    {
+        "name":"Light Probe ON",
+        "iblEnabled":true,
+        "aoEnabled":false,
+        "skyboxEnabled":false
+    },
+    {
+        "name":"Light Probe and skybox ON",
+        "iblEnabled":true,
+        "aoEnabled":false,
+        "skyboxEnabled":true
+    },
+    {
+        "name":"Ambient Occlusion ON",
+        "iblEnabled":false,
+        "aoEnabled":true,
+        "skyboxEnabled":false
+    },
+    {
+        "name":"Ambient Occlusion and Light Probe ON",
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":false
+    },
+    {
+        "name":"All ON",
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":true
+    }
+]

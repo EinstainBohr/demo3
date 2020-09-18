@@ -1,0 +1,13 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+<file alias="BenchmarkUI/AutoMode.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/AutoMode.qml</file>
+<file alias="BenchmarkUI/BenchmarkUI.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/BenchmarkUI.qml</file>
+<file alias="BenchmarkUI/CommandlineParser.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/CommandlineParser.qml</file>
+<file alias="BenchmarkUI/DemoScene.ui.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/DemoScene.ui.qml</file>
+<file alias="BenchmarkUI/LightContainer.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/LightContainer.qml</file>
+<file alias="BenchmarkUI/LightSpawner.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/LightSpawner.qml</file>
+<file alias="BenchmarkUI/Logger.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/Logger.qml</file>
+<file alias="BenchmarkUI/MeshSpawner.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/MeshSpawner.qml</file>
+<file alias="BenchmarkUI/ScriptHandler.qml">/media/tomi/64a62053-eac1-466d-b026-d262190b956e/dev/qtquick3d-demos/BenchmarkDemoQt6/BenchmarkUI/ScriptHandler.qml</file>
+</qresource>
+</RCC>
