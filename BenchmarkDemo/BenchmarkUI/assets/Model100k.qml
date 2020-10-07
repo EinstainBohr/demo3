@@ -53,8 +53,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/House_Roughness.png"
         }
-        metalness: 0.2
-        specularAmount: 0.5
+        metalness: 0.1
     }
 
     PrincipledMaterial {
@@ -71,7 +70,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/Propeller_Roughness.png"
         }
-        metalness: 0.2
+        metalness: 0.8
         specularAmount: 0.5
     }
 
@@ -90,7 +89,6 @@ Node {
             source: "maps/" + textureSize + "/Power_Roughness.png"
         }
         metalness: 0.2
-        specularAmount: 0.5
     }
 
     PrincipledMaterial {
@@ -107,8 +105,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/Electric_Roughness.png"
         }
-        metalness: 0.2
-        specularAmount: 0.5
+        metalness: 0.1
     }
 
     PrincipledMaterial {
@@ -125,7 +122,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/Parts_Roughness.png"
         }
-        metalness: 0.2
+        metalness: 0.5
         specularAmount: 0.5
     }
 
@@ -144,7 +141,6 @@ Node {
             source: "maps/" + textureSize + "/Cockpit_Roughness.png"
         }
         metalness: 0.2
-        specularAmount: 0.5
     }
 
     PrincipledMaterial {
@@ -161,7 +157,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/Gyro_Roughness.png"
         }
-        metalness: 0.2
+        metalness: 0.5
         specularAmount: 0.5
     }
 
@@ -179,7 +175,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/Engine_Roughness.png"
         }
-        metalness: 0.2
+        metalness: 0.5
         specularAmount: 0.5
     }
 
@@ -197,8 +193,7 @@ Node {
         roughnessMap: Texture {
             source: "maps/" + textureSize + "/StreetBase_Roughness.png"
         }
-        metalness: 0.2
-        specularAmount: 0.5
+        metalness: 0.05
     }
 
     PrincipledMaterial {
