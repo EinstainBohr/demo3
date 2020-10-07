@@ -57,7 +57,7 @@ You can do that by changing the comments in BenchmarkDemoQt6.pro as follows:
         BenchmarkUI/assets-simple/assets-simple.qrc \ # Use these if you want to benchmark with very simple one-mesh models
         $$files(BenchmarkUI/*.qml)
 ```
-With the simple asset set each model contains exactly one mesh, and the triangle count is almost exactly what is show in the UI. The difference in triangle count is between +1.2% (for the 1k model), and -0.2% (for the 10k model). For the larger models triangle count is so close it does not really matter at all.
+With the simple asset set each model contains exactly one mesh, and the triangle count is almost exactly what is shown in the UI. The difference in triangle count is between +1.2% (for the 1k model), and -0.2% (for the 10k model). For the larger models triangle count is so close it does not really matter at all.
 
 Using your own assets
 ---------------------
