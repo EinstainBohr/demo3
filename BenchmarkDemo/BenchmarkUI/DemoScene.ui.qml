@@ -139,7 +139,6 @@ Item {
             source: roughnessImage
         }
         bumpAmount: 1.0
-        specularAmount: 0.25
     }
 
     DefaultMaterial {
