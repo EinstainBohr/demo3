@@ -237,6 +237,7 @@ Item {
             source: iblImage
             mappingMode: Texture.LightProbe
         }
+        //tonemapMode: SceneEnvironment.TonemapModeAces
         clearColor: "#cccccc"
     }
 
@@ -245,6 +246,7 @@ Item {
         aoStrength: aoEnabled ? 100 : 0
         backgroundMode: effectMotionBlur.checked ? SceneEnvironment.Transparent
                                                  : SceneEnvironment.Color
+        //tonemapMode: SceneEnvironment.TonemapModeAces
         clearColor: "#cccccc"
     }
 
@@ -1209,7 +1211,7 @@ Item {
     Connections {
         target: lightBrightness
         function onValueChanged() {
-            lightSpawner.brightness = lightBrightness.value
+            lightSpawner.brightness = lightBrightness.value * 2.0
         }
     }
 
@@ -1742,10 +1744,10 @@ Item {
                         : "qrc:/../lightprobe/DemoModeIBL_small.hdr"
                 if (benchmarkRoot.aoEnabled) {
                     lightSpawner.brightness = 3.5;
-                    sceneEnvironmentIBL.probeExposure = 2;
+                    sceneEnvironmentIBL.probeExposure = 1.5;//2;
                 } else {
-                    lightSpawner.brightness = 2.5;
-                    sceneEnvironmentIBL.probeExposure = 1.25;
+                    lightSpawner.brightness = 3.5;//2.5;
+                    sceneEnvironmentIBL.probeExposure = 1;//1.25;
                 }
                 lightSpawner.demomode = true;
                 modelSpawner.demomode = true;
@@ -1780,11 +1782,15 @@ Item {
                 swipeView.visible = false
                 // Enable some select effects
                 effectInstanceDepthOfFieldHQBlur.focusDistance = 10;
-                effectInstanceDepthOfFieldHQBlur.blurAmount = 4;
+                effectInstanceDepthOfFieldHQBlur.blurAmount = 3;
                 effectInstanceDepthOfFieldHQBlur.focusRange = 7.5;
                 effectList.push(effectInstanceDepthOfFieldHQBlur)
+                effectInstanceHDRBloomTonemap.bloomThreshold = 0.95;
+//                effectInstanceHDRBloomTonemap.blurFalloff = 10;
                 effectList.push(effectInstanceHDRBloomTonemap)
                 view3D.environment.effects = effectList
+                // Set tonemapMode
+                view3D.environment.tonemapMode = SceneEnvironment.TonemapModeAces
                 // Camera startup position
                 camera.position = Qt.vector3d(-32.3353, 21.3145, -16.3025);
                 camera.eulerRotation = Qt.vector3d(-90 + 63.5292, -114.546, 0.000302634);
