@@ -336,6 +336,23 @@ Supported arguments:
             if (parser.modeBenchmark) {
                 // Benchmark mode
                 console.log("Benchmark Mode");
+
+                // Use these overrides to get specific renderdoc readings easily
+                /*
+                benchmarkRoot.shadowsEnabled = false;
+                benchmarkRoot.iblEnabled = true;
+                benchmarkRoot.aoEnabled = false;
+                benchmarkRoot.skyboxEnabled = true;
+                benchmarkRoot.texturesEnabled = true;
+                benchmarkRoot.textureSizeIndex = 2;
+                benchmarkRoot.msaaQualityIndex = 0;
+                benchmarkRoot.modelIndex = 2;
+                benchmarkRoot.modelInstanceCount = 1;
+                benchmarkRoot.lightTypeIndex = 0;
+                benchmarkRoot.lightInstanceCount = 1;
+                benchmarkRoot.materialIndex = 6;
+                */
+
                 parser.quitAfter = true;
                 // If any automatic benchmark modes have been activated, reset the defaults accordingly
                 if (parser.autoModel)

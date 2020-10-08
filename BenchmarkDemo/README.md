@@ -52,10 +52,8 @@ Using simplified asset set
 In case you want to run a strictly simplified version of the application, you will need to take the assets-simple.qrc resource file into use instead of using the default assets.qrc resource file.
 You can do that by changing the comments in BenchmarkDemo.pro as follows:
 ```
-    RESOURCES += qml.qrc \
-        #BenchmarkUI/assets/assets.qrc \
-        BenchmarkUI/assets-simple/assets-simple.qrc \ # Use these if you want to benchmark with very simple one-mesh models
-        $$files(BenchmarkUI/*.qml)
+# Define this if you want to benchmark with very simple one-mesh models
+CONFIG += SIMPLE_ASSET_MODE
 ```
 With the simple asset set each model contains exactly one mesh, and the triangle count is almost exactly what is shown in the UI. The difference in triangle count is between +1.2% (for the 1k model), and -0.2% (for the 10k model). For the larger models triangle count is so close it does not really matter at all.
 

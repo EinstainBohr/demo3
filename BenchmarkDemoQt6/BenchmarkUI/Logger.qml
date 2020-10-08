@@ -9,6 +9,7 @@ Item {
     signal measurementDone
 
     property bool androidMode: false
+    property bool reportModelStats: true
     property bool singleReportMode: false
 
     property View3D source
@@ -125,6 +126,68 @@ Item {
             measurementLog += "\nMaximum Sync Time: " + maxSyncTime;
             for (var i = 0; i < config.length; ++i)
                 measurementLog += "\n" + config[i];
+            if (reportModelStats) {
+                measurementLog += "\nModel statistics:\n";
+                var drawCalls = 0;
+                var shadowDrawCalls = 0;
+                var aoDrawCalls = 0;
+                var skyboxDrawCalls = 0;
+                switch (benchmarkRoot.modelIndex) {
+                case 0:
+                    measurementLog += "-Model consists of 3 separate meshes of 336 triangles each.\n";
+                    measurementLog += "-There is one material used by all meshes.\n";
+                    drawCalls = benchmarkRoot.modelInstanceCount * 3;
+                    measurementLog += "-This results in 3 separate draw calls per model, i.e. "
+                            + drawCalls + " draw calls per frame.\n";
+                    break;
+                case 1:
+                    measurementLog += "-Model consists of 5 separate meshes. One has 21196 triangles and the rest 3792 triangles each.\n";
+                    measurementLog += "-There is one material used by all meshes.\n";
+                    drawCalls = benchmarkRoot.modelInstanceCount * 5;
+                    measurementLog += "-This results in 5 separate draw calls per model, i.e. "
+                            + drawCalls + " draw calls per frame.\n";
+                    break;
+                case 2:
+                    measurementLog += "-Model consists of 5 separate meshes. One has 81734 triangles and the rest 1600 triangles each.\n";
+                    measurementLog += "-There are 10 materials used by one mesh and 1 used by the rest.\n";
+                    drawCalls = benchmarkRoot.modelInstanceCount * 14;
+                    measurementLog += "-This results in 14 separate draw calls per model, i.e. "
+                            + drawCalls + " draw calls per frame.\n";
+                    break;
+                case 3:
+                    measurementLog += "-Model consists of 5 separate meshes. One has 154397 triangles and the rest 1600 triangles each.\n";
+                    measurementLog += "-There are 10 materials used by one mesh and 1 used by the rest.\n";
+                    drawCalls = benchmarkRoot.modelInstanceCount * 14;
+                    measurementLog += "-This results in 14 separate draw calls per model, i.e. "
+                            + drawCalls + " draw calls per frame.\n";
+                    break;
+                case 4:
+                    measurementLog += "-Model consists of 5 separate meshes. One has 879892 triangles and the rest 1600 triangles each.\n";
+                    measurementLog += "-There are 10 materials used by one mesh and 1 used by the rest.\n";
+                    drawCalls = benchmarkRoot.modelInstanceCount * 14;
+                    measurementLog += "-This results in 14 separate draw calls per model, i.e. "
+                            + drawCalls + " draw calls per frame.\n";
+                    break;
+                }
+                if (benchmarkRoot.skyboxEnabled && benchmarkRoot.iblEnabled) {
+                    skyboxDrawCalls = 1;
+                    measurementLog += "-Taking skybox into account there are "
+                            + (drawCalls + skyboxDrawCalls)
+                            + " draw calls per frame.\n";
+                }
+                if (benchmarkRoot.shadowsEnabled) {
+                    shadowDrawCalls = benchmarkRoot.lightTypeIndex === 0 ? drawCalls : 6 * drawCalls;
+                    measurementLog += "-Taking shadows into account there are "
+                            + (drawCalls + skyboxDrawCalls + shadowDrawCalls)
+                            + " draw calls per frame.\n";
+                }
+                if (benchmarkRoot.aoEnabled) {
+                    aoDrawCalls = drawCalls;
+                    measurementLog += "-Taking ambient occlusion into account there are "
+                            + (drawCalls + skyboxDrawCalls + shadowDrawCalls + aoDrawCalls)
+                            + " draw calls per frame, " + aoDrawCalls + " being depth-only.\n";
+                }
+            }
             if (singleReportMode)
                 measurementLog += "\n\n";
 

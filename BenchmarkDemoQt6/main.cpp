@@ -23,6 +23,11 @@ int main(int argc, char *argv[])
 #else
     engine->rootContext()->setContextProperty("android", false);
 #endif
+#ifdef SIMPLE_ASSETS
+    engine->rootContext()->setContextProperty("complex_models", false);
+#else
+    engine->rootContext()->setContextProperty("complex_models", true);
+#endif
     view.setSource(QUrl("qrc:/BenchmarkUI/BenchmarkUI.qml"));
 
     view.setWidth(1920);

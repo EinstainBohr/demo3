@@ -12,6 +12,7 @@ Item {
     visible: false
 
     property alias androidMode: commands.androidMode
+    property alias reportModelComplexity: logger.reportModelStats
 
     property var effectList: []
     property string baseColorImage: "qrc:/maps/" + textureSize + "/basecolor.jpg"
@@ -389,11 +390,19 @@ Item {
                     anchors.leftMargin: 0
                     anchors.right: parent.right
                     anchors.rightMargin: 0
-                    displayText: "Model: " + model[currentIndex]
+                    displayText: (reportModelComplexity ? "Model: " : "Mesh: ") + model[currentIndex]
                     currentIndex: 3
                     textRole: "Model"
-                    model: [qsTr("Very Low (1k)"), qsTr("Low (10k)"), qsTr("Medium (50k)"),
-                        qsTr("High (100k)"), qsTr("Very High (500k)")]
+                    model: reportModelComplexity ? [qsTr("Very Low (1k): 3 x 0.3 / 1 material"),
+                                                    qsTr("Low (~36k): 1 x 21k + 4 x 3.8k / 1 material"),
+                                                    qsTr("Medium (~88k): 1 x 82k + 4 x 1.6k / 10 materials"),
+                                                    qsTr("High (~160k): 1 x 154k + 4 x 1.6k / 10 materials"),
+                                                    qsTr("Very High (~886k): 1 x 880k + 4 x 1.6k / 10 materials")]
+                                                 : [qsTr("Very Low (1k)"),
+                                                    qsTr("Low (10k)"),
+                                                    qsTr("Medium (50k)"),
+                                                    qsTr("High (100k)"),
+                                                    qsTr("Very High (500k)")]
 
                     delegate: ItemDelegate {
                         id: modelDelegate
@@ -1609,7 +1618,8 @@ Item {
                     && !commands.scriptModeEnabled
             logger.enabled = true
             logger.config = [// Model
-                             "Model: " + modelCB.currentValue + " (#" + modelCount.text + ")",
+                             (reportModelComplexity ? "Model: " : "Mesh: ") + modelCB.currentValue
+                             + " (#" + modelCount.text + ")",
                              // Light
                              "Light Type: " + lightTypeCB.currentValue + " [brightness "
                              + lightBrightnessNumber.text + "] (#" + lightCountNumber.text + ")",

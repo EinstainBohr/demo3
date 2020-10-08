@@ -5,6 +5,7 @@ Item {
 
     DemoScene {
         androidMode: android
+        reportModelComplexity: complex_models
     }
 }
 
