@@ -1738,8 +1738,10 @@ Item {
                 view3D.environment.effects = effectList;
             }
 
-            if (commands.modeBenchmark)
+            if (commands.modeBenchmark) {
                 logger.singleReportMode = commands.reportSingle;
+                logger.settingsString = commands.commandlineArgumentsString;
+            }
 
             // Force changing the env once to enable all state changed (bit unclear why this is needed, though)
             view3D.environment = sceneEnvironmentIBL;

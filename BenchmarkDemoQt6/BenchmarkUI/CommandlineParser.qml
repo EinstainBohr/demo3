@@ -40,6 +40,7 @@ Item {
 
     // Other parameters to be read from the outside
     property bool quitAfter: false
+    property string commandlineArgumentsString: ""
 
     signal parsingDone
     signal startBenchmark
@@ -97,6 +98,7 @@ Item {
                 for (var i = 1; i < commandLineArguments.length; i += 2) {
                     switch (commandLineArguments[i]) {
                     case "--preset":
+                        commandlineArgumentsString += commandLineArguments[i + 1] + "_";
                         parser.presetMidrange = false;
                         switch (commandLineArguments[i + 1]) {
                         case "entrylevel":
@@ -114,6 +116,7 @@ Item {
                         break;
                     case "--target":
                         parser.targetDesktop = false;
+                        commandlineArgumentsString += commandLineArguments[i + 1] + "_";
                         switch (commandLineArguments[i + 1]) {
                         case "embedded":
                             parser.targetEmbedded = true;
@@ -161,6 +164,7 @@ Item {
                         break;
                     case "--automatic":
                         autoModeEnabled = true;
+                        commandlineArgumentsString += commandLineArguments[i + 1] + "_";
                         switch (commandLineArguments[i + 1]) {
                         case "model":
                             parser.autoModel = true;

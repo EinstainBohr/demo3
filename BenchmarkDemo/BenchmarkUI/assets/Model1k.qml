@@ -28,7 +28,7 @@ Node {
         y: 0.510341
         z: -1.45991
         eulerRotation.x: -180
-        eulerRotation.z: rootNode.gearRotation
+        eulerRotation.z: rootNode.gearRotation + 25
         source: "meshes/gear.mesh"
 
         materials: [

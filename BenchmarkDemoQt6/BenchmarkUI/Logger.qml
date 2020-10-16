@@ -46,16 +46,22 @@ Item {
     // script file name in case of script testing
     property string scriptName: ""
 
+    // additional report name string
+    property string settingsString: ""
+
     function start(view) {
         var date = new Date().toLocaleDateString(Qt.locale("en_EN"), "yyyy-MM-dd-");
         var time = new Date().toLocaleTimeString(Qt.locale("en_EN"), "hh-mm-ss");
         if (!singleReportMode) {
             logUrl = "file:./benchmark_result_" + date + time + ".txt";
         } else if (singleReportMode && logUrl.length === 0) {
-            if (scriptName.length > 0)
+            if (scriptName.length > 0) {
                 logUrl = "file:./" + scriptName + "_" + date + time + ".txt";
-            else
-                logUrl = "file:./" + "benchmark_result_automatic_" + date + time + ".txt";
+            } else {
+                logUrl = "file:./" + "benchmark_result_automatic_"
+                        + settingsString
+                        + date + time + ".txt";
+            }
         }
         source = view;
         measureTimer.start();
