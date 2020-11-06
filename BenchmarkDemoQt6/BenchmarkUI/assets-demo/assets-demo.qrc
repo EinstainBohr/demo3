@@ -21,5 +21,29 @@
         <file>../lightprobe/DemoModeIBL.hdr</file>
         <file>../lightprobe/DemoModeIBL_small.hdr</file>
         <file>FlyingSmallShip.qml</file>
+        <file>maps/cockpitInterior/finalcockpit_Albedo.png</file>
+        <file>maps/cockpitInterior/finalcockpit_Metalness.png</file>
+        <file>maps/cockpitInterior/finalcockpit_Normal.png</file>
+        <file>maps/cockpitInterior/finalcockpit_Roughness.png</file>
+        <file>maps/gauge/gauge_Albedo_rpm0.png</file>
+        <file>maps/gauge/gauge_Metalness.png</file>
+        <file>maps/gauge/gauge_Normal.png</file>
+        <file>maps/gauge/gauge_Roughness.png</file>
+        <file>maps/gaugecombo/Multigauges_Albedo.png</file>
+        <file>maps/gaugecombo/Multigauges_Metalness.png</file>
+        <file>maps/gaugecombo/Multigauges_Normal.png</file>
+        <file>maps/gaugecombo/Multigauges_Roughness.png</file>
+        <file>meshes/base.mesh</file>
+        <file>meshes/bigGauge.mesh</file>
+        <file>meshes/compassBall.mesh</file>
+        <file>meshes/gauge1.mesh</file>
+        <file>meshes/gaugeNeedle0.mesh</file>
+        <file>meshes/smallGaugeneedle1.mesh</file>
+        <file>meshes/switch.mesh</file>
+        <file>meshes/switchbase.mesh</file>
+        <file>CockpitAll.qml</file>
+        <file>meshes/windows.mesh</file>
+        <file>maps/cockpitInterior/windows.png</file>
+        <file>maps/cockpitInterior/windows_Normal.png</file>
     </qresource>
 </RCC>

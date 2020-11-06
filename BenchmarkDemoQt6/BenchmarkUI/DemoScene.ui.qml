@@ -163,6 +163,7 @@ Item {
             source: normalImage
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -268,6 +269,19 @@ Item {
                 z: 600
                 clipFar: 1200
                 clipNear: 1
+
+                // Cockpit needs to be a child of the camera to make the scene alive
+                MeshSpawner {
+                    id: demoCockpitLoader
+                    demomode: true
+                    // Add a little animated rotation and position change
+                    property real positionVariation: (camera.eulerRotation.z + 15) / 10
+                    property real xRotationVariation: -camera.eulerRotation.z / 2.5
+                    property real zRotationVariation: camera.eulerRotation.z / 22.5
+                    position: Qt.vector3d(0, -15 - zRotationVariation, -30 + positionVariation)
+                    eulerRotation: Qt.vector3d(xRotationVariation, 0, zRotationVariation)
+                    visible: false
+                }
             }
 
             MeshSpawner {
@@ -394,9 +408,9 @@ Item {
                     currentIndex: 3
                     textRole: "Model"
                     model: reportModelComplexity ? [qsTr("Very Low (1k): 3 x 0.3 / 1 material"),
-                                                    qsTr("Low (~36k): 1 x 21k + 4 x 3.8k / 1 material"),
-                                                    qsTr("Medium (~88k): 1 x 82k + 4 x 1.6k / 10 materials"),
-                                                    qsTr("High (~160k): 1 x 154k + 4 x 1.6k / 10 materials"),
+                                                    qsTr("Low (~28k): 1 x 21k + 4 x 1.6k / 2 materials"),
+                                                    qsTr("Medium (~57k): 1 x 51k + 4 x 1.6k / 10 materials"),
+                                                    qsTr("High (~117k): 1 x 110k + 4 x 1.6k / 10 materials"),
                                                     qsTr("Very High (~886k): 1 x 880k + 4 x 1.6k / 10 materials")]
                                                  : [qsTr("Very Low (1k)"),
                                                     qsTr("Low (10k)"),
@@ -1762,6 +1776,7 @@ Item {
                     sceneEnvironmentIBL.probeExposure = 1;//1.25;
                 }
                 lightSpawner.demomode = true;
+                lightSpawner.cockpitmode = commands.cockpitScene;
                 modelSpawner.demomode = true;
                 demoContentLoader.demomode = true;
                 demoContentLoader.instanceCount = 1;
@@ -1786,29 +1801,64 @@ Item {
                 measureButton.onClicked() // In script mode, do this after script has been parsed
             } else if (commands.modeDemo) {
                 // Demo mode
-                modelSpawner.model = "qrc:/DemoCity.qml";
-                demoContentLoader.visible = true;
-                demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
+
+                // Hide controls
                 measureButton.visible = false
                 debugView.visible = false
                 swipeView.visible = false
-                // Enable some select effects
-                effectInstanceDepthOfFieldHQBlur.focusDistance = 10;
-                effectInstanceDepthOfFieldHQBlur.blurAmount = 3;
-                effectInstanceDepthOfFieldHQBlur.focusRange = 7.5;
-                effectList.push(effectInstanceDepthOfFieldHQBlur)
-                effectInstanceHDRBloomTonemap.bloomThreshold = 0.95;
-//                effectInstanceHDRBloomTonemap.blurFalloff = 10;
-                effectList.push(effectInstanceHDRBloomTonemap)
-                view3D.environment.effects = effectList
-                // Set tonemapMode
-                view3D.environment.tonemapMode = SceneEnvironment.TonemapModeAces
-                // Camera startup position
-                camera.position = Qt.vector3d(-32.3353, 21.3145, -16.3025);
-                camera.eulerRotation = Qt.vector3d(-90 + 63.5292, -114.546, 0.000302634);
-                camera.clipFar = 170;
-                camera.clipNear = 0.1;
-                camera.fieldOfView = 50;
+
+                // Cockpit scene or fly-though scene
+                if (!commands.cockpitScene) {
+                    // City
+                    modelSpawner.model = "qrc:/DemoCity.qml";
+                    // Flying small vessel
+                    demoContentLoader.visible = true;
+                    demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
+                    // Enable some select effects
+                    effectInstanceDepthOfFieldHQBlur.focusDistance = 10;
+                    effectInstanceDepthOfFieldHQBlur.blurAmount = 3;
+                    effectInstanceDepthOfFieldHQBlur.focusRange = 7.5;
+                    effectList.push(effectInstanceDepthOfFieldHQBlur)
+                    effectInstanceHDRBloomTonemap.bloomThreshold = 0.95;
+                    //effectInstanceHDRBloomTonemap.blurFalloff = 10;
+                    effectList.push(effectInstanceHDRBloomTonemap)
+                    view3D.environment.effects = effectList
+                    // Set tonemapMode
+                    view3D.environment.tonemapMode = SceneEnvironment.TonemapModeAces
+                    // Camera startup position
+                    camera.position = Qt.vector3d(-32.3353, 21.3145, -16.3025);
+                    camera.eulerRotation = Qt.vector3d(-90 + 63.5292, -114.546, 0.000302634);
+                    camera.clipFar = 170;
+                    camera.clipNear = 0.1;
+                    camera.fieldOfView = 50;
+                } else {
+                    // Populate the skies
+                    modelSpawner.demomode = false;
+                    modelSpawner.minRange = 50;
+                    modelSpawner.instanceCount = 20;
+                    modelSpawner.instanceScale = 1;
+                    modelSpawner.model = "qrc:/Model10k.qml";
+                    // Cockpit
+                    demoCockpitLoader.model = "qrc:/CockpitAll.qml";
+                    demoCockpitLoader.visible = true;
+                    // Individual flying vessel
+                    demoContentLoader.visible = true;
+                    demoContentLoader.demomode = true;
+                    demoContentLoader.x = 0;
+                    demoContentLoader.y = -20;
+                    demoContentLoader.z = -0.5;
+                    demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
+                    // Enable some select effects
+                    effectInstanceVignette.vignetteColor = Qt.vector3d(0.5, 0.5, 0);
+                    effectInstanceVignette.vignetteRadius = 0.1;
+                    effectList.push(effectInstanceVignette);
+                    view3D.environment.effects = effectList;
+                    // Camera settings
+                    camera.clipFar = 1000;
+                    camera.clipNear = 0.1;
+                    camera.fieldOfView = 45;
+                    camera.frustumCullingEnabled = true;
+                }
             }
         }
 

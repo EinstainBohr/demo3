@@ -8,9 +8,9 @@ Node {
     y: 0.371851
     z: -0.329138
     eulerRotation.y: 90
-    scale.x: 0.25
-    scale.y: 0.25
-    scale.z: 0.25
+    scale.x: commands.cockpitScene ? 1 : 0.25
+    scale.y: commands.cockpitScene ? 1 : 0.25
+    scale.z: commands.cockpitScene ? 1 : 0.25
 
     Model10k {
     }
@@ -6032,6 +6032,14 @@ Node {
             Keyframe {
                 frame: 20708.3
                 value: Qt.vector3d(-0.451877, 179.818, 6.6329)
+            }
+            Keyframe {
+                frame: 20725
+                value: Qt.vector3d(-0.476619, 180, 6.63133)
+            }
+            Keyframe {
+                frame: 20725.1
+                value: Qt.vector3d(-0.476619, -180, 6.63133)
             }
             Keyframe {
                 frame: 20750

@@ -9,6 +9,7 @@ Node {
     property var instancePosition: Qt.vector3d(0, 0, 0)
     property real brightness: 2.5
     property bool demomode: false
+    property bool cockpitmode: false
 
     DirectionalLight {
         visible: lightType === 0
@@ -33,8 +34,9 @@ Node {
         position: lightInstance.instancePosition
         eulerRotation: lightInstance.instanceRotation
         castsShadow: shadowsEnabled
-        shadowMapFar: demomode ? 170 : 1500
-        shadowMapQuality: Light.ShadowMapQualityHigh
+        shadowMapFar: demomode ? (cockpitmode ? 75 : 170) : 1500
+        shadowMapQuality: cockpitmode ? Light.ShadowMapQualityVeryHigh
+                                      : Light.ShadowMapQualityHigh
         shadowFactor: 100
         shadowFilter: 4
         shadowBias: 0.005

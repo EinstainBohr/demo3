@@ -23,6 +23,9 @@ Item {
     // Speed
     property int demoSpeed: 120000
 
+    // Scene
+    property bool cockpitScene: false
+
     // Automatic benchmark modes
     property bool autoModeEnabled: false
     property bool autoModel: false
@@ -67,6 +70,8 @@ Item {
     //              Target is 'desktop' by default.
     // --speed      Only used in demo mode. Determines the speed at which the animation loop is run.
     //              Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
+    // --scene      Demo mode scene. Can be one of: [ flythrough, cockpit ].
+    //              Preset is 'flythrough' by default.
     // --automatic  Only used in benchmark mode. Defines a set of benchmarks to be run one after
     //              another.
     //              Can be one of: [ model, modelcount, light, lightcount, texture ].
@@ -157,6 +162,18 @@ Item {
                             break;
                         case "veryfast":
                             parser.demoSpeed = 30000;
+                            break;
+                        default:
+                            printHelpAndQuit();
+                        }
+                        break;
+                    case "--scene":
+                        switch (commandLineArguments[i + 1]) {
+                        case "flythrough":
+                            parser.cockpitScene = false;
+                            break;
+                        case "cockpit":
+                            parser.cockpitScene = true;
                             break;
                         default:
                             printHelpAndQuit();

@@ -11,6 +11,7 @@ Node {
     property real brightness: 2.5
     property bool shadowsEnabled: false
     property bool demomode: false
+    property bool cockpitmode: false
 
     function remove(clearAll) {
         var endCount = clearAll ? 0 : instanceCount;
@@ -30,7 +31,8 @@ Node {
                         "lightType": lightSpawner.lightType,
                         "brightness": lightSpawner.brightness,
                         "shadowsEnabled": lightSpawner.shadowsEnabled,
-                        "demomode": true });
+                        "demomode": true,
+                        "cockpitmode": cockpitmode });
             instances.push(instance);
         } else {
             for (var i = instances.length; i < instanceCount; ++i) {
@@ -51,7 +53,8 @@ Node {
                             "lightType": lightSpawner.lightType,
                             "brightness": lightSpawner.brightness,
                             "shadowsEnabled": lightSpawner.shadowsEnabled,
-                            "demomode": false });
+                            "demomode": false,
+                            "cockpitmode": false });
                 instances.push(instance);
             }
         }

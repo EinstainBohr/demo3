@@ -23,6 +23,7 @@ Node {
             source: "maps/" + textureSize + "/House_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -40,6 +41,7 @@ Node {
             source: "maps/" + textureSize + "/Propeller_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -57,6 +59,7 @@ Node {
             source: "maps/" + textureSize + "/Power_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -74,6 +77,7 @@ Node {
             source: "maps/" + textureSize + "/Electric_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -91,6 +95,7 @@ Node {
             source: "maps/" + textureSize + "/Parts_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -108,6 +113,7 @@ Node {
             source: "maps/" + textureSize + "/Cockpit_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -125,6 +131,7 @@ Node {
             source: "maps/" + textureSize + "/Gyro_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -142,6 +149,7 @@ Node {
             source: "maps/" + textureSize + "/Engine_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -159,6 +167,7 @@ Node {
             source: "maps/" + textureSize + "/StreetBase_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
     PrincipledMaterial {
@@ -176,6 +185,7 @@ Node {
             source: "maps/" + textureSize + "/Frame_Roughness.png"
         }
         roughness: 1.0
+        metalness: 1.0
     }
 
 

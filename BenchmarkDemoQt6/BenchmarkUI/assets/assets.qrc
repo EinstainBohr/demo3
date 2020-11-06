@@ -185,7 +185,6 @@
         <file>Model10k.qml</file>
         <file>meshes/gear.mesh</file>
         <file>meshes/ship10.mesh</file>
-        <file>meshes/propeller_ship.mesh</file>
         <file>maps/1024x1024/Cockpit_Metalness.png</file>
         <file>maps/1024x1024/Electric_Metalness.png</file>
         <file>maps/1024x1024/Engine_Metalness.png</file>
@@ -236,7 +235,6 @@
         <file>maps/4096x4096/Propeller_Metalness.png</file>
         <file>maps/4096x4096/SmallMachine_Albedo.png</file>
         <file>maps/4096x4096/SmallMachine_Metalness.png</file>
-        <file>maps/4096x4096/SmallMachine_Roughness-min.png</file>
         <file>maps/4096x4096/StreetBase_Metalness.png</file>
         <file>maps/512x512/Cockpit_Metalness.png</file>
         <file>maps/512x512/Electric_Metalness.png</file>
@@ -252,5 +250,6 @@
         <file>maps/512x512/SmallMachine_Roughness.png</file>
         <file>maps/512x512/StreetBase_Metalness.png</file>
         <file>maps/512x512/Electric_Albedo.png</file>
+        <file>maps/4096x4096/SmallMachine_Roughness.png</file>
     </qresource>
 </RCC>

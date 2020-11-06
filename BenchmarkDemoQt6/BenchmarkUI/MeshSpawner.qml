@@ -20,6 +20,7 @@ Node {
                                      ? 30 : instanceCount === 1
                                        ? 100 : 40;
     property real range: 200
+    property real minRange: 0
 
     function remove(clearAll) {
         var endCount = clearAll ? 0 : instanceCount;
@@ -39,11 +40,20 @@ Node {
                 instances.push(instance);
             } else {
                 var xPos = (instanceCount > 1 && randomize)
-                        ? 2 * ((2 * Math.random() * range) - range) : 0;
-                var yPos = (instanceCount > 1 && randomize) ? (2 * Math.random() * range) - range
-                                                            : demomode ? 0 : -150;
-                var zPos = (instanceCount > 1 && randomize) ? (2 * Math.random() * range) - range
-                                                            : 0;
+                        ? 2 * ((2 * Math.random() * range) - range)
+                        : 0;
+                var yPos = (instanceCount > 1 && randomize)
+                        ? (2 * Math.random() * range) - range
+                        : -150;
+                var zPos = (instanceCount > 1 && randomize)
+                        ? (2 * Math.random() * range) - range
+                        : 0;
+
+                if (Math.abs(xPos) < minRange)
+                    xPos += (xPos > 0 ? minRange : -minRange);
+                if (Math.abs(zPos) < minRange)
+                    zPos += (zPos > 0 ? minRange : -minRange);
+
                 let instance = meshComponent.createObject(
                         shapeSpawner, { "x": xPos, "y": yPos, "z": zPos,
                             "scale": Qt.vector3d(instanceScale, instanceScale, instanceScale),
