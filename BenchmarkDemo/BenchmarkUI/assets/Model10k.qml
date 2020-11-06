@@ -11,13 +11,13 @@ Node {
         smallMachine.materials = useExternalMaterial
                 ? [ materials ] : [ smallMachine_material ]
         propeller1.materials = useExternalMaterial
-                ? [ materials ] : [ smallMachine_material ]
+                ? [ materials ] : [ propeller_material ]
         propeller2.materials = useExternalMaterial
-                ? [ materials ] : [ smallMachine_material ]
+                ? [ materials ] : [ propeller_material ]
         propeller3.materials = useExternalMaterial
-                ? [ materials ] : [ smallMachine_material ]
+                ? [ materials ] : [ propeller_material ]
         propeller4.materials = useExternalMaterial
-                ? [ materials ] : [ smallMachine_material ]
+                ? [ materials ] : [ propeller_material ]
     }
 
     PrincipledMaterial {
@@ -33,6 +33,14 @@ Node {
         }
         metalness: 0.2
         specularAmount: 0.25
+    }
+
+    PrincipledMaterial {
+        id: propeller_material
+        baseColor: "#b87333"
+        metalness: 0.8
+        roughness: 0.1
+        specularAmount: 1.0
     }
 
     Model {
@@ -53,53 +61,57 @@ Node {
 
         Model {
             id: propeller4
+            scale: Qt.vector3d(0.75, 0.75, 0.75)
             x: -6.00498
             y: 6.00003
             z: -5.01082
             eulerRotation.y: -rootNode_1.propellerRotation
             eulerRotation.x: 90
-            source: "meshes/propeller_ship.mesh"
+            source: "meshes/propeller.mesh"
             materials: [
-                smallMachine_material
+                propeller_material
             ]
         }
 
         Model {
             id: propeller3
+            scale: Qt.vector3d(0.75, 0.75, 0.75)
             x: 5.98832
             y: 6.00002
             z: -4.99438
             eulerRotation.y: rootNode_1.propellerRotation
             eulerRotation.x: 90
-            source: "meshes/propeller_ship.mesh"
+            source: "meshes/propeller.mesh"
             materials: [
-                smallMachine_material
+                propeller_material
             ]
         }
 
         Model {
             id: propeller2
+            scale: Qt.vector3d(0.75, 0.75, 0.75)
             x: 6.00662
             y: 6.00002
             z: 5.0125
             eulerRotation.y: -rootNode_1.propellerRotation
             eulerRotation.x: 90
-            source: "meshes/propeller_ship.mesh"
+            source: "meshes/propeller.mesh"
             materials: [
-                smallMachine_material
+                propeller_material
             ]
         }
 
         Model {
             id: propeller1
+            scale: Qt.vector3d(0.75, 0.75, 0.75)
             x: -6.01134
             y: 6.00002
             z: 5.00359
             eulerRotation.y: rootNode_1.propellerRotation
             eulerRotation.x: 90
-            source: "meshes/propeller_ship.mesh"
+            source: "meshes/propeller.mesh"
             materials: [
-                smallMachine_material
+                propeller_material
             ]
         }
 

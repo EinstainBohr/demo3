@@ -20,15 +20,15 @@ Node {
                    materials,
                    materials ]
                 : [ house_material,
-                   propeller_material,
                    power_material,
-                   electric_material,
                    parts_material,
                    cockpit_material,
                    gyro_material,
+                   propeller_material,
                    engine_material,
                    base_material,
-                   frame_material ]
+                   frame_material,
+                   electric_material ]
         propeller1.materials = useExternalMaterial
                 ? [ materials ] : [ propeller_material ]
         propeller2.materials = useExternalMaterial
@@ -222,15 +222,15 @@ Node {
 
         materials: [
             house_material,
-            propeller_material,
             power_material,
-            electric_material,
             parts_material,
             cockpit_material,
             gyro_material,
+            propeller_material,
             engine_material,
             base_material,
-            frame_material
+            frame_material,
+            electric_material
         ]
     }
 
