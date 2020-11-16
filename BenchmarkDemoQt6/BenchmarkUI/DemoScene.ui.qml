@@ -1834,7 +1834,7 @@ Item {
                 } else {
                     // Populate the skies
                     modelSpawner.demomode = false;
-                    modelSpawner.minRange = 50;
+                    modelSpawner.minRange = 20;
                     modelSpawner.instanceCount = 20;
                     modelSpawner.instanceScale = 1;
                     modelSpawner.model = "qrc:/Model10k.qml";
@@ -1885,7 +1885,7 @@ Item {
         ]
 
         KeyframeGroup {
-            target: camera
+            target: !commands.cockpitScene ? camera : null
             property: "position"
 
             Keyframe {
