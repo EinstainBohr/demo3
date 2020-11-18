@@ -45,5 +45,6 @@
         <file>meshes/windows.mesh</file>
         <file>maps/cockpitInterior/windows.png</file>
         <file>maps/cockpitInterior/windows_Normal.png</file>
+        <file>meshes/lamp.mesh</file>
     </qresource>
 </RCC>

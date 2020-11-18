@@ -1810,10 +1810,18 @@ Item {
                 // Cockpit scene or fly-though scene
                 if (!commands.cockpitScene) {
                     // City
+                    modelSpawner.demomode = true;
+                    modelSpawner.minRange = 0;
+                    modelSpawner.instanceCount = 1;
+                    modelSpawner.instanceScale = 100;
                     modelSpawner.model = "qrc:/DemoCity.qml";
+                    // Cockpit
+                    demoCockpitLoader.visible = false;
+                    demoCockpitLoader.model = "qrc:/Model1k.qml";
                     // Flying small vessel
                     demoContentLoader.visible = true;
                     demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
+                    demoContentLoader.position = Qt.vector3d(5, 0, 1.5);
                     // Enable some select effects
                     effectInstanceDepthOfFieldHQBlur.focusDistance = 10;
                     effectInstanceDepthOfFieldHQBlur.blurAmount = 3;
@@ -1831,6 +1839,7 @@ Item {
                     camera.clipFar = 170;
                     camera.clipNear = 0.1;
                     camera.fieldOfView = 50;
+                    camera.frustumCullingEnabled = true;
                 } else {
                     // Populate the skies
                     modelSpawner.demomode = false;
@@ -1839,14 +1848,13 @@ Item {
                     modelSpawner.instanceScale = 1;
                     modelSpawner.model = "qrc:/Model10k.qml";
                     // Cockpit
-                    demoCockpitLoader.model = "qrc:/CockpitAll.qml";
                     demoCockpitLoader.visible = true;
+                    demoCockpitLoader.model = "qrc:/CockpitAll.qml";
                     // Individual flying vessel
                     demoContentLoader.visible = true;
-                    demoContentLoader.demomode = true;
-                    demoContentLoader.x = 0;
-                    demoContentLoader.y = -20;
-                    demoContentLoader.z = -0.5;
+                    demoContentLoader.x = -20;
+                    demoContentLoader.y = -30;
+                    demoContentLoader.z = 0;
                     demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
                     // Enable some select effects
                     effectInstanceVignette.vignetteColor = Qt.vector3d(0.5, 0.5, 0);
@@ -1854,6 +1862,7 @@ Item {
                     effectList.push(effectInstanceVignette);
                     view3D.environment.effects = effectList;
                     // Camera settings
+                    camera.position = Qt.vector3d(0, 0, 0);
                     camera.clipFar = 1000;
                     camera.clipNear = 0.1;
                     camera.fieldOfView = 45;
@@ -1864,6 +1873,19 @@ Item {
 
         function onStartBenchmark() {
             logger.start(view3D)
+        }
+    }
+
+    // Handle demo scene change
+    Item {
+        anchors.fill: parent
+        enabled: commands.modeDemo
+        focus: commands.modeDemo
+        Keys.onSpacePressed: {
+            effectList = [];
+            commands.cockpitScene = !commands.cockpitScene;
+            commands.parsingDone();
+            modelSpawner.eulerRotation.y = 0;
         }
     }
 

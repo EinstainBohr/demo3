@@ -31,6 +31,8 @@ Supported arguments:
             Target is 'desktop' by default.
 --speed     Only used in demo mode. Determines the speed at which the animation loop is run.
             Can be one of: [ slow, normal, fast, veryfast ]. Speed is 'normal' by default.
+--scene     Demo mode scene. Can be one of: [ flythrough, cockpit ].
+            Preset is 'flythrough' by default.
 --automatic Only used in benchmark mode. Defines a set of benchmarks to be run one after
             another. Can be one of: [ model, modelcount, light, lightcount, texture ].
             model and modelcount can be specified at the same time
@@ -46,6 +48,10 @@ Supported arguments:
             'Single' style filename begins with the test script filename.
             Can be one of: [ single, multi ]. Report is 'single' by default.
 ```
+
+Keyboard input
+--------------
+Currently the only keyboard input supported is switching between cockpit scene and flythrough scene in the demo mode. You can toggle between these two by pressing the space bar.
 
 Using simplified asset set
 --------------------------

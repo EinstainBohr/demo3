@@ -108,6 +108,32 @@ Node {
         }
     }
 
+    PrincipledMaterial {
+        id: lamp_warn_material
+        metalness: 1.0
+        roughness: 0.3
+        opacity: 0.7
+        baseColor: "red"
+        emissiveColor: "red"
+    }
+
+    PrincipledMaterial {
+        id: lamp_ok_material
+        metalness: 1.0
+        roughness: 0.3
+        opacity: 0.7
+        baseColor: "green"
+        emissiveColor: "green"
+    }
+
+    PrincipledMaterial {
+        id: lamp_off_material
+        metalness: 1.0
+        roughness: 0.3
+        opacity: 0.2
+        baseColor: "gray"
+    }
+
     // Base
     Model {
         id: base
@@ -291,7 +317,7 @@ Node {
     Model {
         id: compassBall
         x: -3.91548
-        y: 6.4 //6.19417
+        y: 6.4
         z: 0.580916
         eulerRotation.x: camera.eulerRotation.z
         eulerRotation.y: -camera.eulerRotation.y
@@ -371,6 +397,61 @@ Node {
 
         materials: [
             window_material
+        ]
+    }
+
+    // Lamps
+    property bool leftWarn: ((gaugeNeedle_RearRightEngine.eulerRotation.y < -25)
+                             || (gaugeNeedle_RearLeftEngine.eulerRotation.y < -25)
+                             || (gaugeNeedle_FrontRightEngine.eulerRotation.y < -25)
+                             || (gaugeNeedle_FrontLeftEngine.eulerRotation.y < -25));
+    property bool rightWarn: Math.abs(smallGaugeneedle_Bank.eulerRotation.y) > 90;
+
+    Model {
+        id: lampLeft
+        x: 3.24831
+        y: 7.07789
+        z: -0.444125
+        eulerRotation.x: -63.2943
+        scale.x: 0.2
+        scale.z: 0.2
+        source: "meshes/lamp.mesh"
+
+        materials: [
+            leftWarn ? lamp_warn_material : lamp_off_material
+        ]
+    }
+
+    Model {
+        id: lampMiddle
+        x: 4.232
+        y: 7.07789
+        z: -0.444125
+        eulerRotation.x: -63.2943
+        scale.x: 0.2
+        scale.z: 0.2
+        source: "meshes/lamp.mesh"
+
+        materials: [
+            (leftWarn && rightWarn) ? lamp_warn_material
+                                    : ((!leftWarn && !rightWarn)
+                                       ? lamp_ok_material
+                                       : lamp_off_material)
+        ]
+    }
+
+    Model {
+        id: lampRight
+        x: 5.20684
+        y: 7.07789
+        z: -0.444125
+        eulerRotation.x: -63.2943
+        scale.x: 0.2
+        scale.z: 0.2
+        source: "meshes/lamp.mesh"
+
+        materials: [
+            rightWarn ? lamp_warn_material : lamp_off_material
         ]
     }
 }
