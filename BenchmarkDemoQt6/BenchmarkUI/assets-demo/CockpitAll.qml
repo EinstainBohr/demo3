@@ -134,6 +134,22 @@ Node {
         baseColor: "gray"
     }
 
+    PrincipledMaterial {
+        id: inactive_material
+        baseColor: "#3f3500"
+        metalness: 0.4
+        roughness: 0.2
+        specularAmount: 0.2
+    }
+
+    PrincipledMaterial {
+        id: active_material
+        baseColor: "#b87333"
+        metalness: 0.8
+        roughness: 0.1
+        specularAmount: 1.0
+    }
+
     // Base
     Model {
         id: base
@@ -254,6 +270,81 @@ Node {
                 gauge_material
             ]
         }
+    }
+
+    // RPM engine position indicators
+    Model {
+        id: enginePositionRearLeft
+        x: -5.38403
+        y: 11.3814
+        z: 0
+        eulerRotation.x: 0
+        eulerRotation.y: -90
+        eulerRotation.z: -75
+        scale.x: 0.05
+        scale.y: 0.2
+        scale.z: 0.05
+        source: "meshes/enginePosition.mesh"
+
+        materials: [
+            inactive_material,
+            active_material
+        ]
+    }
+
+    Model {
+        id: enginePositionFrontLeft
+        x: -3.18868
+        y: 11.3816
+        z: 0
+        eulerRotation.x: -105
+        eulerRotation.y: 0
+        eulerRotation.z: 180
+        scale.x: 0.05
+        scale.y: 0.2
+        scale.z: 0.05
+        source: "meshes/enginePosition.mesh"
+
+        materials: [
+            inactive_material,
+            active_material
+        ]
+    }
+
+    Model {
+        id: enginePositionFrontRight
+        x: 2.67745
+        y: 11.8639
+        z: 0
+        eulerRotation.x: 0
+        eulerRotation.y: 90
+        eulerRotation.z: 75
+        scale.x: 0.05
+        scale.y: 0.2
+        scale.z: 0.05
+        source: "meshes/enginePosition.mesh"
+
+        materials: [
+            inactive_material,
+            active_material
+        ]
+    }
+
+    Model {
+        id: enginePositionRearRight
+        x: 5.8893
+        y: 11.8632
+        z: 0
+        eulerRotation.x: 75
+        scale.x: 0.05
+        scale.y: 0.2
+        scale.z: 0.05
+        source: "meshes/enginePosition.mesh"
+
+        materials: [
+            inactive_material,
+            active_material
+        ]
     }
 
     // Small gauges; heading & bank
