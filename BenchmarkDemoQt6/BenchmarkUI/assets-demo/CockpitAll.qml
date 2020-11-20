@@ -6,7 +6,25 @@ Node {
     PrincipledMaterial {
         id: gaugecombo_material
         baseColorMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Albedo.png"
+            source: "maps/gaugecombo/MultigaugesHeading_Albedo.png"
+        }
+        normalMap: Texture {
+            source: "maps/gaugecombo/Multigauges_Normal.png"
+        }
+        metalnessMap: Texture {
+            source: "maps/gaugecombo/Multigauges_Metalness.png"
+        }
+        roughnessMap: Texture {
+            source: "maps/gaugecombo/Multigauges_Roughness.png"
+        }
+        roughness: 1.0
+        metalness: 1.0
+    }
+
+    PrincipledMaterial {
+        id: gaugecombo_bank_material
+        baseColorMap: Texture {
+            source: "maps/gaugecombo/MultigaugesBank_Albedo.png"
         }
         normalMap: Texture {
             source: "maps/gaugecombo/Multigauges_Normal.png"
@@ -52,44 +70,6 @@ Node {
         }
         roughnessMap: Texture {
             source: "maps/cockpitInterior/finalcockpit_Roughness.png"
-        }
-        roughness: 1.0
-        metalness: 1.0
-    }
-
-    PrincipledMaterial {
-        id: smallgauge_heading_material
-        baseColorMap: Texture {
-            // To be changed
-            source: "maps/gaugecombo/Multigauges_Albedo.png"
-        }
-        normalMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Normal.png"
-        }
-        metalnessMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Metalness.png"
-        }
-        roughnessMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Roughness.png"
-        }
-        roughness: 1.0
-        metalness: 1.0
-    }
-
-    PrincipledMaterial {
-        id: smallgauge_bank_material
-        baseColorMap: Texture {
-            // To be changed
-            source: "maps/gaugecombo/Multigauges_Albedo.png"
-        }
-        normalMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Normal.png"
-        }
-        metalnessMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Metalness.png"
-        }
-        roughnessMap: Texture {
-            source: "maps/gaugecombo/Multigauges_Roughness.png"
         }
         roughness: 1.0
         metalness: 1.0
@@ -356,7 +336,7 @@ Node {
         rotation: Qt.quaternion(0.971193, 0.238295, 0, 0)
         source: "meshes/gauge1.mesh"
         materials: [
-            smallgauge_heading_material
+            gaugecombo_material
         ]
     }
     Node {
@@ -383,7 +363,7 @@ Node {
         rotation: Qt.quaternion(0.971193, 0.238295, 0, 0)
         source: "meshes/gauge1.mesh"
         materials: [
-            smallgauge_bank_material
+            gaugecombo_bank_material
         ]
     }
     Node {
@@ -394,8 +374,11 @@ Node {
 
         Model {
             id: smallGaugeneedle_Bank
-            eulerRotation.y: -Math.max(Math.abs(camera.eulerRotation.x),
-                                       Math.abs(camera.eulerRotation.z)) * 4 // 90 degrees would give 360
+            // Limit the rotation between -90 and 90
+            property real maxMin: Math.abs(Math.min(camera.eulerRotation.x,
+                                                    camera.eulerRotation.z))
+            property real maxMax: Math.max(camera.eulerRotation.x, camera.eulerRotation.z)
+            eulerRotation.y: (maxMin > maxMax) ? -maxMin : maxMax
             source: "meshes/smallGaugeneedle1.mesh"
 
             materials: [
@@ -496,7 +479,7 @@ Node {
                              || (gaugeNeedle_RearLeftEngine.eulerRotation.y < -25)
                              || (gaugeNeedle_FrontRightEngine.eulerRotation.y < -25)
                              || (gaugeNeedle_FrontLeftEngine.eulerRotation.y < -25));
-    property bool rightWarn: Math.abs(smallGaugeneedle_Bank.eulerRotation.y) > 90;
+    property bool rightWarn: Math.abs(smallGaugeneedle_Bank.eulerRotation.y) > 40;
 
     Model {
         id: lampLeft

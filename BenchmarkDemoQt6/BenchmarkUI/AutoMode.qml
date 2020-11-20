@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick
 
 Item {
     property int currentModelIndex: benchmarkRoot.modelIndex

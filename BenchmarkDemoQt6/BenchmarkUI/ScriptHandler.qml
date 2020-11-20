@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import FileHelper 1.0
+import QtQuick
+import FileHelper
 
 Item {
     property url source: ""

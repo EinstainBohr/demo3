@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtQuick3D 1.15
+import QtQuick
+import QtQuick3D
 
 Node {
     id: lightSpawner

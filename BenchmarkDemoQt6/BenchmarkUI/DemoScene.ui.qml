@@ -1,10 +1,10 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick3D 1.15
-import QtQuick3D.Helpers 1.15
-import QtQuick3D.Effects 1.15
-import QtQuick.Layouts 1.3
-import QtQuick.Timeline 1.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick3D
+import QtQuick3D.Helpers
+import QtQuick3D.Effects
+import QtQuick.Layouts
+import QtQuick.Timeline
 
 Item {
     id: benchmarkRoot

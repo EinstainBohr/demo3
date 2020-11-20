@@ -29,7 +29,6 @@
         <file>maps/gauge/gauge_Metalness.png</file>
         <file>maps/gauge/gauge_Normal.png</file>
         <file>maps/gauge/gauge_Roughness.png</file>
-        <file>maps/gaugecombo/Multigauges_Albedo.png</file>
         <file>maps/gaugecombo/Multigauges_Metalness.png</file>
         <file>maps/gaugecombo/Multigauges_Normal.png</file>
         <file>maps/gaugecombo/Multigauges_Roughness.png</file>
@@ -47,5 +46,7 @@
         <file>maps/cockpitInterior/windows_Normal.png</file>
         <file>meshes/lamp.mesh</file>
         <file>meshes/enginePosition.mesh</file>
+        <file>maps/gaugecombo/MultigaugesBank_Albedo.png</file>
+        <file>maps/gaugecombo/MultigaugesHeading_Albedo.png</file>
     </qresource>
 </RCC>

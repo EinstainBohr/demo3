@@ -1,6 +1,6 @@
-import QtQuick3D 1.15
-import QtQuick 2.15
-import QtQuick.Timeline 1.0
+import QtQuick3D
+import QtQuick
+import QtQuick.Timeline
 
 Node {
     property string textureSize: "2048x2048"
