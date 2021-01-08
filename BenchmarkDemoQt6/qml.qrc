@@ -167,5 +167,6 @@
         <file>BenchmarkUI/lightprobe/IBL.hdr</file>
         <file>BenchmarkUI/AutoMode.qml</file>
         <file>BenchmarkUI/CommandlineParser.qml</file>
+        <file>BenchmarkUI/ScriptHandler.qml</file>
     </qresource>
 </RCC>

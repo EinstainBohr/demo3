@@ -1,9 +1,10 @@
-import QtQuick3D 1.15
-import QtQuick 2.15
+import QtQuick3D
+import QtQuick
 
 Node {
     id: rootNode
     property Material materials
+    property var instancing
     property bool useExternalMaterial: false
 
     DefaultMaterial {
@@ -20,6 +21,7 @@ Node {
     Model {
         id: model
         source: "meshes/1k.mesh"
+        instancing: rootNode.instancing
         materials: [ defaultMaterial ]
     }
 }

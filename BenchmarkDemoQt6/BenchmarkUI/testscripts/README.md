@@ -49,6 +49,7 @@ If a value is not set in the following test sets, it will remain at the value se
 |name|string|name of the test set|
 |modelIndex|integer|0: 1k model<br> 1: 10k model<br> 2: 50k model<br> 3: 100k model<br> 4: 500k model|
 |modelInstanceCount|integer|0...1000|
+|instancingEnabled|boolean|true<br>false|
 |lightTypeIndex|integer|0: Directional<br> 1: Spot<br> 2: Point<br> 3: Area|
 |lightInstanceCount|integer|0...7|
 |shadowsEnabled|boolean|true<br>false|

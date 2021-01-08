@@ -11,6 +11,7 @@ Item {
     property bool androidMode: false
     property bool reportModelStats: true
     property bool singleReportMode: false
+    property bool instancing: false
 
     property View3D source
     property var config: []
@@ -142,37 +143,62 @@ Item {
                 case 0:
                     measurementLog += "-Model consists of 3 separate meshes of 336 triangles each.\n";
                     measurementLog += "-There is one material used by all meshes.\n";
-                    drawCalls = benchmarkRoot.modelInstanceCount * 3;
+                    drawCalls = (instancing ? 1 : benchmarkRoot.modelInstanceCount) * 3;
                     measurementLog += "-This results in 3 separate draw calls per model, i.e. "
                             + drawCalls + " draw calls per frame.\n";
+                    if (instancing) {
+                        measurementLog += "-Due to instancing each draw call draws "
+                                + benchmarkRoot.modelInstanceCount
+                                + " times the original triangle count."
+                    }
                     break;
                 case 1:
                     measurementLog += "-Model consists of 5 separate meshes. One has 21196 triangles and the rest 3792 triangles each.\n";
                     measurementLog += "-There is one material used by all meshes.\n";
-                    drawCalls = benchmarkRoot.modelInstanceCount * 5;
+                    drawCalls = (instancing ? 1 : benchmarkRoot.modelInstanceCount) * 5;
                     measurementLog += "-This results in 5 separate draw calls per model, i.e. "
                             + drawCalls + " draw calls per frame.\n";
+                    if (instancing) {
+                        measurementLog += "-Due to instancing each draw call draws "
+                                + benchmarkRoot.modelInstanceCount
+                                + " times the original triangle count."
+                    }
                     break;
                 case 2:
                     measurementLog += "-Model consists of 5 separate meshes. One has 81734 triangles and the rest 1600 triangles each.\n";
                     measurementLog += "-There are 10 materials used by one mesh and 1 used by the rest.\n";
-                    drawCalls = benchmarkRoot.modelInstanceCount * 14;
+                    drawCalls = (instancing ? 1 : benchmarkRoot.modelInstanceCount) * 14;
                     measurementLog += "-This results in 14 separate draw calls per model, i.e. "
                             + drawCalls + " draw calls per frame.\n";
+                    if (instancing) {
+                        measurementLog += "-Due to instancing each draw call draws "
+                                + benchmarkRoot.modelInstanceCount
+                                + " times the original triangle count."
+                    }
                     break;
                 case 3:
                     measurementLog += "-Model consists of 5 separate meshes. One has 154397 triangles and the rest 1600 triangles each.\n";
                     measurementLog += "-There are 10 materials used by one mesh and 1 used by the rest.\n";
-                    drawCalls = benchmarkRoot.modelInstanceCount * 14;
+                    drawCalls = (instancing ? 1 : benchmarkRoot.modelInstanceCount) * 14;
                     measurementLog += "-This results in 14 separate draw calls per model, i.e. "
                             + drawCalls + " draw calls per frame.\n";
+                    if (instancing) {
+                        measurementLog += "-Due to instancing each draw call draws "
+                                + benchmarkRoot.modelInstanceCount
+                                + " times the original triangle count."
+                    }
                     break;
                 case 4:
                     measurementLog += "-Model consists of 5 separate meshes. One has 879892 triangles and the rest 1600 triangles each.\n";
                     measurementLog += "-There are 10 materials used by one mesh and 1 used by the rest.\n";
-                    drawCalls = benchmarkRoot.modelInstanceCount * 14;
+                    drawCalls = (instancing ? 1 : benchmarkRoot.modelInstanceCount) * 14;
                     measurementLog += "-This results in 14 separate draw calls per model, i.e. "
                             + drawCalls + " draw calls per frame.\n";
+                    if (instancing) {
+                        measurementLog += "-Due to instancing each draw call draws "
+                                + benchmarkRoot.modelInstanceCount
+                                + " times the original triangle count."
+                    }
                     break;
                 }
                 if (benchmarkRoot.skyboxEnabled && benchmarkRoot.iblEnabled) {

@@ -1,9 +1,10 @@
-import QtQuick3D 1.15
-import QtQuick 2.15
+import QtQuick3D
+import QtQuick
 
 Node {
     id: rootNode
     property Material materials
+    property var instancing
     property bool useExternalMaterial: false
     property real gearRotation: 0
 
@@ -30,7 +31,7 @@ Node {
         eulerRotation.x: -180
         eulerRotation.z: rootNode.gearRotation + 25
         source: "meshes/gear.mesh"
-
+        instancing: rootNode.instancing
         materials: [
             parts_material
         ]
@@ -43,6 +44,7 @@ Node {
         eulerRotation.x: 90
         eulerRotation.y: rootNode.gearRotation
         source: "meshes/gear.mesh"
+        instancing: rootNode.instancing
         materials: [
             parts_material
         ]
@@ -53,6 +55,7 @@ Node {
         eulerRotation.x: 90
         eulerRotation.y: -rootNode.gearRotation
         source: "meshes/gear.mesh"
+        instancing: rootNode.instancing
         materials: [
             parts_material
         ]

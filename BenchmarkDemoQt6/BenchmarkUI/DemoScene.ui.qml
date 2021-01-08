@@ -448,9 +448,18 @@ Item {
                         Layout.fillWidth: true
                         validator: IntValidator {
                             bottom: 1
-                            top: 1000
+                            top: instancing.checked ? 10000 : 1000
                         }
                     }
+                }
+
+                CheckBox {
+                    id: instancing
+                    text: qsTr("Instancing")
+                    anchors.leftMargin: 0
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.rightMargin: 0
                 }
 
                 Label {
@@ -1184,6 +1193,14 @@ Item {
     }
 
     Connections {
+        target: instancing
+        function onClicked() {
+            modelSpawner.useInstancing = instancing.checked
+            logger.instancing = instancing.checked
+        }
+    }
+
+    Connections {
         target: iblLighting
         function onClicked() {
             if (iblLighting.checked)
@@ -1634,6 +1651,7 @@ Item {
             logger.config = [// Model
                              (reportModelComplexity ? "Model: " : "Mesh: ") + modelCB.currentValue
                              + " (#" + modelCount.text + ")",
+                             instancing.checked ? "Instancing: ON" : "Instancing: OFF",
                              // Light
                              "Light Type: " + lightTypeCB.currentValue + " [brightness "
                              + lightBrightnessNumber.text + "] (#" + lightCountNumber.text + ")",

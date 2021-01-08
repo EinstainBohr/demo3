@@ -1,9 +1,10 @@
-import QtQuick3D 1.15
-import QtQuick 2.15
+import QtQuick3D
+import QtQuick
 
 Node {
     id: rootNode
     property Material materials
+    property var instancing
     property bool useExternalMaterial: false
     property string textureSize: "1024x1024"
 
@@ -51,7 +52,7 @@ Node {
         source: "meshes/ship10.mesh"
         scale: Qt.vector3d(0.5, 0.5, 0.5)
         eulerRotation.x: 90
-
+        instancing: rootNode.instancing
         materials: [
             smallMachine_material
         ]
@@ -71,6 +72,7 @@ Node {
             eulerRotation.y: -rootNode_1.propellerRotation
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
+            instancing: rootNode.instancing
             materials: [
                 propeller_material
             ]
@@ -85,6 +87,7 @@ Node {
             eulerRotation.y: rootNode_1.propellerRotation
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
+            instancing: rootNode.instancing
             materials: [
                 propeller_material
             ]
@@ -99,6 +102,7 @@ Node {
             eulerRotation.y: -rootNode_1.propellerRotation
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
+            instancing: rootNode.instancing
             materials: [
                 propeller_material
             ]
@@ -113,6 +117,7 @@ Node {
             eulerRotation.y: rootNode_1.propellerRotation
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
+            instancing: rootNode.instancing
             materials: [
                 propeller_material
             ]

@@ -57,6 +57,11 @@ Item {
                                            ? 2 : 0);
             renderModeCB.onActivated(renderModeCB.currentIndex);
         }
+        // Instancing
+        if (jsonScript[currentTestSet].instancingEnabled !== undefined) {
+            instancing.checked = jsonScript[currentTestSet].instancingEnabled;
+            instancing.onClicked();
+        }
         // Temporal AA
         if (jsonScript[currentTestSet].temporalAA !== undefined) {
             temporalAA.checked = jsonScript[currentTestSet].temporalAA;

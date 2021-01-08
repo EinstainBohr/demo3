@@ -4,9 +4,6 @@ CONFIG += c++11 resources_big
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
-# Define this if you want to benchmark with very simple one-mesh models
-#CONFIG += SIMPLE_ASSET_MODE
-
 SOURCES += \
     fileio.cpp \
     main.cpp
@@ -14,14 +11,8 @@ SOURCES += \
 RESOURCES += qml.qrc \
     $$files(BenchmarkUI/*.qml)
 
-SIMPLE_ASSET_MODE: {
-    DEFINES += SIMPLE_ASSETS
-    RESOURCES += BenchmarkUI/assets-simple/assets-simple.qrc
-}
-!SIMPLE_ASSET_MODE: RESOURCES += BenchmarkUI/assets/assets.qrc
-
-# Demo mode not yet supported for Android
-!android: RESOURCES += BenchmarkUI/assets-demo/assets-demo.qrc
+DEFINES += SIMPLE_ASSETS
+RESOURCES += BenchmarkUI/assets-simple/assets-simple.qrc
 
 RCC_DIR = $${PWD}
 

@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick3D
+import QtQuick3D.Helpers
 
 Node {
     id: shapeSpawner
     property bool demomode: false;
+    property bool useInstancing: false;
     property var instances: []
     property string model: "qrc:/Model1k.qml"
     property Material material: DefaultMaterial {
@@ -32,7 +34,7 @@ Node {
 
     function create(randomize) {
         // Add instances
-        for (var i = instances.length; i < instanceCount; ++i) {
+        for (var i = instances.length; i < (useInstancing ? 1 : instanceCount); ++i) {
             var meshComponent = Qt.createComponent(model);
             if (demomode) {
                 let instance = meshComponent.createObject(
@@ -54,18 +56,38 @@ Node {
                 if (Math.abs(zPos) < minRange)
                     zPos += (zPos > 0 ? minRange : -minRange);
 
-                let instance = meshComponent.createObject(
-                        shapeSpawner, { "x": xPos, "y": yPos, "z": zPos,
-                            "scale": Qt.vector3d(instanceScale, instanceScale, instanceScale),
-                            "eulerRotation": Qt.vector3d(Math.random() * xPos / 20,
-                                                         Math.random() * yPos / 20,
-                                                         Math.random() * zPos / 20),
-                            "materials": shapeSpawner.material,
-                            "useExternalMaterial": !shapeSpawner.useInternalMaterial,
-                            "textureSize": textureSize });
-                instances.push(instance);
+                if (useInstancing) {
+                    let instance = meshComponent.createObject(
+                            shapeSpawner, {
+                                "scale": Qt.vector3d(instanceScale, instanceScale, instanceScale),
+                                "materials": shapeSpawner.material,
+                                "useExternalMaterial": !shapeSpawner.useInternalMaterial,
+                                "textureSize": textureSize,
+                                "instancing": randomInstancing });
+                    instances.push(instance);
+                } else {
+                    let instance = meshComponent.createObject(
+                            shapeSpawner, {
+                                "x": xPos, "y": yPos, "z": zPos,
+                                "scale": Qt.vector3d(instanceScale, instanceScale, instanceScale),
+                                "eulerRotation": Qt.vector3d(Math.random() * xPos / 20,
+                                                             Math.random() * yPos / 20,
+                                                             Math.random() * zPos / 20),
+                                "materials": shapeSpawner.material,
+                                "useExternalMaterial": !shapeSpawner.useInternalMaterial,
+                                "textureSize": textureSize,
+                                "instancing": null });
+                    instances.push(instance);
+                }
             }
         }
+    }
+
+    onUseInstancingChanged: {
+        if (!visible)
+            return;
+        shapeSpawner.remove(true);
+        shapeSpawner.create(true);
     }
 
     onInstanceCountChanged: {
@@ -142,6 +164,20 @@ Node {
         duration: 60000
         running: !demomode
         loops: Animation.Infinite
+    }
+
+    RandomInstancing {
+        id: randomInstancing
+        instanceCount: shapeSpawner.instanceCount
+
+        position: InstanceRange {
+            from: Qt.vector3d(-range * 2, -range, -range)
+            to: Qt.vector3d(range * 2, range, range)
+        }
+        rotation: InstanceRange {
+            from: Qt.vector3d(-range / 20, -range / 20, -range / 20)
+            to: Qt.vector3d(range / 20, range / 20, range / 20)
+        }
     }
 }
 

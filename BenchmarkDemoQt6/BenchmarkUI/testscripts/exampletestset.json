@@ -1,6 +1,24 @@
 [
     {
-        "name":"Test Set #1",
+        "name":"Test Set #1 Instancing",
+        "modelIndex":1,
+        "modelInstanceCount":1000,
+        "instancingEnabled":true,
+        "lightTypeIndex":0,
+        "lightInstanceCount":1,
+        "shadowsEnabled":false,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Test Set #1 No Instancing",
+        "instancingEnabled":false
+    },
+    {
+        "name":"Test Set #2",
         "modelIndex":0,
         "modelInstanceCount":500,
         "lightTypeIndex":0,
@@ -17,7 +35,7 @@
         ]
     },
     {
-        "name":"Test Set #2",
+        "name":"Test Set #3",
         "modelIndex":2,
         "modelInstanceCount":100,
         "lightTypeIndex":2,
@@ -36,7 +54,7 @@
         ]
     },
     {
-        "name":"Test Set #3",
+        "name":"Test Set #4",
         "modelIndex":3,
         "modelInstanceCount":25,
         "lightTypeIndex":1,
@@ -54,7 +72,7 @@
         ]
     },
     {
-        "name":"Test Set #4",
+        "name":"Test Set #5",
         "modelIndex":4,
         "modelInstanceCount":1,
         "lightTypeIndex":3,
@@ -72,7 +90,7 @@
         ]
     },
     {
-        "name":"Test Set #5",
+        "name":"Test Set #6",
         "lightTypeIndex":2,
         "shadowsEnabled":false,
         "iblEnabled":false,
@@ -80,11 +98,11 @@
         "skyboxEnabled":false
     },
     {
-        "name":"Test Set #5 Overlay",
+        "name":"Test Set #6 Overlay",
         "renderMode":"Overlay"
     },
     {
-        "name":"Test Set #5 Underlay",
+        "name":"Test Set #6 Underlay",
         "renderMode":"Underlay"
     }
 ]

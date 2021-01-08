@@ -34,18 +34,19 @@ Supported arguments:
 --scene     Demo mode scene. Can be one of: [ flythrough, cockpit ].
             Preset is 'flythrough' by default.
 --automatic Only used in benchmark mode. Defines a set of benchmarks to be run one after
-            another. Can be one of: [ model, modelcount, light, lightcount, texture ].
-            model and modelcount can be specified at the same time
-            [ --automatic model --automatic modelcount ], as well as light
-            and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
-            maximum model complexity, as well as the maximum number of lights and models. Cannot
-            be used together with 'testset'.
+            another. Can be one of: [ model, modelcount, instancing, light, lightcount, texture ].
+            model, modelcount, and instancing can be specified at the same time
+            [ --automatic model --automatic modelcount --automatic instancing ], as well as
+            light and lightcount [ --automatic light --automatic lightcount ]. instancing
+            cannot be used by itself. Preset affects the maximum model complexity, as well
+            as the maximum number of lights and models.
+            Cannot be used together with 'testset'.
 --testset   Only used in benchmark mode. Value is a path to the JSON file containing the
             tests to be run. For example [ --testset /testscripts/exampletestset.json ]. Cannot
             be used together with 'automatic'.
 --report    Only used in benchmark mode. Determines the report file style, either combining
             each test result into a single file, or saving each one into a separate file.
-            'Single' style filename begins with the test script filename.
+            'single' style filename begins with the test script filename.
             Can be one of: [ single, multi ]. Report is 'single' by default.
 ```
 
@@ -61,7 +62,28 @@ You can do that by changing the comments in BenchmarkDemoQt6.pro as follows:
 # Define this if you want to benchmark with very simple one-mesh models
 CONFIG += SIMPLE_ASSET_MODE
 ```
-With the simple asset set each model contains exactly one mesh, and the triangle count is almost exactly what is shown in the UI. The difference in triangle count is between +1.2% (for the 1k model), and -0.2% (for the 10k model). For the larger models triangle count is so close it does not really matter at all.
+With the simple asset set each model contains exactly one mesh and one material, and the triangle count is almost exactly what is shown in the UI. The difference in triangle count is between +1.2% (for the 1k model), and -0.2% (for the 10k model). For the larger models triangle count is so close it does not really matter at all.
+
+Optionally you can build simple asset version using the BenchmarkDemoQt6Simple.pro project file. It does not include demo mode assets at all, so it will only run in normal and benchmark modes.
+
+Problems with too large executable
+----------------------------------
+If the executable size is too large for your target, first try building with the BenchmarkDemoQt6Simple.pro project file.
+
+If the executable size is still too large, you can consider removing the largest textures from the resource file (assets-simple.qrc):
+```
+<!--        <file>maps/4096x4096/basecolor.jpg</file>
+        <file>maps/4096x4096/metallic.jpg</file>
+        <file>maps/4096x4096/normal.jpg</file>
+        <file>maps/4096x4096/roughness.jpg</file>-->
+```
+After doing so selecting the `4096x4096` texture size option in the UI results in untextured models.
+
+Another option is to remove the most complex model file:
+```
+<!--        <file>meshes/500k.mesh</file>-->
+```
+After doing so selecting the `Very High (500k)` mesh option in the UI will fail.
 
 Using your own assets
 ---------------------
@@ -116,6 +138,6 @@ It is possible to replace the assets used in the application with your own. You 
 
 All done.
 
-Note: When using your own assets changing the texture size, texture config option, or material does not work. To get them working will require manual modification of the generated balsam output. You can compare the generated balsam output to the original assets in the demo if you want to do that.
+Note: When using your own assets changing instancing, texture size, texture config option, or material does not work. To get them working will require manual modification of the generated balsam output. You can compare the generated balsam output to the original assets in the demo if you want to do that.
 
 

@@ -29,6 +29,7 @@ Item {
     // Automatic benchmark modes
     property bool autoModeEnabled: false
     property bool autoModel: false
+    property bool autoInstancing: false
     property bool autoTexture: false
     property bool autoLight: false
     property bool autoModelCount: false
@@ -74,11 +75,12 @@ Item {
     //              Preset is 'flythrough' by default.
     // --automatic  Only used in benchmark mode. Defines a set of benchmarks to be run one after
     //              another.
-    //              Can be one of: [ model, modelcount, light, lightcount, texture ].
-    //              model and modelcount can be specified at the same time
-    //              [ --automatic model --automatic modelcount ], as well as light
-    //              and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
-    //              maximum model complexity, as well as the maximum number of lights and models.
+    //              Can be one of: [ model, modelcount, instancing, light, lightcount, texture ].
+    //              model, modelcount, and instancing can be specified at the same time
+    //              [ --automatic model --automatic modelcount --automatic instancing ], as well as
+    //              light and lightcount [ --automatic light --automatic lightcount ]. instancing
+    //              cannot be used by itself. Preset affects the maximum model complexity, as well
+    //              as the maximum number of lights and models.
     //              Cannot be used together with 'testset'.
     // --testset    Only used in benchmark mode. Value is a path to the JSON file containing the
     //              tests to be run. For example [ --testset /testscripts/exampletestset.json ].
@@ -189,6 +191,9 @@ Item {
                         case "modelcount":
                             parser.autoModelCount = true;
                             break;
+                        case "instancing":
+                            parser.autoInstancing = true;
+                            break;
                         case "light":
                             parser.autoLight = true;
                             break;
@@ -235,7 +240,10 @@ Item {
             if (((parser.autoModel || parser.autoModelCount)
                  && (parser.autoLight || parser.autoLightCount || parser.autoTexture))
                     || ((parser.autoLight || parser.autoLightCount)
-                        && (parser.autoModel || parser.autoModelCount || parser.autoTexture))) {
+                        && (parser.autoModel || parser.autoModelCount || parser.autoTexture))
+                    || (parser.autoInstancing && !parser.autoModel && !parser.autoModelCount)
+                        || (parser.autoInstancing
+                            && (parser.autoLight || parser.autoLightCount || parser.autoTexture))) {
                 printHelpAndQuit();
             }
             // Do not allow both --testset and --automatic
@@ -274,18 +282,19 @@ Supported arguments:
 --scene     Demo mode scene. Can be one of: [ flythrough, cockpit ].
             Preset is 'flythrough' by default.
 --automatic Only used in benchmark mode. Defines a set of benchmarks to be run one after
-            another. Can be one of: [ model, modelcount, light, lightcount, texture ].
-            model and modelcount can be specified at the same time
-            [ --automatic model --automatic modelcount ], as well as light
-            and lightcount [ --automatic light --automatic lightcount ]. Preset affects the
-            maximum model complexity, as well as the maximum number of lights and models. Cannot
-            be used together with 'testset'.
+            another. Can be one of: [ model, modelcount, instancing, light, lightcount, texture ].
+            model, modelcount, and instancing can be specified at the same time
+            [ --automatic model --automatic modelcount --automatic instancing ], as well as
+            light and lightcount [ --automatic light --automatic lightcount ]. instancing
+            cannot be used by itself. Preset affects the maximum model complexity, as well
+            as the maximum number of lights and models.
+            Cannot be used together with 'testset'.
 --testset   Only used in benchmark mode. Value is a path to the JSON file containing the
             tests to be run. For example [ --testset /testscripts/exampletestset.json ]. Cannot
             be used together with 'automatic'.
 --report    Only used in benchmark mode. Determines the report file style, either combining
             each test result into a single file, or saving each one into a separate file.
-            'Single' style filename begins with the test script filename.
+            'single' style filename begins with the test script filename.
             Can be one of: [ single, multi ]. Report is 'single' by default.
                     ");
         Qt.callLater(Qt.quit);
