@@ -14,13 +14,13 @@ RESOURCES += qml.qrc \
 DEFINES += SIMPLE_ASSETS
 RESOURCES += BenchmarkUI/assets-simple/assets-simple.qrc
 
-RCC_DIR = $${PWD}
+android: RCC_DIR = $${OUT_PWD}/$${ANDROID_TARGET_ARCH}
 
 OTHER_FILES += \
     BenchmarkUI/testscripts/*.* \
     README.md
 
-android: QMAKE_LFLAGS += --for-linker=--long-plt
+#android: QMAKE_LFLAGS += --for-linker=--long-plt
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 !android: QML_IMPORT_PATH = BenchmarkUI
@@ -45,6 +45,7 @@ DISTFILES += \
     BenchmarkUI/testscripts/shadows.json \
     android/AndroidManifest.xml \
     android/build.gradle \
+    android/gradle.properties \
     android/gradle/wrapper/gradle-wrapper.jar \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew \
