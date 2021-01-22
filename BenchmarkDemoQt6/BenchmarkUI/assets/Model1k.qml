@@ -32,6 +32,7 @@ Node {
         eulerRotation.z: rootNode.gearRotation + 25
         source: "meshes/gear.mesh"
         instancing: rootNode.instancing
+        instanceRoot: rootNode
         materials: [
             parts_material
         ]
@@ -45,6 +46,7 @@ Node {
         eulerRotation.y: rootNode.gearRotation
         source: "meshes/gear.mesh"
         instancing: rootNode.instancing
+        instanceRoot: rootNode
         materials: [
             parts_material
         ]
@@ -56,6 +58,7 @@ Node {
         eulerRotation.y: -rootNode.gearRotation
         source: "meshes/gear.mesh"
         instancing: rootNode.instancing
+        instanceRoot: rootNode
         materials: [
             parts_material
         ]

@@ -226,6 +226,7 @@ Node {
         scale: Qt.vector3d(0.2, 0.2, 0.2)
         source: "meshes/city50.mesh"
         instancing: rootNode.instancing
+        instanceRoot: rootNode
         materials: [
             house_material,
             power_material,
@@ -253,6 +254,7 @@ Node {
             eulerRotation.x: 90
             eulerRotation.y: rootNode_1.propellerRotation
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             source: "meshes/propeller.mesh"
             materials: [
                 propeller_material
@@ -268,6 +270,7 @@ Node {
             eulerRotation.y: -rootNode_1.propellerRotation
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]
@@ -282,6 +285,7 @@ Node {
             eulerRotation.y: rootNode_1.propellerRotation
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]
@@ -296,6 +300,7 @@ Node {
             eulerRotation.y: -rootNode_1.propellerRotation
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]

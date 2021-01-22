@@ -53,6 +53,7 @@ Node {
         scale: Qt.vector3d(0.5, 0.5, 0.5)
         eulerRotation.x: 90
         instancing: rootNode.instancing
+        instanceRoot: rootNode
         materials: [
             smallMachine_material
         ]
@@ -73,6 +74,7 @@ Node {
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]
@@ -88,6 +90,7 @@ Node {
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]
@@ -103,6 +106,7 @@ Node {
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]
@@ -118,6 +122,7 @@ Node {
             eulerRotation.x: 90
             source: "meshes/propeller.mesh"
             instancing: rootNode.instancing
+            instanceRoot: rootNode
             materials: [
                 propeller_material
             ]
