@@ -1841,14 +1841,16 @@ Item {
                     demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
                     demoContentLoader.position = Qt.vector3d(5, 0, 1.5);
                     // Enable some select effects
-                    effectInstanceDepthOfFieldHQBlur.focusDistance = 10;
-                    effectInstanceDepthOfFieldHQBlur.blurAmount = 3;
-                    effectInstanceDepthOfFieldHQBlur.focusRange = 7.5;
-                    effectList.push(effectInstanceDepthOfFieldHQBlur)
-                    effectInstanceHDRBloomTonemap.bloomThreshold = 0.95;
-                    //effectInstanceHDRBloomTonemap.blurFalloff = 10;
-                    effectList.push(effectInstanceHDRBloomTonemap)
-                    view3D.environment.effects = effectList
+                    if (!commands.targetEmbedded && !commands.presetEntrylevel) {
+                        effectInstanceDepthOfFieldHQBlur.focusDistance = 10;
+                        effectInstanceDepthOfFieldHQBlur.blurAmount = 3;
+                        effectInstanceDepthOfFieldHQBlur.focusRange = 7.5;
+                        effectList.push(effectInstanceDepthOfFieldHQBlur)
+                        effectInstanceHDRBloomTonemap.bloomThreshold = 0.95;
+                        //effectInstanceHDRBloomTonemap.blurFalloff = 10;
+                        effectList.push(effectInstanceHDRBloomTonemap)
+				        view3D.environment.effects = effectList
+                    }
                     // Set tonemapMode
                     view3D.environment.tonemapMode = SceneEnvironment.TonemapModeAces
                     // Camera startup position
@@ -1875,10 +1877,12 @@ Item {
                     demoContentLoader.z = 0;
                     demoContentLoader.model = "qrc:/FlyingSmallShip.qml";
                     // Enable some select effects
-                    effectInstanceVignette.vignetteColor = Qt.vector3d(0.5, 0.5, 0);
-                    effectInstanceVignette.vignetteRadius = 0.1;
-                    effectList.push(effectInstanceVignette);
-                    view3D.environment.effects = effectList;
+                    if (!commands.targetEmbedded && !commands.presetEntrylevel) {
+                        effectInstanceVignette.vignetteColor = Qt.vector3d(0.5, 0.5, 0);
+                        effectInstanceVignette.vignetteRadius = 0.1;
+                        effectList.push(effectInstanceVignette);
+                        view3D.environment.effects = effectList;
+                    }
                     // Camera settings
                     camera.position = Qt.vector3d(0, 0, 0);
                     camera.clipFar = 1000;

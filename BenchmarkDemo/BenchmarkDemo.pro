@@ -23,8 +23,6 @@ SIMPLE_ASSET_MODE: {
 # Demo mode not yet supported for Android
 !android: RESOURCES += BenchmarkUI/assets-demo/assets-demo.qrc
 
-RCC_DIR = $${PWD}
-
 OTHER_FILES += BenchmarkUI/testscripts/*.json
 
 android: QMAKE_LFLAGS += --for-linker=--long-plt

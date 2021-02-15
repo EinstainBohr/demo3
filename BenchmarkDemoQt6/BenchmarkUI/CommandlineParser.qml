@@ -407,17 +407,17 @@ Supported arguments:
         } else {
             // Demo mode
             console.log("Demo Mode");
-            benchmarkRoot.shadowsEnabled = true;
+            benchmarkRoot.shadowsEnabled = parser.presetEntrylevel ? false : true;
             benchmarkRoot.iblEnabled = true;
             benchmarkRoot.aoEnabled = (parser.targetDesktop && parser.presetHighend) ? true : false;
             benchmarkRoot.skyboxEnabled = true;
             benchmarkRoot.textureSizeIndex = (parser.targetDesktop && parser.presetHighend)
                     ? 4 : parser.targetDesktop ? 3 : 2; // 4096x4096 / 2048x2048 / 1024x1024
             benchmarkRoot.msaaQualityIndex = (parser.targetDesktop && parser.presetHighend)
-                    ? 3 : 2; // Very High / High
+                    ? 3 : !parser.presetEntrylevel ? 2 : 0; // Very High / High / Off
             benchmarkRoot.modelIndex = 3; // 100k
             benchmarkRoot.modelInstanceCount = 1;
-            benchmarkRoot.lightTypeIndex = 1; // Point
+            benchmarkRoot.lightTypeIndex = parser.targetDesktop ? 1 : 0; // Point / Directional
             benchmarkRoot.lightInstanceCount = 1;
             benchmarkRoot.materialIndex = 6; // Original Material
         }
