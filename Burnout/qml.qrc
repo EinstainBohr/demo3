@@ -7,5 +7,6 @@
         <file>RangeRover/meshes/wheelRight.mesh</file>
         <file>RangeRover/RangeRover.qml</file>
         <file>images/night_bridge_4k.hdr</file>
+        <file>images/snowflake.png</file>
     </qresource>
 </RCC>
