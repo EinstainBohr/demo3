@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/MainScreen.qml</file>
+        <file>RangeRover/meshes/body.mesh</file>
+        <file>RangeRover/meshes/wheelLeft.mesh</file>
+        <file>RangeRover/meshes/wheelRight.mesh</file>
+        <file>RangeRover/RangeRover.qml</file>
+        <file>images/night_bridge_4k.hdr</file>
+    </qresource>
+</RCC>
