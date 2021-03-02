@@ -8,5 +8,7 @@
         <file>RangeRover/RangeRover.qml</file>
         <file>images/night_bridge_4k.hdr</file>
         <file>images/snowflake.png</file>
+        <file>images/dust.png</file>
+        <file>images/smoke_sprite.png</file>
     </qresource>
 </RCC>

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick3D 1.15
 import QtQuick.Timeline 1.0
+import QtQuick3D.Particles3D
 
 Node {
     id: rangeRover
@@ -180,6 +181,130 @@ Node {
             mirror_mat_material,
             door_light_ma_material
         ]
+    }
+
+    ParticleSystem3D {
+        id: psystem
+
+        property real dustEmitRate: 0
+        property real smokeEmitRate: 0
+
+        SpriteParticle3D {
+            id: smokeParticle
+            sprite: Texture {
+                source: "../images/smoke_sprite.png"
+            }
+            maxAmount: 50
+            frameCount: 15
+            interpolate: true
+            blendMode: SpriteParticle3D.Screen
+            color: "#ffffff"
+            colorVariation: Qt.vector4d(0.0, 0.0, 0.0, 0.8)
+            fadeInEffect: Particle3D.FadeScale
+            fadeInDuration: 100
+            fadeOutEffect: Particle3D.FadeOpacity
+            fadeOutDuration: 1500
+        }
+
+        ParticleEmitter3D {
+            id: smokeEmitterFL
+            particle: smokeParticle
+            position: Qt.vector3d(wheelFL.position.x-1, wheelFL.position.y-2, wheelFL.position.z+1)
+            particleScale: 15
+            particleScaleVariation: 8
+            particleEndScale: 40
+            particleRotation: Qt.vector3d(0, 45, 0)
+            particleRotationVariation: Qt.vector3d(0, 0, 180)
+            particleRotationVelocityVariation: Qt.vector3d(0, 0, 40)
+            emitRate: psystem.smokeEmitRate
+            lifeSpan: 1500
+            lifeSpanVariation: 1000
+            velocity: VectorDirection3D {
+                direction: Qt.vector3d(0, 10, -6)
+                directionVariation: Qt.vector3d(0, 5, 2)
+            }
+        }
+
+        ParticleEmitter3D {
+            id: smokeEmitterRL
+            particle: smokeParticle
+            position: Qt.vector3d(wheelRL.position.x-1, wheelRL.position.y-2, wheelRL.position.z+1)
+            particleScale: 15
+            particleScaleVariation: 8
+            particleEndScale: 40
+            particleRotation: Qt.vector3d(0, 45, 0)
+            particleRotationVariation: Qt.vector3d(0, 0, 180)
+            particleRotationVelocityVariation: Qt.vector3d(0, 0, 40)
+            emitRate: psystem.smokeEmitRate
+            lifeSpan: 1500
+            lifeSpanVariation: 1000
+            velocity: VectorDirection3D {
+                direction: Qt.vector3d(0, 10, -6)
+                directionVariation: Qt.vector3d(0, 5, 2)
+            }
+        }
+
+        SpriteParticle3D {
+            id: dustParticle
+            sprite: Texture {
+                source: "../images/dust.png"
+            }
+            maxAmount: 2000
+            color: "#ffffff"
+            colorVariation: Qt.vector4d(0.2, 0.2, 0.2, 0.2)
+            unifiedColorVariation: true
+            billboard: true
+            fadeInDuration: 0
+            fadeOutDuration: 500
+            fadeInEffect: SpriteParticle3D.FadeScale
+            fadeOutEffect: SpriteParticle3D.FadeOpacity
+        }
+
+        ParticleEmitter3D {
+            id: dustEmitterFL
+            particle: dustParticle
+            position: Qt.vector3d(wheelFL.position.x+0, wheelFL.position.y-2, wheelFL.position.z+4)
+            emitRate: psystem.dustEmitRate
+            lifeSpan: 1000
+            lifeSpanVariation: 800
+            particleScale: 0.1
+            particleEndScale: 8.0
+            particleScaleVariation: 1.0
+            particleRotationVariation: Qt.vector3d(40, 40, 180)
+            particleRotationVelocityVariation: Qt.vector3d(0, 0, 100)
+            velocity: VectorDirection3D {
+                direction: Qt.vector3d(0, 1 + psystem.dustEmitRate * 0.06, -6)
+            }
+        }
+        ParticleEmitter3D {
+            id: dustEmitterRL
+            particle: dustParticle
+            position: Qt.vector3d(wheelRL.position.x+0, wheelRL.position.y-2, wheelRL.position.z+4)
+            emitRate: psystem.dustEmitRate
+            lifeSpan: 1000
+            lifeSpanVariation: 800
+            particleScale: 0.1
+            particleEndScale: 8.0
+            particleScaleVariation: 1.0
+            particleRotationVariation: Qt.vector3d(40, 40, 180)
+            particleRotationVelocityVariation: Qt.vector3d(0, 0, 100)
+            velocity: VectorDirection3D {
+                direction: Qt.vector3d(0, 1 + psystem.dustEmitRate * 0.06, -8)
+            }
+        }
+
+        Gravity3D {
+            id: gravity
+            direction: Qt.vector3d(0, 0, 1)
+            magnitude: 4.0
+        }
+
+        Wander3D {
+            uniqueAmount: Qt.vector3d(0, 1.0, 1.0)
+            uniqueAmountVariation: 0.8
+            uniquePace: Qt.vector3d(0.0, 0.5, 0.5)
+            uniquePaceVariation: 0.8
+        }
     }
 
     Node {
@@ -381,6 +506,86 @@ Node {
             Keyframe {
                 frame: 1800
                 value: -54000
+            }
+        }
+        KeyframeGroup {
+            target: psystem
+            property: "dustEmitRate"
+            Keyframe {
+                frame: 0
+                value: 0
+            }
+            Keyframe {
+                frame: 360
+                value: 0
+            }
+            Keyframe {
+                frame: 450
+                value: 200
+            }
+            Keyframe {
+                frame: 700
+                value: 200
+            }
+            Keyframe {
+                frame: 800
+                value: 500
+            }
+        }
+        KeyframeGroup {
+            target: dustParticle
+            property: "color"
+            Keyframe {
+                frame: 0
+                value: "#ffffff"
+            }
+            Keyframe {
+                frame: 1000
+                value: "#ffffff"
+            }
+            Keyframe {
+                frame: 1100
+                value: "#6070f0"
+            }
+            Keyframe {
+                frame: 1400
+                value: "#6070f0"
+            }
+            Keyframe {
+                frame: 1500
+                value: "#907030"
+            }
+        }
+        KeyframeGroup {
+            target: psystem
+            property: "smokeEmitRate"
+            Keyframe {
+                frame: 0
+                value: 0
+            }
+            Keyframe {
+                frame: 1550
+                value: 0
+            }
+            Keyframe {
+                frame: 1600
+                value: 10
+            }
+        }
+        KeyframeGroup {
+            target: gravity
+            property: "magnitude"
+            Keyframe {
+                frame: 0
+                value: 4.0
+            }
+            Keyframe {
+                frame: 1000
+                value: 4.0
+            }
+            Keyframe {
+                frame: 1100
+                value: 8.0
             }
         }
     }
