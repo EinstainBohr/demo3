@@ -531,6 +531,10 @@ Node {
                 frame: 800
                 value: 500
             }
+            Keyframe {
+                frame: 1800
+                value: 0
+            }
         }
         KeyframeGroup {
             target: dustParticle
@@ -545,15 +549,39 @@ Node {
             }
             Keyframe {
                 frame: 1100
-                value: "#6070f0"
+                value: "lightblue"
             }
             Keyframe {
                 frame: 1400
-                value: "#6070f0"
+                value: "lightblue"
             }
             Keyframe {
                 frame: 1500
-                value: "#907030"
+                value: "#222222"
+            }
+        }
+        KeyframeGroup {
+            target: dustParticle
+            property: "particleScale"
+            Keyframe {
+                frame: 0
+                value: 8.0
+            }
+            Keyframe {
+                frame: 900
+                value: 8.0
+            }
+            Keyframe {
+                frame: 1100
+                value: 4.0
+            }
+            Keyframe {
+                frame: 1400
+                value: 4.0
+            }
+            Keyframe {
+                frame: 1600
+                value: 8.0
             }
         }
         KeyframeGroup {
@@ -571,6 +599,10 @@ Node {
                 frame: 1600
                 value: 10
             }
+            Keyframe {
+                frame: 1800
+                value: 0
+            }
         }
         KeyframeGroup {
             target: gravity
@@ -580,7 +612,7 @@ Node {
                 value: 4.0
             }
             Keyframe {
-                frame: 1000
+                frame: 900
                 value: 4.0
             }
             Keyframe {

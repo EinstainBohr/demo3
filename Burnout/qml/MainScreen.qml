@@ -104,7 +104,7 @@ Item {
 
         DebugView {
             source: parent
-            enabled: false
+            visible: false
         }
     }
 
