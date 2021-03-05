@@ -1,0 +1,130 @@
+[
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, Shadows",
+        "modelIndex":0,
+        "modelInstanceCount":1,
+        "lightTypeIndex":1,
+        "lightInstanceCount":1,
+        "shadowsEnabled":true,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":false,
+        "textureSizeIndex":0,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, Shadows",
+        "modelIndex":1
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, Shadows",
+        "modelIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, Shadows",
+        "modelIndex":3
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, Shadows",
+        "modelIndex":4
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, Ambient Occlusion",
+        "modelIndex":0,
+        "shadowsEnabled":false,
+        "iblEnabled":false,
+        "aoEnabled":true,
+        "skyboxEnabled":false
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, Ambient Occlusion",
+        "modelIndex":1
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, Ambient Occlusion",
+        "modelIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, Ambient Occlusion",
+        "modelIndex":3
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, Ambient Occlusion",
+        "modelIndex":4
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, Skybox",
+        "modelIndex":0,
+        "shadowsEnabled":false,
+        "iblEnabled":true,
+        "aoEnabled":false,
+        "skyboxEnabled":true
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, Skybox",
+        "modelIndex":1
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, Skybox",
+        "modelIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, Skybox",
+        "modelIndex":3
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, Skybox",
+        "modelIndex":4
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, Temporal AA",
+        "modelIndex":0,
+        "shadowsEnabled":false,
+        "iblEnabled":false,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "temporalAA":true
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, Temporal AA",
+        "modelIndex":1
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, Temporal AA",
+        "modelIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, Temporal AA",
+        "modelIndex":3
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, Temporal AA",
+        "modelIndex":4
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, Everything ON",
+        "modelIndex":0,
+        "shadowsEnabled":true,
+        "iblEnabled":true,
+        "aoEnabled":true,
+        "skyboxEnabled":true,
+        "temporalAA":true
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, Everything ON",
+        "modelIndex":1
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, Everything ON",
+        "modelIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, Everything ON",
+        "modelIndex":3
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, Everything ON",
+        "modelIndex":4
+    }
+]

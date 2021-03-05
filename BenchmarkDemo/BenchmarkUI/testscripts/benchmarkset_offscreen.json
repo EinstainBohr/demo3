@@ -1,0 +1,492 @@
+[
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 1k model, MSAA OFF",
+        "modelIndex":0,
+        "modelInstanceCount":10,
+        "lightTypeIndex":2,
+        "lightInstanceCount":1,
+        "shadowsEnabled":false,
+        "iblEnabled":true,
+        "aoEnabled":false,
+        "skyboxEnabled":false,
+        "texturesEnabled":true,
+        "textureSizeIndex":2,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 1k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 1k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 10k model, MSAA OFF",
+        "modelIndex":1,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 10k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 10k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 50k model, MSAA OFF",
+        "modelIndex":2,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 50k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 50k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 100k model, MSAA OFF",
+        "modelIndex":3,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 100k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 100k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 500k model, MSAA OFF",
+        "modelIndex":4,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 500k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, IBL, 1 Point Light, 500k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 1k model, MSAA OFF",
+        "modelIndex":0,
+        "lightTypeIndex":0,
+        "iblEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 1k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 1k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 10k model, MSAA OFF",
+        "modelIndex":1,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 10k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 10k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 50k model, MSAA OFF",
+        "modelIndex":2,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 50k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 50k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 100k model, MSAA OFF",
+        "modelIndex":3,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 100k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 100k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 500k model, MSAA OFF",
+        "modelIndex":4,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 500k model, MSAA Medium",
+        "msaaQualityIndex":1
+    },
+    {
+        "name":"Textures 1024x1024, 1 Directional Light, 500k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 1k model, MSAA OFF",
+        "modelIndex":0,
+        "lightTypeIndex":2,
+        "iblEnabled":true,
+        "textureSizeIndex":4,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 1k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 10k model, MSAA OFF",
+        "modelIndex":1,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 10k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 50k model, MSAA OFF",
+        "modelIndex":2,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 50k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 100k model, MSAA OFF",
+        "modelIndex":3,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 100k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 500k model, MSAA OFF",
+        "modelIndex":4,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, IBL, 1 Point Light, 500k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 1k model, MSAA OFF",
+        "modelIndex":0,
+        "lightTypeIndex":0,
+        "iblEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 1k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 10k model, MSAA OFF",
+        "modelIndex":1,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 10k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 50k model, MSAA OFF",
+        "modelIndex":2,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 50k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 100k model, MSAA OFF",
+        "modelIndex":3,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 100k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 500k model, MSAA OFF",
+        "modelIndex":4,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"Textures 4096x4096, 1 Directional Light, 500k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, MSAA OFF",
+        "modelIndex":0,
+        "lightTypeIndex":2,
+        "iblEnabled":true,
+        "texturesEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 1k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, MSAA OFF",
+        "modelIndex":1,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 10k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, MSAA OFF",
+        "modelIndex":2,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 50k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, MSAA OFF",
+        "modelIndex":3,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 100k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, MSAA OFF",
+        "modelIndex":4,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"No Textures, IBL, 1 Point Light, 500k model, MSAA High",
+        "msaaQualityIndex":2
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 1k model, No Textures",
+        "modelIndex":0,
+        "lightTypeIndex":2,
+        "iblEnabled":true,
+        "texturesEnabled":false,
+        "textureSizeIndex":2,
+        "msaaQualityIndex":2,
+        "materialIndex":1
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 1k model, Textures 1024x1024",
+        "texturesEnabled":true
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 10k model, No Textures",
+        "modelIndex":1,
+        "texturesEnabled":false
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 10k model, Textures 1024x1024",
+        "texturesEnabled":true
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 50k model, No Textures",
+        "modelIndex":2,
+        "texturesEnabled":false
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 50k model, Textures 1024x1024",
+        "texturesEnabled":true
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 100k model, No Textures",
+        "modelIndex":3,
+        "texturesEnabled":false
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 100k model, Textures 1024x1024",
+        "texturesEnabled":true
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 500k model, No Textures",
+        "modelIndex":4,
+        "texturesEnabled":false
+    },
+    {
+        "name":"Principled Material – Metal, IBL, 1 Point Light, 500k model, Textures 1024x1024",
+        "texturesEnabled":true
+    },
+    {
+        "name":"1000 x 1k model, IBL, 1 Point Light, Textures OFF",
+        "modelIndex":0,
+        "modelInstanceCount":1000,
+        "lightTypeIndex":2,
+        "iblEnabled":true,
+        "texturesEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"1000 x 1k model, IBL, 1 Point Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"1000 x 1k model, IBL, 1 Point Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"100 x 10k model, IBL, 1 Point Light, Textures OFF",
+        "modelIndex":1,
+        "modelInstanceCount":100,
+        "texturesEnabled":false
+    },
+    {
+        "name":"100 x 10k model, IBL, 1 Point Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"100 x 10k model, IBL, 1 Point Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"20 x 50k model, IBL, 1 Point Light, Textures OFF",
+        "modelIndex":2,
+        "modelInstanceCount":20,
+        "texturesEnabled":false
+    },
+    {
+        "name":"20 x 50k model, IBL, 1 Point Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"20 x 50k model, IBL, 1 Point Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"10 x 100k model, IBL, 1 Point Light, Textures OFF",
+        "modelIndex":3,
+        "modelInstanceCount":10,
+        "texturesEnabled":false
+    },
+    {
+        "name":"10 x 100k model, IBL, 1 Point Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"10 x 100k model, IBL, 1 Point Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"2 x 500k model, IBL, 1 Point Light, Textures OFF",
+        "modelIndex":4,
+        "modelInstanceCount":2,
+        "texturesEnabled":false
+    },
+    {
+        "name":"2 x 500k model, IBL, 1 Point Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"2 x 500k model, IBL, 1 Point Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"1000 x 1k model, 1 Directional Light, Textures OFF",
+        "modelIndex":0,
+        "modelInstanceCount":1000,
+        "lightTypeIndex":0,
+        "iblEnabled":false,
+        "texturesEnabled":false,
+        "msaaQualityIndex":0
+    },
+    {
+        "name":"1000 x 1k model, 1 Directional Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"1000 x 1k model, 1 Directional Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"100 x 10k model, 1 Directional Light, Textures OFF",
+        "modelIndex":1,
+        "modelInstanceCount":100,
+        "texturesEnabled":false
+    },
+    {
+        "name":"100 x 10k model, 1 Directional Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"100 x 10k model, 1 Directional Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"20 x 50k model, 1 Directional Light, Textures OFF",
+        "modelIndex":2,
+        "modelInstanceCount":20,
+        "texturesEnabled":false
+    },
+    {
+        "name":"20 x 50k model, 1 Directional Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"20 x 50k model, 1 Directional Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"10 x 100k model, 1 Directional Light, Textures OFF",
+        "modelIndex":3,
+        "modelInstanceCount":10,
+        "texturesEnabled":false
+    },
+    {
+        "name":"10 x 100k model, 1 Directional Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"10 x 100k model, 1 Directional Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    },
+    {
+        "name":"2 x 500k model, 1 Directional Light, Textures OFF",
+        "modelIndex":4,
+        "modelInstanceCount":2,
+        "texturesEnabled":false
+    },
+    {
+        "name":"2 x 500k model, 1 Directional Light, 512x512 Textures",
+        "texturesEnabled":true,
+        "textureSizeIndex":1
+    },
+    {
+        "name":"2 x 500k model, 1 Directional Light, 2048x2048 Textures",
+        "textureSizeIndex":3
+    }
+]
